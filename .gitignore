@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+
+models/
+data/
+outputs/
+runs/
+
+.env
+.DS_Store
