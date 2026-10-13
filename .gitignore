@@ -6,6 +6,7 @@ models/
 data/
 outputs/
 runs/
+local_scripts/
 
 .env
 .DS_Store
