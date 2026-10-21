@@ -10,3 +10,4 @@ local_scripts/
 
 .env
 .DS_Store
+rf_detr/*.zip

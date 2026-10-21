@@ -23,3 +23,13 @@ The separate RF-DETR training package and dataset notes are in [`rf_detr/doors_c
 ## Local files
 
 Datasets, model weights, and generated outputs are local working files and are excluded from version control. The detector expects its sample image and model at the paths listed above.
+
+## Check before uploading to GitHub
+
+Run the lightweight syntax check from a Git checkout:
+
+```bash
+python3 scripts/check.py
+```
+
+This checks tracked Python files and the check script itself without installing dependencies, loading models, or modifying files. It checks syntax only; it does not validate detection or training behavior. Dataset ZIP archives directly under `rf_detr/` are also excluded from version control.
