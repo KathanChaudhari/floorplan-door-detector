@@ -1,0 +1,62 @@
+{
+  "export_images": 72,
+  "export_annotations": 385,
+  "export_empty_images": 6,
+  "empty_dimension_metadata_repaired_from_png": 6,
+  "review_unique_door_clusters": 202,
+  "review_replaced_original_boxes": 199,
+  "new_source_doors": 3,
+  "source_train_annotations_before": 316,
+  "source_train_annotations_after": 319,
+  "preserved_review_omissions": [
+    {
+      "source": "asc_image_003.png",
+      "source_annotation_id": 64,
+      "door_tag": "1133"
+    },
+    {
+      "source": "gvhc_stockton_image_000.png",
+      "source_annotation_id": 108,
+      "door_tag": "72"
+    },
+    {
+      "source": "gvhc_stockton_image_003.png",
+      "source_annotation_id": 220,
+      "door_tag": "26"
+    },
+    {
+      "source": "greenville_image_000.png",
+      "source_annotation_id": 312,
+      "door_tag": "A170"
+    }
+  ],
+  "excluded_regions": [
+    {
+      "source": "asc_image_000.png",
+      "xyxy": [
+        3815,
+        1520,
+        4583,
+        2288
+      ],
+      "reason": "Unresolved symbol below elevator P10; crops 031 and 041 overlap it."
+    },
+    {
+      "source": "asc_image_001.png",
+      "xyxy": [
+        1364,
+        1600,
+        1550,
+        1802
+      ],
+      "reason": "Unresolved untagged angled symbol near reception; visible in crops 032 and 051. Original annotation 39 retained for audit, excluded from training."
+    }
+  ],
+  "notes": [
+    "Overlap groups use IoU >= 0.50 and choose a representative original review box (medoid).",
+    "Explicitly matched two slimmer revised sliding door boxes (110 and 114) to their original annotations instead of duplicating them.",
+    "No raw review crops are appended to the training dataset: corrected boxes are mapped onto the original source pages before retiling.",
+    "Validation and test full-page images and annotations are unchanged.",
+    "The five empty crops outside 041 were visually checked at overview scale; this is not a certification of every unlabeled pixel."
+  ]
+}

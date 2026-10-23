@@ -1,0 +1,807 @@
+{
+  "regions": [
+    {
+      "file": "001_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        1647,
+        1055,
+        2423,
+        1823
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "002_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        2722,
+        1893,
+        3490,
+        2826
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "003_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        3535,
+        1487,
+        4383,
+        2353
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "004_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        2721,
+        411,
+        3500,
+        1291
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "005_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        1285,
+        1100,
+        2653,
+        2009
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "006_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        2619,
+        3409,
+        3620,
+        4275
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "007_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        3813,
+        697,
+        4581,
+        1465
+      ],
+      "reviewed_empty": true
+    },
+    {
+      "file": "008_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2760,
+        1878,
+        3910,
+        2782
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "009_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        3710,
+        1938,
+        4665,
+        2770
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "010_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        3070,
+        1774,
+        4633,
+        2846
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "011_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        1182,
+        2483,
+        1950,
+        3251
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "012_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        2704,
+        1700,
+        3472,
+        2826
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "013_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        729,
+        384,
+        1497,
+        1152
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "014_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        2747,
+        1494,
+        3547,
+        2701
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "015_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        995,
+        745,
+        1799,
+        1554
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "016_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        2832,
+        2736,
+        4296,
+        3776
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "017_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        589,
+        809,
+        1666,
+        1577
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "018_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2986,
+        3090,
+        3940,
+        3885
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "019_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        1264,
+        1620,
+        2215,
+        2430
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "020_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        2849,
+        1160,
+        4042,
+        2263
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "021_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        685,
+        1500,
+        1453,
+        2268
+      ],
+      "reviewed_empty": true
+    },
+    {
+      "file": "022_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        3586,
+        1427,
+        4354,
+        2293
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "023_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        3488,
+        1487,
+        4256,
+        2294
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "024_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        91,
+        1567,
+        1023,
+        2335
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "025_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        1881,
+        751,
+        2965,
+        1837
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "026_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        1957,
+        2952,
+        3795,
+        3867
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "027_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        3037,
+        371,
+        3805,
+        1139
+      ],
+      "reviewed_empty": true
+    },
+    {
+      "file": "028_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2547,
+        3090,
+        3315,
+        3882
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "029_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        1488,
+        403,
+        2256,
+        1171
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "030_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        654,
+        367,
+        1422,
+        1330
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "031_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        3813,
+        1589,
+        4581,
+        2357
+      ],
+      "reviewed_empty": true
+    },
+    {
+      "file": "032_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        1372,
+        1425,
+        2475,
+        2316
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "033_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        1010,
+        358,
+        1778,
+        1126
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "034_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        2431,
+        1494,
+        3264,
+        2701
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "035_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        1291,
+        945,
+        2653,
+        1713
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "036_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        2125,
+        397,
+        3007,
+        1165
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "037_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        3022,
+        419,
+        3790,
+        1187
+      ],
+      "reviewed_empty": true
+    },
+    {
+      "file": "038_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        3431,
+        2432,
+        4487,
+        3552
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "039_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        2618,
+        1852,
+        3500,
+        2777
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "040_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        969,
+        477,
+        1915,
+        1332
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "042_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        272,
+        2469,
+        1040,
+        3237
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "043_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        1516,
+        472,
+        2284,
+        1240
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "044_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        1881,
+        750,
+        3532,
+        1847
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "045_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        1491,
+        776,
+        2487,
+        1592
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "046_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        2328,
+        1085,
+        3159,
+        1866
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "047_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2622,
+        2339,
+        3940,
+        3552
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "048_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        4668,
+        1312,
+        5543,
+        2080
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "049_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        1507,
+        745,
+        2508,
+        1638
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "050_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        2242,
+        1771,
+        3057,
+        2539
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "051_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        1073,
+        1316,
+        1841,
+        2108
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "052_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        489,
+        3069,
+        1257,
+        3837
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "053_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        2530,
+        1510,
+        3383,
+        2393
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "054_asc_image_000.png",
+      "source": "asc_image_000.png",
+      "xyxy": [
+        2827,
+        1791,
+        3675,
+        2579
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "055_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        3014,
+        544,
+        3782,
+        1397
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "056_asc_image_001.png",
+      "source": "asc_image_001.png",
+      "xyxy": [
+        2001,
+        1122,
+        2938,
+        1900
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "057_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        2902,
+        1072,
+        3962,
+        2237
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "058_asc_image_002.png",
+      "source": "asc_image_002.png",
+      "xyxy": [
+        3393,
+        1487,
+        4161,
+        2529
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "059_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        2417,
+        1494,
+        3264,
+        2716
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "060_asc_image_003.png",
+      "source": "asc_image_003.png",
+      "xyxy": [
+        365,
+        1624,
+        1312,
+        2583
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "061_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        2957,
+        439,
+        4119,
+        1847
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "062_asc_image_005.png",
+      "source": "asc_image_005.png",
+      "xyxy": [
+        2653,
+        1119,
+        3532,
+        2147
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "063_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        1491,
+        787,
+        2482,
+        1765
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "064_greenville_image_000.png",
+      "source": "greenville_image_000.png",
+      "xyxy": [
+        1371,
+        787,
+        2282,
+        1928
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "065_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        1423,
+        2121,
+        2191,
+        2889
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "066_gvhc_stockton_image_000.png",
+      "source": "gvhc_stockton_image_000.png",
+      "xyxy": [
+        1422,
+        2283,
+        2190,
+        3178
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "067_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2622,
+        2784,
+        3940,
+        3552
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "068_gvhc_stockton_image_001.png",
+      "source": "gvhc_stockton_image_001.png",
+      "xyxy": [
+        2622,
+        3079,
+        3940,
+        3847
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "069_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        551,
+        1582,
+        1626,
+        2587
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "070_gvhc_stockton_image_002.png",
+      "source": "gvhc_stockton_image_002.png",
+      "xyxy": [
+        1708,
+        439,
+        2611,
+        1207
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "071_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        2860,
+        834,
+        3686,
+        1689
+      ],
+      "reviewed_empty": false
+    },
+    {
+      "file": "072_gvhc_stockton_image_003.png",
+      "source": "gvhc_stockton_image_003.png",
+      "xyxy": [
+        2860,
+        1153,
+        3701,
+        1921
+      ],
+      "reviewed_empty": false
+    }
+  ],
+  "excluded": [
+    {
+      "source": "asc_image_000.png",
+      "xyxy": [
+        3815,
+        1520,
+        4583,
+        2288
+      ],
+      "reason": "Unresolved symbol below elevator P10; crops 031 and 041 overlap it."
+    },
+    {
+      "source": "asc_image_001.png",
+      "xyxy": [
+        1364,
+        1600,
+        1550,
+        1802
+      ],
+      "reason": "Unresolved untagged angled symbol near reception; visible in crops 032 and 051. Original annotation 39 retained for audit, excluded from training."
+    }
+  ]
+}
