@@ -1,0 +1,5668 @@
+{
+  "info": {
+    "description": "Commercial doors v1"
+  },
+  "licenses": [],
+  "categories": [
+    {
+      "id": 0,
+      "name": "door",
+      "supercategory": "opening"
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "file_name": "asc_image_000.png",
+      "width": 5400,
+      "height": 3601,
+      "project": "asc",
+      "source_file": "1eb621fe-project_001_page_002.png"
+    },
+    {
+      "id": 2,
+      "file_name": "asc_image_001.png",
+      "width": 5400,
+      "height": 3601,
+      "project": "asc",
+      "source_file": "0cc70e93-project_001_page_003.png"
+    },
+    {
+      "id": 3,
+      "file_name": "asc_image_002.png",
+      "width": 5400,
+      "height": 3601,
+      "project": "asc",
+      "source_file": "7a9a3c54-project_001_page_004.png"
+    },
+    {
+      "id": 4,
+      "file_name": "asc_image_003.png",
+      "width": 5400,
+      "height": 3601,
+      "project": "asc",
+      "source_file": "7b2f6446-project_001_page_005.png"
+    },
+    {
+      "id": 5,
+      "file_name": "asc_image_005.png",
+      "width": 5400,
+      "height": 3601,
+      "project": "asc",
+      "source_file": "dce30260-project_001_page_006.png"
+    },
+    {
+      "id": 6,
+      "file_name": "gvhc_stockton_image_000.png",
+      "width": 6300,
+      "height": 4500,
+      "project": "gvhc_stockton",
+      "source_file": "ed73d92e-gvhc_stockton_area_d.png"
+    },
+    {
+      "id": 7,
+      "file_name": "gvhc_stockton_image_001.png",
+      "width": 6300,
+      "height": 4500,
+      "project": "gvhc_stockton",
+      "source_file": "bc75ec6a-gvhc_stockton_area_c.png"
+    },
+    {
+      "id": 8,
+      "file_name": "gvhc_stockton_image_002.png",
+      "width": 6300,
+      "height": 4500,
+      "project": "gvhc_stockton",
+      "source_file": "ab362d5e-gvhc_stockton_area_b.png"
+    },
+    {
+      "id": 9,
+      "file_name": "gvhc_stockton_image_003.png",
+      "width": 6300,
+      "height": 4500,
+      "project": "gvhc_stockton",
+      "source_file": "1adc6677-gvhc_stockton_area_a.png"
+    },
+    {
+      "id": 10,
+      "file_name": "greenville_image_000.png",
+      "width": 6300,
+      "height": 4500,
+      "project": "greenville",
+      "source_file": "0ba62346-greenville_page_001.png"
+    }
+  ],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        2264.6232558139536,
+        2153.213953488372,
+        200.0372093023256,
+        173.84186046511618
+      ],
+      "area": 34774.84062736613,
+      "iscrowd": 0,
+      "source_annotation_id": 0,
+      "review_crops": [
+        "050_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 2,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        2822.9643410852714,
+        2091.8217054263564,
+        175.23100775193797,
+        139.6372093023257
+      ],
+      "area": 24468.768905714816,
+      "iscrowd": 0,
+      "source_annotation_id": 1,
+      "review_crops": [
+        "050_asc_image_000.png",
+        "053_asc_image_000.png",
+        "054_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 3,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        2839.217054263566,
+        1936.382945736434,
+        189.36434108527123,
+        141.71782945736433
+      ],
+      "area": 26836.30339522864,
+      "iscrowd": 0,
+      "source_annotation_id": 2,
+      "review_crops": [
+        "050_asc_image_000.png",
+        "053_asc_image_000.png",
+        "054_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 4,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3208.172093023256,
+        2416.5131782945737,
+        144.16124031007755,
+        130.72248062015498
+      ],
+      "area": 18845.114942611617,
+      "iscrowd": 0,
+      "source_annotation_id": 3,
+      "review_crops": [
+        "054_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 5,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3189.8542635658914,
+        2105.5116279069766,
+        171.12403100775194,
+        139.63720930232554
+      ],
+      "area": 23895.282134487104,
+      "iscrowd": 0,
+      "source_annotation_id": 4,
+      "review_crops": [
+        "053_asc_image_000.png",
+        "054_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 6,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3189.338933845039,
+        1196.9864640603612,
+        162.748159587155,
+        170.62307053491975
+      ],
+      "area": 27768.59071266752,
+      "iscrowd": 0,
+      "source_annotation_id": 5,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 7,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        2838.0232558139537,
+        1537.3798449612402,
+        213.56279069767447,
+        139.63720930232557
+      ],
+      "area": 29821.31210383992,
+      "iscrowd": 0,
+      "source_annotation_id": 6,
+      "review_crops": [
+        "053_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 8,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3187.264743499318,
+        2733.9772155450732,
+        167.799417816418,
+        158.7291790155309
+      ],
+      "area": 26634.66382928408,
+      "iscrowd": 0,
+      "source_annotation_id": 7,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 9,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3332.034767237024,
+        2892.3435814572936,
+        202.6701559453444,
+        151.1438451117823
+      ],
+      "area": 30632.346658983897,
+      "iscrowd": 0,
+      "source_annotation_id": 8,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 10,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3508.5078028001763,
+        1509.57927078793,
+        178.76596627751817,
+        144.45734648688347
+      ],
+      "area": 25824.05713061397,
+      "iscrowd": 0,
+      "source_annotation_id": 9,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 11,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3191.3614596641924,
+        1029.471438601352,
+        163.20888660753107,
+        170.74160445095617
+      ],
+      "area": 27866.547160024027,
+      "iscrowd": 0,
+      "source_annotation_id": 10,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 12,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3502.958099978334,
+        1062.109721389312,
+        196.39009942670364,
+        130.2587394156705
+      ],
+      "area": 25581.526785040613,
+      "iscrowd": 0,
+      "source_annotation_id": 11,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 13,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        1661.8511627906976,
+        2597.306976744186,
+        84.53953488372098,
+        275.05116279069773
+      ],
+      "area": 23252.697371552207,
+      "iscrowd": 0,
+      "source_annotation_id": 12,
+      "review_crops": [
+        "011_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 14,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        1643.1866672657954,
+        2137.3362851746438,
+        100.10425160458779,
+        312.4466034931081
+      ],
+      "area": 31277.23340907297,
+      "iscrowd": 0,
+      "source_annotation_id": 13,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 15,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        1663.6697674418604,
+        1512.2279069767442,
+        75.0139534883721,
+        266.7162790697674
+      ],
+      "area": 20007.4425527312,
+      "iscrowd": 0,
+      "source_annotation_id": 14,
+      "review_crops": [
+        "001_asc_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 16,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        854.8528237578748,
+        1097.2992682135884,
+        257.61229426088266,
+        115.24760532723691
+      ],
+      "area": 29689.200016422223,
+      "iscrowd": 0,
+      "source_annotation_id": 15,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 17,
+      "image_id": 1,
+      "category_id": 0,
+      "bbox": [
+        3882.7186089829866,
+        576.3410435209121,
+        296.59656040842265,
+        188.74326571445087
+      ],
+      "area": 55980.60341115909,
+      "iscrowd": 0,
+      "source_annotation_id": 16,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 18,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3150.5870815591065,
+        1430.66913378708,
+        175.7742792677752,
+        160.1993431301242
+      ],
+      "area": 28158.924077868593,
+      "iscrowd": 0,
+      "source_annotation_id": 17,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 19,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3324.782945736434,
+        854.7829457364342,
+        157.37519379844966,
+        153.40775193798453
+      ],
+      "area": 24142.574691424805,
+      "iscrowd": 0,
+      "source_annotation_id": 18,
+      "review_crops": [
+        "055_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 20,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3328.750387596899,
+        1227.722480620155,
+        182.5023255813954,
+        160.02015503875967
+      ],
+      "area": 29204.05043446909,
+      "iscrowd": 0,
+      "source_annotation_id": 19,
+      "review_crops": [
+        "055_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 21,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3812.905426356589,
+        1427.0,
+        185.28372093023256,
+        182.59844961240316
+      ],
+      "area": 33832.520180277636,
+      "iscrowd": 0,
+      "source_annotation_id": 20,
+      "review_crops": [
+        "022_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 22,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1891.5640926658568,
+        2850.455989145975,
+        179.79223059002186,
+        172.30088764877132
+      ],
+      "area": 30978.360923013344,
+      "iscrowd": 0,
+      "source_annotation_id": 21,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 23,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1543.2166458976892,
+        2854.2016606166003,
+        202.26625941377446,
+        168.55521617814563
+      ],
+      "area": 34093.03308103364,
+      "iscrowd": 0,
+      "source_annotation_id": 22,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 24,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        566.1023255813953,
+        2674.9906976744187,
+        185.74883720930237,
+        167.88837209302318
+      ],
+      "area": 31185.069897241745,
+      "iscrowd": 0,
+      "source_annotation_id": 23,
+      "review_crops": [
+        "042_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 25,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        417.26511627906973,
+        2546.3953488372094,
+        201.22790697674415,
+        163.12558139534886
+      ],
+      "area": 32825.419318550565,
+      "iscrowd": 0,
+      "source_annotation_id": 24,
+      "review_crops": [
+        "042_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 26,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1170.1837944587778,
+        2383.82511079239,
+        242.66598032076078,
+        168.38047614093566
+      ],
+      "area": 40860.21330961662,
+      "iscrowd": 0,
+      "source_annotation_id": 25,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 27,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1426.2816802526338,
+        2389.517051117694,
+        188.18994392222248,
+        155.99955877763202
+      ],
+      "area": 29357.548218254018,
+      "iscrowd": 0,
+      "source_annotation_id": 26,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 28,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1975.9944111833365,
+        2382.0885006997114,
+        237.71361337543928,
+        178.28521003157988
+      ],
+      "area": 42380.82148800597,
+      "iscrowd": 0,
+      "source_annotation_id": 27,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 29,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1410.679069767442,
+        2117.079069767442,
+        174.05581395348835,
+        156.0976744186046
+      ],
+      "area": 27169.70777717684,
+      "iscrowd": 0,
+      "source_annotation_id": 28,
+      "review_crops": [
+        "032_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 30,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1475.753488372093,
+        1915.2186046511629,
+        190.3255813953488,
+        169.45116279069774
+      ],
+      "area": 32250.89107625744,
+      "iscrowd": 0,
+      "source_annotation_id": 29,
+      "review_crops": [
+        "051_asc_image_001.png",
+        "032_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 31,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        2294.106976744186,
+        1239.0015503875968,
+        172.48682170542634,
+        147.15658914728678
+      ],
+      "area": 25382.572355026732,
+      "iscrowd": 0,
+      "source_annotation_id": 30,
+      "review_crops": [
+        "056_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 32,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        2315.818604651163,
+        1436.8186046511628,
+        188.1674418604651,
+        126.65116279069744
+      ],
+      "area": 23831.62531097886,
+      "iscrowd": 0,
+      "source_annotation_id": 31,
+      "review_crops": [
+        "056_asc_image_001.png",
+        "032_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 33,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        2762.1131782945736,
+        1424.7565891472868,
+        155.60000000000002,
+        162.8372093023256
+      ],
+      "area": 25337.469767441864,
+      "iscrowd": 0,
+      "source_annotation_id": 32,
+      "review_crops": [
+        "056_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 34,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        2718.68992248062,
+        1711.8325581395352,
+        206.2604651162793,
+        180.93023255813947
+      ],
+      "area": 37318.75392103843,
+      "iscrowd": 0,
+      "source_annotation_id": 33,
+      "review_crops": [
+        "056_asc_image_001.png",
+        "012_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 35,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3063.6217054263566,
+        1904.2511627906977,
+        165.84496124031008,
+        226.94573643410848
+      ],
+      "area": 37637.80686256835,
+      "iscrowd": 0,
+      "source_annotation_id": 34,
+      "review_crops": [
+        "012_asc_image_001.png",
+        "002_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 36,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3259.1441860465115,
+        2503.0387596899227,
+        186.79379844961244,
+        162.3534883720929
+      ],
+      "area": 30326.624784568216,
+      "iscrowd": 0,
+      "source_annotation_id": 35,
+      "review_crops": [
+        "012_asc_image_001.png",
+        "002_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 37,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3072.350387596899,
+        2667.137984496124,
+        169.3364341085271,
+        153.6248062015505
+      ],
+      "area": 26014.276872784103,
+      "iscrowd": 0,
+      "source_annotation_id": 36,
+      "review_crops": [
+        "012_asc_image_001.png",
+        "002_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 38,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        3956.567441860465,
+        1649.8775193798451,
+        167.82945736434107,
+        149.03255813953484
+      ],
+      "area": 25012.053362177743,
+      "iscrowd": 0,
+      "source_annotation_id": 37,
+      "review_crops": [
+        "022_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 39,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1380.9041371238034,
+        1616.6682580961601,
+        152.68533548685963,
+        168.40294355168334
+      ],
+      "area": 25712.659933163453,
+      "iscrowd": 0,
+      "source_annotation_id": 38,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 40,
+      "image_id": 2,
+      "category_id": 0,
+      "bbox": [
+        1819.5720930232558,
+        2129.5116279069766,
+        203.06511627906968,
+        147.80930232558146
+      ],
+      "area": 30014.913163872363,
+      "iscrowd": 0,
+      "source_annotation_id": 39,
+      "review_crops": [
+        "032_asc_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 41,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        488.0126098546141,
+        1365.2733728075516,
+        284.6740224151917,
+        145.24184817101576
+      ],
+      "area": 41346.58114185961,
+      "iscrowd": 0,
+      "source_annotation_id": 40,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 42,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        1176.4589701852303,
+        1356.5588619172904,
+        273.0546745615101,
+        159.76603298811764
+      ],
+      "area": 43624.86214355395,
+      "iscrowd": 0,
+      "source_annotation_id": 41,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 43,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        1079.0604651162791,
+        694.9674418604651,
+        285.7674418604651,
+        129.78604651162792
+      ],
+      "area": 37088.62650081125,
+      "iscrowd": 0,
+      "source_annotation_id": 42,
+      "review_crops": [
+        "013_asc_image_002.png",
+        "033_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 44,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        2637.591962785652,
+        1109.647720026563,
+        212.05309832968322,
+        194.62407654916166
+      ],
+      "area": 41270.638441803174,
+      "iscrowd": 0,
+      "source_annotation_id": 43,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 45,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3194.6046511627906,
+        1093.6744186046512,
+        202.29457364341087,
+        151.72093023255815
+      ],
+      "area": 30692.320894177035,
+      "iscrowd": 0,
+      "source_annotation_id": 44,
+      "review_crops": [
+        "057_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 46,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3200.0232558139537,
+        1559.6744186046512,
+        162.5581395348837,
+        131.85271317829455
+      ],
+      "area": 21433.731746890204,
+      "iscrowd": 0,
+      "source_annotation_id": 45,
+      "review_crops": [
+        "057_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 47,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3057.3333333333335,
+        1951.6201550387595,
+        167.9767441860465,
+        177.00775193798447
+      ],
+      "area": 29733.18586623399,
+      "iscrowd": 0,
+      "source_annotation_id": 46,
+      "review_crops": [
+        "057_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 48,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3488.709193067806,
+        2707.30804990774,
+        217.86277225652492,
+        209.1482613662634
+      ],
+      "area": 45565.62003388639,
+      "iscrowd": 0,
+      "source_annotation_id": 47,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 49,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3693.4837209302327,
+        2054.0418604651163,
+        155.0883720930233,
+        155.0883720930233
+      ],
+      "area": 24052.40315846405,
+      "iscrowd": 0,
+      "source_annotation_id": 48,
+      "review_crops": [
+        "057_asc_image_002.png",
+        "058_asc_image_002.png",
+        "023_asc_image_002.png",
+        "003_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 50,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3709.5426356589146,
+        1832.0573643410853,
+        158.43100775193795,
+        159.77364341085269
+      ],
+      "area": 25313.09933778017,
+      "iscrowd": 0,
+      "source_annotation_id": 49,
+      "review_crops": [
+        "057_asc_image_002.png",
+        "058_asc_image_002.png",
+        "023_asc_image_002.png",
+        "003_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 51,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3543.201550387597,
+        1691.5271317829456,
+        200.4883720930232,
+        157.13953488372078
+      ],
+      "area": 31504.64954029201,
+      "iscrowd": 0,
+      "source_annotation_id": 50,
+      "review_crops": [
+        "057_asc_image_002.png",
+        "058_asc_image_002.png",
+        "023_asc_image_002.png",
+        "003_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 52,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3735.4868217054263,
+        1517.6945736434109,
+        198.70697674418602,
+        169.62790697674419
+      ],
+      "area": 33706.248566792856,
+      "iscrowd": 0,
+      "source_annotation_id": 51,
+      "review_crops": [
+        "057_asc_image_002.png",
+        "058_asc_image_002.png",
+        "023_asc_image_002.png",
+        "003_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 53,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3572.1007751937987,
+        1108.124031007752,
+        211.32558139534868,
+        178.8139534883721
+      ],
+      "area": 37787.96268253107,
+      "iscrowd": 0,
+      "source_annotation_id": 52,
+      "review_crops": [
+        "057_asc_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 54,
+      "image_id": 3,
+      "category_id": 0,
+      "bbox": [
+        3564.2349541167355,
+        755.2576104892838,
+        214.95793529310274,
+        194.62407654916166
+      ],
+      "area": 41835.98965333457,
+      "iscrowd": 0,
+      "source_annotation_id": 53,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 55,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        589.9023255813954,
+        1626.5348837209303,
+        186.939534883721,
+        191.70232558139534
+      ],
+      "area": 35836.7435803137,
+      "iscrowd": 0,
+      "source_annotation_id": 54,
+      "review_crops": [
+        "060_asc_image_003.png",
+        "024_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 56,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        399.39069767441856,
+        1809.9023255813954,
+        186.9395348837209,
+        164.3162790697674
+      ],
+      "area": 30717.208783126003,
+      "iscrowd": 0,
+      "source_annotation_id": 55,
+      "review_crops": [
+        "060_asc_image_003.png",
+        "024_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 57,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        531.5581395348838,
+        1958.7395348837208,
+        226.23255813953492,
+        175.03255813953493
+      ],
+      "area": 39598.06338561386,
+      "iscrowd": 0,
+      "source_annotation_id": 56,
+      "review_crops": [
+        "060_asc_image_003.png",
+        "024_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 58,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        863.0852713178294,
+        2101.2697674418605,
+        160.57674418604657,
+        163.55038759689918
+      ],
+      "area": 26262.388750676044,
+      "iscrowd": 0,
+      "source_annotation_id": 57,
+      "review_crops": [
+        "060_asc_image_003.png",
+        "024_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 59,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        1393.8426095865664,
+        2121.8885551764424,
+        197.57380679576573,
+        146.15048721878588
+      ],
+      "area": 28875.50812487143,
+      "iscrowd": 0,
+      "source_annotation_id": 58,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 60,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        1875.5979193077483,
+        2132.714517192649,
+        189.45433528361124,
+        159.682939739044
+      ],
+      "area": 30252.62520439353,
+      "iscrowd": 0,
+      "source_annotation_id": 59,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 61,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        1897.2498433401606,
+        1653.6656979755185,
+        170.50890175524998,
+        159.6829397390435
+      ],
+      "area": 27227.36268395407,
+      "iscrowd": 0,
+      "source_annotation_id": 60,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 62,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        1551.7209302325582,
+        741.0976744186047,
+        229.8046511627907,
+        234.56744186046515
+      ],
+      "area": 53904.68915089238,
+      "iscrowd": 0,
+      "source_annotation_id": 61,
+      "review_crops": [
+        "043_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 63,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        1851.7767441860465,
+        763.7209302325582,
+        258.38139534883726,
+        221.46976744186043
+      ],
+      "area": 57223.667539210386,
+      "iscrowd": 0,
+      "source_annotation_id": 62,
+      "review_crops": [
+        "043_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 64,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        2755.2073331245138,
+        2254.5065898749704,
+        92.02067713775412,
+        156.97644923499203
+      ],
+      "area": 14445.079153284252,
+      "iscrowd": 0,
+      "source_annotation_id": 63,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 65,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3078.475968992248,
+        2513.8682170542634,
+        174.03255813953484,
+        159.06201550387584
+      ],
+      "area": 27681.969460969864,
+      "iscrowd": 0,
+      "source_annotation_id": 64,
+      "review_crops": [
+        "059_asc_image_003.png",
+        "014_asc_image_003.png",
+        "034_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 66,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3080.1007751937987,
+        1759.2403100775196,
+        172.40620155038752,
+        231.13798449612403
+      ],
+      "area": 39849.621940989105,
+      "iscrowd": 0,
+      "source_annotation_id": 65,
+      "review_crops": [
+        "059_asc_image_003.png",
+        "014_asc_image_003.png",
+        "034_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 67,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3093.1937984496126,
+        1512.7131782945737,
+        162.80465116279066,
+        222.68682170542638
+      ],
+      "area": 36254.4503263025,
+      "iscrowd": 0,
+      "source_annotation_id": 66,
+      "review_crops": [
+        "059_asc_image_003.png",
+        "014_asc_image_003.png",
+        "034_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 68,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3274.922480620155,
+        986.7519379844962,
+        177.3643410852713,
+        163.72093023255806
+      ],
+      "area": 29038.25491256533,
+      "iscrowd": 0,
+      "source_annotation_id": 67,
+      "review_crops": [
+        "004_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 69,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3089.3720930232557,
+        595.186046511628,
+        162.35658914728674,
+        163.72093023255812
+      ],
+      "area": 26581.171804579037,
+      "iscrowd": 0,
+      "source_annotation_id": 68,
+      "review_crops": [
+        "004_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 70,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3292.6589147286822,
+        428.73643410852713,
+        166.4496124031008,
+        169.17829457364343
+      ],
+      "area": 28159.66155880056,
+      "iscrowd": 0,
+      "source_annotation_id": 69,
+      "review_crops": [
+        "004_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 71,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3336.4651162790697,
+        2337.9643410852714,
+        168.4186046511628,
+        170.28992248062005
+      ],
+      "area": 28679.99113034071,
+      "iscrowd": 0,
+      "source_annotation_id": 70,
+      "review_crops": [
+        "014_asc_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 72,
+      "image_id": 4,
+      "category_id": 0,
+      "bbox": [
+        3280.266490910522,
+        2879.7058963108866,
+        184.04135427550787,
+        202.98678780386876
+      ],
+      "area": 37357.963327459154,
+      "iscrowd": 0,
+      "source_annotation_id": 71,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 73,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        1015.0682170542635,
+        1263.0108527131783,
+        196.9193798449612,
+        267.1581395348837
+      ],
+      "area": 52608.615157742905,
+      "iscrowd": 0,
+      "source_annotation_id": 90,
+      "review_crops": [
+        "015_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 74,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        1322.5350089766607,
+        1840.9084380610414,
+        133.82046678635547,
+        148.50807899461395
+      ],
+      "area": 19873.42045260419,
+      "iscrowd": 0,
+      "source_annotation_id": 91,
+      "review_crops": [
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 75,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        1316.0071813285458,
+        1117.951526032316,
+        272.5368043087972,
+        158.29982046678634
+      ],
+      "area": 43142.52719267427,
+      "iscrowd": 0,
+      "source_annotation_id": 92,
+      "review_crops": [
+        "015_asc_image_005.png",
+        "035_asc_image_005.png",
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 76,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        1891.7610993657504,
+        1229.1437632135307,
+        277.6490486257929,
+        134.7653276955602
+      ],
+      "area": 37417.465022415505,
+      "iscrowd": 0,
+      "source_annotation_id": 93,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "025_asc_image_005.png",
+        "035_asc_image_005.png",
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 77,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2335.025369978858,
+        1121.9809725158561,
+        160.7441860465115,
+        160.74418604651163
+      ],
+      "area": 25838.69334775552,
+      "iscrowd": 0,
+      "source_annotation_id": 94,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "025_asc_image_005.png",
+        "035_asc_image_005.png",
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 78,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2713.5643410852713,
+        1133.3441860465116,
+        157.7860465116279,
+        146.62945736434108
+      ],
+      "area": 23136.08237966468,
+      "iscrowd": 0,
+      "source_annotation_id": 95,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "062_asc_image_005.png",
+        "025_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 79,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2371.4003590664274,
+        1577.181328545781,
+        271.78815080789946,
+        147.71095152603237
+      ],
+      "area": 40146.086369335615,
+      "iscrowd": 0,
+      "source_annotation_id": 96,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "025_asc_image_005.png",
+        "035_asc_image_005.png",
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 80,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2057.7906976744184,
+        1478.367441860465,
+        281.18139534883716,
+        129.646511627907
+      ],
+      "area": 36454.18704164413,
+      "iscrowd": 0,
+      "source_annotation_id": 97,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "025_asc_image_005.png",
+        "035_asc_image_005.png",
+        "005_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 81,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2792.8689407540396,
+        1655.960502692998,
+        161.49730700179535,
+        185.13105924596056
+      ],
+      "area": 29898.167510612457,
+      "iscrowd": 0,
+      "source_annotation_id": 98,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "062_asc_image_005.png",
+        "025_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 82,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        2967.9147286821703,
+        1641.8031007751938,
+        163.72093023255812,
+        176.81860465116281
+      ],
+      "area": 28948.906435911304,
+      "iscrowd": 0,
+      "source_annotation_id": 99,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "061_asc_image_005.png",
+        "062_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 83,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3354.170556552962,
+        1671.7163375224418,
+        177.82944344703776,
+        161.49730700179524
+      ],
+      "area": 28718.97622232464,
+      "iscrowd": 0,
+      "source_annotation_id": 100,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "061_asc_image_005.png",
+        "062_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 84,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3834.5441860465116,
+        1552.3023255813953,
+        198.6480620155038,
+        144.0744186046512
+      ],
+      "area": 28620.10404182441,
+      "iscrowd": 0,
+      "source_annotation_id": 101,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 85,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3662.0914728682174,
+        1347.1054263565893,
+        159.35503875968988,
+        148.44031007751946
+      ],
+      "area": 23654.711365903495,
+      "iscrowd": 0,
+      "source_annotation_id": 102,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 86,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3677.3720930232557,
+        1139.7255813953489,
+        144.0744186046511,
+        135.34263565891476
+      ],
+      "area": 19499.411544979263,
+      "iscrowd": 0,
+      "source_annotation_id": 103,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 87,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3666.4573643410854,
+        764.2589147286822,
+        148.4403100775194,
+        135.3426356589147
+      ],
+      "area": 20090.30280391803,
+      "iscrowd": 0,
+      "source_annotation_id": 104,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 88,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3522.382945736434,
+        500.12248062015505,
+        179.00155038759686,
+        152.8062015503876
+      ],
+      "area": 27352.54698635899,
+      "iscrowd": 0,
+      "source_annotation_id": 105,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 89,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3225.5023255813953,
+        565.6108527131782,
+        172.45271317829457,
+        165.90387596899225
+      ],
+      "area": 28610.57353764798,
+      "iscrowd": 0,
+      "source_annotation_id": 106,
+      "review_crops": [
+        "061_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 90,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3921.6666735039694,
+        2147.200112056601,
+        203.88843794009233,
+        146.54481476944142
+      ],
+      "area": 29878.793371561584,
+      "iscrowd": 0,
+      "source_annotation_id": 107,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 91,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3220.2459605026934,
+        1484.6157989228006,
+        157.5583482944342,
+        151.64991023339326
+      ],
+      "area": 23893.70937537266,
+      "iscrowd": 0,
+      "source_annotation_id": 108,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "062_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 92,
+      "image_id": 5,
+      "category_id": 0,
+      "bbox": [
+        3017.3895870736087,
+        1222.6750448833034,
+        226.49012567324942,
+        214.67324955116703
+      ],
+      "area": 48621.37126952866,
+      "iscrowd": 0,
+      "source_annotation_id": 109,
+      "review_crops": [
+        "044_asc_image_005.png",
+        "061_asc_image_005.png",
+        "062_asc_image_005.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 93,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        605.695652173913,
+        979.809364548495,
+        165.67224080267562,
+        151.54515050167225
+      ],
+      "area": 25106.824666390763,
+      "iscrowd": 0,
+      "source_annotation_id": 0,
+      "review_crops": [
+        "017_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 94,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        763.6622073578595,
+        1404.9063545150502,
+        165.67224080267562,
+        142.55518394648837
+      ],
+      "area": 23617.43676245234,
+      "iscrowd": 0,
+      "source_annotation_id": 1,
+      "review_crops": [
+        "017_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 95,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        457.19209978344327,
+        2991.4017026554707,
+        204.80551076271888,
+        151.01820490584322
+      ],
+      "area": 30929.36059021016,
+      "iscrowd": 0,
+      "source_annotation_id": 2,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 96,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1717.5581395348838,
+        2979.5736434108526,
+        220.62790697674419,
+        151.24806201550382
+      ],
+      "area": 33369.54335676941,
+      "iscrowd": 0,
+      "source_annotation_id": 3,
+      "review_crops": [
+        "066_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 97,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1734.2093023255816,
+        2577.170542635659,
+        174.83720930232565,
+        163.73643410852716
+      ],
+      "area": 28627.221200649015,
+      "iscrowd": 0,
+      "source_annotation_id": 4,
+      "review_crops": [
+        "065_gvhc_stockton_image_000.png",
+        "066_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 98,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1731.4341085271317,
+        2437.0232558139537,
+        180.3875968992249,
+        134.59689922480618
+      ],
+      "area": 24279.611201249932,
+      "iscrowd": 0,
+      "source_annotation_id": 5,
+      "review_crops": [
+        "065_gvhc_stockton_image_000.png",
+        "066_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 99,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1710.850074755238,
+        1475.0134259981676,
+        198.59928316384884,
+        151.01820490584322
+      ],
+      "area": 29992.107238991703,
+      "iscrowd": 0,
+      "source_annotation_id": 6,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 100,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1888.7619325895191,
+        1257.7954600377082,
+        184.11808543315144,
+        144.81197730697318
+      ],
+      "area": 26662.504009548873,
+      "iscrowd": 0,
+      "source_annotation_id": 7,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 101,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        1890.830675122476,
+        860.5968937100109,
+        186.18682796610824,
+        165.49940263654048
+      ],
+      "area": 30813.808807183243,
+      "iscrowd": 0,
+      "source_annotation_id": 8,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 102,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        2420.0248062015503,
+        1552.3891472868218,
+        167.09767441860467,
+        161.04341085271324
+      ],
+      "area": 26909.979433928263,
+      "iscrowd": 0,
+      "source_annotation_id": 9,
+      "review_crops": [
+        "046_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 103,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        2977.017054263566,
+        1317.4837209302325,
+        168.30852713178277,
+        173.15193798449604
+      ],
+      "area": 29142.94765218432,
+      "iscrowd": 0,
+      "source_annotation_id": 10,
+      "review_crops": [
+        "046_gvhc_stockton_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 104,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        3247.925776742109,
+        1249.5204899058813,
+        196.53054063089206,
+        157.22443250471343
+      ],
+      "area": 30899.40272053653,
+      "iscrowd": 0,
+      "source_annotation_id": 11,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 105,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        4162.309976308996,
+        1923.9305556497836,
+        221.35545102637283,
+        184.11808543315138
+      ],
+      "area": 40755.54184316747,
+      "iscrowd": 0,
+      "source_annotation_id": 12,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 106,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        3936.8170402167093,
+        2879.6896058758057,
+        208.942995828632,
+        200.66802569680516
+      ],
+      "area": 41928.17845610738,
+      "iscrowd": 0,
+      "source_annotation_id": 13,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 107,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        2896.23954613946,
+        2443.1849314219303,
+        196.53054063089158,
+        144.81197730697303
+      ],
+      "area": 28459.976189967812,
+      "iscrowd": 0,
+      "source_annotation_id": 14,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 108,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        2614.401455024043,
+        1093.1295282330493,
+        238.6666136642158,
+        194.94143253489395
+      ],
+      "area": 46526.01156595432,
+      "iscrowd": 0,
+      "source_annotation_id": 15,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 109,
+      "image_id": 6,
+      "category_id": 0,
+      "bbox": [
+        2701.8518172826866,
+        861.7504447570541,
+        213.16025800544526,
+        194.94143253489395
+      ],
+      "area": 41553.766055089094,
+      "iscrowd": 0,
+      "source_annotation_id": 16,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 110,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        431.2662179617992,
+        1869.7850792169274,
+        167.87544054888812,
+        150.50901566452072
+      ],
+      "area": 25266.76731126092,
+      "iscrowd": 0,
+      "source_annotation_id": 17,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 111,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        431.2662179617992,
+        1696.12083037325,
+        170.76984469628277,
+        162.08663225409882
+      ],
+      "area": 27679.509017375953,
+      "iscrowd": 0,
+      "source_annotation_id": 18,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 112,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        754.587349068417,
+        1231.245852918349,
+        154.44160682615885,
+        152.23529815721344
+      ],
+      "area": 23511.464063059422,
+      "iscrowd": 0,
+      "source_annotation_id": 19,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 113,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        1081.1210320722955,
+        1255.5152482767453,
+        163.26684150193955,
+        145.61637215037837
+      ],
+      "area": 23774.32515196327,
+      "iscrowd": 0,
+      "source_annotation_id": 20,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 114,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        1416.4799497519552,
+        1268.7531002904161,
+        156.64791549510414,
+        141.203754812488
+      ],
+      "area": 22119.273851458027,
+      "iscrowd": 0,
+      "source_annotation_id": 21,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 115,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        518.4825372021047,
+        560.4024019120621,
+        187.53623686033575,
+        180.9173108535003
+      ],
+      "area": 33928.55166035703,
+      "iscrowd": 0,
+      "source_annotation_id": 22,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 116,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        1826.8235778865646,
+        586.8781059394039,
+        189.7425455292809,
+        150.02898948826854
+      ],
+      "area": 28466.8823686898,
+      "iscrowd": 0,
+      "source_annotation_id": 23,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 117,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3236.5271317829456,
+        2018.15503875969,
+        170.9891472868217,
+        134.54883720930235
+      ],
+      "area": 23006.390942851995,
+      "iscrowd": 0,
+      "source_annotation_id": 24,
+      "review_crops": [
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 118,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3442.5550387596895,
+        2431.6124031007753,
+        179.39844961240294,
+        156.9736434108528
+      ],
+      "area": 28160.82825791718,
+      "iscrowd": 0,
+      "source_annotation_id": 25,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 119,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2911.367441860465,
+        2361.5348837209303,
+        166.784496124031,
+        149.96589147286818
+      ],
+      "area": 25011.985645093435,
+      "iscrowd": 0,
+      "source_annotation_id": 26,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 120,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3026.294573643411,
+        1896.2201550387597,
+        173.79224806201546,
+        131.74573643410852
+      ],
+      "area": 22896.387707469497,
+      "iscrowd": 0,
+      "source_annotation_id": 27,
+      "review_crops": [
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 121,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2781.0232558139537,
+        2596.9953488372093,
+        175.19379844961242,
+        172.39069767441873
+      ],
+      "area": 30201.781142960182,
+      "iscrowd": 0,
+      "source_annotation_id": 28,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 122,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3075.3488372093025,
+        2602.6015503875965,
+        204.6263565891472,
+        156.9736434108526
+      ],
+      "area": 32120.94473168676,
+      "iscrowd": 0,
+      "source_annotation_id": 29,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 123,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3445.711627906977,
+        2606.048062015504,
+        174.89767441860462,
+        142.9271317829458
+      ],
+      "area": 24997.62296015865,
+      "iscrowd": 0,
+      "source_annotation_id": 30,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 124,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3737.2077519379845,
+        2604.1674418604653,
+        171.13643410852717,
+        163.6139534883721
+      ],
+      "area": 28000.308570398418,
+      "iscrowd": 0,
+      "source_annotation_id": 31,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png",
+        "008_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 125,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        4313.1085271317825,
+        2840.062015503876,
+        142.38759689922495,
+        262.20155038759685
+      ],
+      "area": 37334.24866294096,
+      "iscrowd": 0,
+      "source_annotation_id": 32,
+      "review_crops": [
+        "038_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 126,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3762.486293206198,
+        3144.978545887962,
+        160.23361144219308,
+        157.09177592371873
+      ],
+      "area": 25171.382584125207,
+      "iscrowd": 0,
+      "source_annotation_id": 33,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 127,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3620.2713178294575,
+        3393.984496124031,
+        149.33333333333331,
+        140.6511627906977
+      ],
+      "area": 21003.906976744187,
+      "iscrowd": 0,
+      "source_annotation_id": 34,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 128,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3462.441001191895,
+        3253.371871275328,
+        147.66626936829556,
+        141.38259833134683
+      ],
+      "area": 20877.440849186194,
+      "iscrowd": 0,
+      "source_annotation_id": 35,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 129,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3462.441001191895,
+        3100.9928486293206,
+        158.66269368295593,
+        144.5244338498212
+      ],
+      "area": 22930.63597761681,
+      "iscrowd": 0,
+      "source_annotation_id": 36,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "038_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 130,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2978.5983313468414,
+        3393.5160905840285,
+        150.80810488676988,
+        142.95351609058395
+      ],
+      "area": 21558.54884852133,
+      "iscrowd": 0,
+      "source_annotation_id": 37,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "028_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 131,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3092.0,
+        3251.4651162790697,
+        146.67441860465118,
+        147.9069767441861
+      ],
+      "area": 21694.16982152516,
+      "iscrowd": 0,
+      "source_annotation_id": 38,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "028_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 132,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3080.7079856972587,
+        3104.467222884386,
+        160.23361144219308,
+        136.66984505363524
+      ],
+      "area": 21899.102848188923,
+      "iscrowd": 0,
+      "source_annotation_id": 39,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "018_gvhc_stockton_image_001.png",
+        "028_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 133,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2627.641860465116,
+        3166.4728682170544,
+        146.68837209302322,
+        152.33023255813953
+      ],
+      "area": 22345.073834505132,
+      "iscrowd": 0,
+      "source_annotation_id": 40,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "028_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 134,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2775.9499404052444,
+        3137.123957091776,
+        161.80452920143026,
+        152.37902264600717
+      ],
+      "area": 24655.61601941127,
+      "iscrowd": 0,
+      "source_annotation_id": 41,
+      "review_crops": [
+        "047_gvhc_stockton_image_001.png",
+        "067_gvhc_stockton_image_001.png",
+        "068_gvhc_stockton_image_001.png",
+        "028_gvhc_stockton_image_001.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 135,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2096.8826093740586,
+        2648.454464232196,
+        165.49806961599356,
+        137.91505801332758
+      ],
+      "area": 22824.675872183478,
+      "iscrowd": 0,
+      "source_annotation_id": 42,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 136,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        1663.4677766530667,
+        2618.2643321299543,
+        229.15117331445276,
+        195.20285134194157
+      ],
+      "area": 44730.96241933261,
+      "iscrowd": 0,
+      "source_annotation_id": 43,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 137,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        663.0020306166599,
+        2041.4350754877355,
+        203.20291329737134,
+        171.1182427767336
+      ],
+      "area": 34771.72545055914,
+      "iscrowd": 0,
+      "source_annotation_id": 44,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 138,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        823.5065433630314,
+        1828.8262196763428,
+        213.89780347091724,
+        197.85546821059802
+      ],
+      "area": 42320.850054956805,
+      "iscrowd": 0,
+      "source_annotation_id": 45,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 139,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        1804.7627167858645,
+        1729.8984855710435,
+        176.46568786350642,
+        163.0970751465739
+      ],
+      "area": 28781.03755426616,
+      "iscrowd": 0,
+      "source_annotation_id": 46,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 140,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        2425.0663468515245,
+        1729.8984855710435,
+        176.46568786350642,
+        157.7496300598011
+      ],
+      "area": 27837.396978716468,
+      "iscrowd": 0,
+      "source_annotation_id": 47,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 141,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        4024.333592358933,
+        490.56062129078674,
+        238.76844399109032,
+        225.7447106824859
+      ],
+      "area": 53900.713308876024,
+      "iscrowd": 0,
+      "source_annotation_id": 48,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 142,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        582.9201414631367,
+        1001.8939931397663,
+        176.95790008702355,
+        137.92306918547436
+      ],
+      "area": 24406.57669661881,
+      "iscrowd": 0,
+      "source_annotation_id": 49,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 143,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        984.1627906976745,
+        1678.6046511627908,
+        165.16279069767447,
+        141.7906976744186
+      ],
+      "area": 23418.547322877235,
+      "iscrowd": 0,
+      "source_annotation_id": 50,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 144,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        580.6046511627907,
+        1909.2093023255813,
+        176.06976744186045,
+        144.90697674418604
+      ],
+      "area": 25513.737696051918,
+      "iscrowd": 0,
+      "source_annotation_id": 51,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 145,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        981.046511627907,
+        1907.6511627906978,
+        157.3720930232558,
+        143.3488372093023
+      ],
+      "area": 22559.106544077873,
+      "iscrowd": 0,
+      "source_annotation_id": 52,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 146,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        565.0232558139535,
+        2195.906976744186,
+        176.06976744186045,
+        158.93023255813966
+      ],
+      "area": 27982.80908599245,
+      "iscrowd": 0,
+      "source_annotation_id": 53,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 147,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        736.4186046511628,
+        2426.5116279069766,
+        166.72093023255812,
+        157.37209302325587
+      ],
+      "area": 26237.221741481888,
+      "iscrowd": 0,
+      "source_annotation_id": 54,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 148,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        996.6893490195595,
+        3294.5397280907623,
+        200.3787986279532,
+        153.537001546094
+      ],
+      "area": 30765.559914744506,
+      "iscrowd": 0,
+      "source_annotation_id": 55,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 149,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1124.2031299646205,
+        2914.6007073156825,
+        189.96951038754003,
+        135.32074712537104
+      ],
+      "area": 25706.81607668285,
+      "iscrowd": 0,
+      "source_annotation_id": 56,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 150,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1647.2698640453818,
+        2984.8634029384716,
+        182.1625442072299,
+        153.537001546094
+      ],
+      "area": 27968.69083158587,
+      "iscrowd": 0,
+      "source_annotation_id": 57,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 151,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2469.6036350380205,
+        3023.8982338400224,
+        200.37879862795296,
+        153.53700154609396
+      ],
+      "area": 30765.559914744463,
+      "iscrowd": 0,
+      "source_annotation_id": 58,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 152,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2891.1798087747534,
+        3284.13043985035,
+        205.58344274815988,
+        166.54861184661095
+      ],
+      "area": 34239.637008353246,
+      "iscrowd": 0,
+      "source_annotation_id": 59,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 153,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4000.733516926915,
+        2566.642438408168,
+        233.72343238755548,
+        203.35756159183018
+      ],
+      "area": 47529.42729720627,
+      "iscrowd": 0,
+      "source_annotation_id": 60,
+      "review_crops": [
+        "009_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 154,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        3734.122657705409,
+        2476.9825745468374,
+        245.12747694968198,
+        209.72827061496886
+      ],
+      "area": 51410.16182086744,
+      "iscrowd": 0,
+      "source_annotation_id": 61,
+      "review_crops": [
+        "009_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 155,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        3717.739534883721,
+        2287.568992248062,
+        189.6186046511628,
+        143.18139534883724
+      ],
+      "area": 27149.85639805301,
+      "iscrowd": 0,
+      "source_annotation_id": 62,
+      "review_crops": [
+        "009_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 156,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4213.159415307224,
+        1665.4861184661045,
+        200.37879862795384,
+        161.34396772640397
+      ],
+      "area": 32329.910418884185,
+      "iscrowd": 0,
+      "source_annotation_id": 63,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 157,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        3838.4250386523504,
+        1777.3859670505458,
+        189.96951038754003,
+        156.1393236061973
+      ],
+      "area": 29661.710857710972,
+      "iscrowd": 0,
+      "source_annotation_id": 64,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 158,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4960.911627906977,
+        1784.706976744186,
+        180.98604651162796,
+        165.50697674418606
+      ],
+      "area": 29954.453391022187,
+      "iscrowd": 0,
+      "source_annotation_id": 65,
+      "review_crops": [
+        "048_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 159,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4716.818604651163,
+        1619.2,
+        172.6511627906977,
+        139.31162790697678
+      ],
+      "area": 24052.314548404553,
+      "iscrowd": 0,
+      "source_annotation_id": 66,
+      "review_crops": [
+        "048_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 160,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4723.962790697675,
+        1469.172093023256,
+        190.51162790697674,
+        126.2139534883721
+      ],
+      "area": 24045.225743645213,
+      "iscrowd": 0,
+      "source_annotation_id": 67,
+      "review_crops": [
+        "048_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 161,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4340.673196252285,
+        1233.5006564889586,
+        187.36718832743702,
+        143.12771330568086
+      ],
+      "area": 26817.43721382092,
+      "iscrowd": 0,
+      "source_annotation_id": 68,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 162,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        5017.276931879141,
+        988.8823828392494,
+        179.5602221471253,
+        161.34396772640397
+      ],
+      "area": 28970.958687051712,
+      "iscrowd": 0,
+      "source_annotation_id": 69,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 163,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4811.69348913098,
+        309.6763251522914,
+        179.5602221471262,
+        176.95790008702355
+      ],
+      "area": 31774.599850314913,
+      "iscrowd": 0,
+      "source_annotation_id": 70,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 164,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4231.375669727947,
+        476.22493699890174,
+        171.7532559668172,
+        156.13932360619722
+      ],
+      "area": 26817.437213820893,
+      "iscrowd": 0,
+      "source_annotation_id": 71,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 165,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        4038.803837280303,
+        484.0319031792116,
+        192.57183244764306,
+        145.73003536578435
+      ],
+      "area": 28063.499953048922,
+      "iscrowd": 0,
+      "source_annotation_id": 72,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 166,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2675.187077786181,
+        567.3062091025168,
+        208.18576480826286,
+        148.33235742588747
+      ],
+      "area": 30880.68527652099,
+      "iscrowd": 0,
+      "source_annotation_id": 73,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 167,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2266.4372093023258,
+        580.693023255814,
+        167.88837209302335,
+        148.83720930232553
+      ],
+      "area": 24988.036776636025,
+      "iscrowd": 0,
+      "source_annotation_id": 74,
+      "review_crops": [
+        "070_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 168,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2420.0372093023248,
+        1054.5906976744186,
+        184.55813953488368,
+        129.7860465116275
+      ],
+      "area": 23953.07128177385,
+      "iscrowd": 0,
+      "source_annotation_id": 75,
+      "review_crops": [
+        "070_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 169,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2641.3568910048384,
+        1171.0449270464799,
+        156.13932360619694,
+        158.74164566630049
+      ],
+      "area": 24785.81318247074,
+      "iscrowd": 0,
+      "source_annotation_id": 76,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 170,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2800.098536671139,
+        1176.2495711666863,
+        156.13932360619737,
+        148.3323574258875
+      ],
+      "area": 23160.51395739078,
+      "iscrowd": 0,
+      "source_annotation_id": 77,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 171,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2018.7720930232558,
+        749.7720930232558,
+        145.26511627906982,
+        146.45581395348836
+      ],
+      "area": 21274.920843699303,
+      "iscrowd": 0,
+      "source_annotation_id": 78,
+      "review_crops": [
+        "070_gvhc_stockton_image_002.png",
+        "029_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 172,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1867.553488372093,
+        602.1255813953488,
+        158.3627906976744,
+        141.69302325581393
+      ],
+      "area": 22438.90258518117,
+      "iscrowd": 0,
+      "source_annotation_id": 79,
+      "review_crops": [
+        "070_gvhc_stockton_image_002.png",
+        "029_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 173,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        866.5732460143951,
+        1358.412115373917,
+        166.5486118466103,
+        140.5253912455775
+      ],
+      "area": 23404.30884115274,
+      "iscrowd": 0,
+      "source_annotation_id": 80,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 174,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1048.046511627907,
+        2022.953488372093,
+        157.37209302325581,
+        137.11627906976742
+      ],
+      "area": 21578.275824770142,
+      "iscrowd": 0,
+      "source_annotation_id": 81,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 175,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        3307.8062015503874,
+        1864.906976744186,
+        149.14728682170553,
+        166.35658914728685
+      ],
+      "area": 24811.633916231018,
+      "iscrowd": 0,
+      "source_annotation_id": 82,
+      "review_crops": [
+        "039_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 176,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2632.3410852713178,
+        1929.4418604651164,
+        205.07751937984492,
+        136.2403100775193
+      ],
+      "area": 27939.824830238544,
+      "iscrowd": 0,
+      "source_annotation_id": 83,
+      "review_crops": [
+        "039_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 177,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        2857.4961240310076,
+        1929.4418604651164,
+        219.41860465116275,
+        131.93798449612402
+      ],
+      "area": 28949.648458626278,
+      "iscrowd": 0,
+      "source_annotation_id": 84,
+      "review_crops": [
+        "039_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 178,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1380.7906976744187,
+        2309.4418604651164,
+        165.76744186046514,
+        57.767441860465105
+      ],
+      "area": 9575.96106003245,
+      "iscrowd": 0,
+      "source_annotation_id": 85,
+      "review_crops": [
+        "069_gvhc_stockton_image_002.png",
+        "019_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 179,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1986.093023255814,
+        1982.9302325581396,
+        177.06976744186045,
+        79.1162790697674
+      ],
+      "area": 14009.101135749044,
+      "iscrowd": 0,
+      "source_annotation_id": 86,
+      "review_crops": [
+        "019_gvhc_stockton_image_002.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 180,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        600.3843042757543,
+        2437.9241446348815,
+        229.23764345074247,
+        160.1024811402009
+      ],
+      "area": 36701.51548719659,
+      "iscrowd": 0,
+      "source_annotation_id": 87,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 181,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        619.9774107689879,
+        2113.453518301023,
+        186.54527712865038,
+        161.01802867946665
+      ],
+      "area": 30037.15278272008,
+      "iscrowd": 0,
+      "source_annotation_id": 88,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 182,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        784.9227084406366,
+        1913.1627996997352,
+        170.8362011599218,
+        182.6180081364682
+      ],
+      "area": 31197.76677342592,
+      "iscrowd": 0,
+      "source_annotation_id": 89,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 183,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        981.2861580497425,
+        2078.108097371383,
+        200.29071860128764,
+        180.65437364037717
+      ],
+      "area": 36183.39431489666,
+      "iscrowd": 0,
+      "source_annotation_id": 90,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 184,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        971.467985569287,
+        2419.7804996912273,
+        251.34521549965498,
+        168.87256666383072
+      ],
+      "area": 42445.311660100386,
+      "iscrowd": 0,
+      "source_annotation_id": 91,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 185,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        832.0499363468219,
+        2284.289719460945,
+        159.0543941833757,
+        161.01802867946634
+      ],
+      "area": 25610.625004213933,
+      "iscrowd": 0,
+      "source_annotation_id": 92,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 186,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1396.1441267207404,
+        2034.3253379503335,
+        200.29071860128764,
+        174.7634701521038
+      ],
+      "area": 35003.501022019555,
+      "iscrowd": 0,
+      "source_annotation_id": 93,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 187,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1602.3257488103015,
+        2032.3617034542424,
+        215.99979457001623,
+        172.7998356560134
+      ],
+      "area": 37324.729003431465,
+      "iscrowd": 0,
+      "source_annotation_id": 94,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 188,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1537.5258104392965,
+        2421.1613336802716,
+        233.67250503483558,
+        170.83620115992207
+      ],
+      "area": 39919.723075674076,
+      "iscrowd": 0,
+      "source_annotation_id": 95,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 189,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1775.1255844663144,
+        2425.088602672454,
+        227.78160154656186,
+        174.7634701521038
+      ],
+      "area": 39807.90312308096,
+      "iscrowd": 0,
+      "source_annotation_id": 96,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 190,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2321.015974379628,
+        2401.524988719361,
+        225.81796705047154,
+        170.8362011599221
+      ],
+      "area": 38577.88364455901,
+      "iscrowd": 0,
+      "source_annotation_id": 97,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 191,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2552.7248449183726,
+        2375.9977402701775,
+        212.07252557783352,
+        192.43618061692325
+      ],
+      "area": 40810.426835983046,
+      "iscrowd": 0,
+      "source_annotation_id": 98,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 192,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3138.9808695652173,
+        2394.8278260869565,
+        180.8417391304348,
+        165.92695652173916
+      ],
+      "area": 30006.51938601135,
+      "iscrowd": 0,
+      "source_annotation_id": 99,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 193,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3321.6869565217394,
+        2398.5565217391304,
+        158.4695652173913,
+        162.1982608695653
+      ],
+      "area": 25703.487879017026,
+      "iscrowd": 0,
+      "source_annotation_id": 100,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 194,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3731.8434782608697,
+        2639.0573913043477,
+        156.60521739130428,
+        173.384347826087
+      ],
+      "area": 27152.89348355387,
+      "iscrowd": 0,
+      "source_annotation_id": 101,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 195,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4110.3060869565215,
+        2657.7008695652175,
+        190.16347826086945,
+        143.55478260869558
+      ],
+      "area": 27298.876781852523,
+      "iscrowd": 0,
+      "source_annotation_id": 102,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 196,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4462.667826086957,
+        2534.653913043478,
+        170.33217391304333,
+        175.24869565217398
+      ],
+      "area": 29850.491305860098,
+      "iscrowd": 0,
+      "source_annotation_id": 103,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 197,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4848.213570848816,
+        2804.0700604180274,
+        184.58164263256018,
+        164.9452976716487
+      ],
+      "area": 30445.873988749518,
+      "iscrowd": 0,
+      "source_annotation_id": 104,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 198,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4746.104577052081,
+        2144.288869731433,
+        172.79983565601225,
+        164.9452976716487
+      ],
+      "area": 28502.520329892912,
+      "iscrowd": 0,
+      "source_annotation_id": 105,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 199,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4302.333913043478,
+        2266.1878260869566,
+        188.29913043478268,
+        136.09739130434787
+      ],
+      "area": 25627.02043705106,
+      "iscrowd": 0,
+      "source_annotation_id": 106,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 200,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4102.848695652174,
+        1800.1008695652174,
+        206.94260869565227,
+        147.28347826086957
+      ],
+      "area": 30479.22720907374,
+      "iscrowd": 0,
+      "source_annotation_id": 107,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 201,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3854.5255813953486,
+        1958.6062015503876,
+        157.3271317829457,
+        145.35658914728685
+      ],
+      "area": 22868.535256294697,
+      "iscrowd": 0,
+      "source_annotation_id": 108,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 202,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3237.791304347826,
+        2068.566956521739,
+        165.92695652173916,
+        149.1478260869565
+      ],
+      "area": 24747.644854442347,
+      "iscrowd": 0,
+      "source_annotation_id": 109,
+      "review_crops": [
+        "010_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 203,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3435.556589147287,
+        1344.6883720930232,
+        150.48682170542637,
+        167.58759689922485
+      ],
+      "area": 25219.724814614514,
+      "iscrowd": 0,
+      "source_annotation_id": 110,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png",
+        "072_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 204,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3424.6976744186045,
+        1246.2558139534883,
+        169.67441860465118,
+        152.44186046511632
+      ],
+      "area": 25865.48404542997,
+      "iscrowd": 0,
+      "source_annotation_id": 111,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png",
+        "072_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 205,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3846.7599778423782,
+        938.6172891315246,
+        155.1271251911931,
+        162.98166317555754
+      ],
+      "area": 25282.87686730358,
+      "iscrowd": 0,
+      "source_annotation_id": 112,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 206,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3406.139534883721,
+        843.2790697674419,
+        167.02325581395354,
+        149.7906976744186
+      ],
+      "area": 25018.53001622499,
+      "iscrowd": 0,
+      "source_annotation_id": 113,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 207,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2975.4976744186047,
+        1175.6232558139534,
+        171.46046511627904,
+        157.17209302325583
+      ],
+      "area": 26948.80017306652,
+      "iscrowd": 0,
+      "source_annotation_id": 114,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png",
+        "072_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 208,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2871.9302325581393,
+        1422.5581395348838,
+        155.09302325581393,
+        157.7441860465115
+      ],
+      "area": 24465.022714981045,
+      "iscrowd": 0,
+      "source_annotation_id": 115,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png",
+        "072_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 209,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2867.8108527131785,
+        2088.572093023256,
+        181.26821705426357,
+        160.74728682170542
+      ],
+      "area": 29138.37407848086,
+      "iscrowd": 0,
+      "source_annotation_id": 116,
+      "review_crops": [
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 210,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2314.1612403100776,
+        1134.0434108527131,
+        181.36899224806194,
+        150.9100775193798
+      ],
+      "area": 27370.40867976682,
+      "iscrowd": 0,
+      "source_annotation_id": 117,
+      "review_crops": [
+        "049_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 211,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        2511.4885205004603,
+        1117.3080282758106,
+        208.14525658565148,
+        164.94529767164855
+      ],
+      "area": 34332.58130646195,
+      "iscrowd": 0,
+      "source_annotation_id": 118,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 212,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1723.2558139534885,
+        1135.813953488372,
+        165.69767441860455,
+        163.04651162790708
+      ],
+      "area": 27016.427798810168,
+      "iscrowd": 0,
+      "source_annotation_id": 119,
+      "review_crops": [
+        "040_gvhc_stockton_image_003.png",
+        "049_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 213,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1548.5348837209303,
+        1176.9627906976743,
+        166.13953488372093,
+        157.8325581395349
+      ],
+      "area": 26222.22779881017,
+      "iscrowd": 0,
+      "source_annotation_id": 120,
+      "review_crops": [
+        "040_gvhc_stockton_image_003.png",
+        "049_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 214,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1004.7906976744187,
+        1131.8372093023254,
+        190.88372093023256,
+        160.3953488372094
+      ],
+      "area": 30616.861005949184,
+      "iscrowd": 0,
+      "source_annotation_id": 121,
+      "review_crops": [
+        "040_gvhc_stockton_image_003.png",
+        "030_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 215,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1006.3534883720931,
+        977.6465116279069,
+        165.72558139534888,
+        138.8511627906977
+      ],
+      "area": 23011.189680908614,
+      "iscrowd": 0,
+      "source_annotation_id": 122,
+      "review_crops": [
+        "040_gvhc_stockton_image_003.png",
+        "030_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 216,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1155.6558139534884,
+        807.4418604651162,
+        159.75348837209302,
+        147.80930232558146
+      ],
+      "area": 23613.05166035696,
+      "iscrowd": 0,
+      "source_annotation_id": 123,
+      "review_crops": [
+        "040_gvhc_stockton_image_003.png",
+        "030_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 217,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        4696.986755022009,
+        809.032004334403,
+        178.29378294573291,
+        141.86817137617476
+      ],
+      "area": 25294.21295425174,
+      "iscrowd": 0,
+      "source_annotation_id": 124,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 218,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        5043.101807439358,
+        817.8002930982743,
+        170.91593427186118,
+        151.44449872190265
+      ],
+      "area": 25884.277989387676,
+      "iscrowd": 0,
+      "source_annotation_id": 125,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 219,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3235.0697674418607,
+        1474.4883720930234,
+        164.31627906976735,
+        141.69302325581393
+      ],
+      "area": 23282.470351541357,
+      "iscrowd": 0,
+      "source_annotation_id": 126,
+      "review_crops": [
+        "071_gvhc_stockton_image_003.png",
+        "072_gvhc_stockton_image_003.png",
+        "020_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 220,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        3216.6572548002664,
+        1271.532537627966,
+        171.67144100697922,
+        68.37760785871224
+      ],
+      "area": 11738.482473715278,
+      "iscrowd": 0,
+      "source_annotation_id": 127,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 221,
+      "image_id": 9,
+      "category_id": 0,
+      "bbox": [
+        1819.8961240310077,
+        1459.4,
+        159.21705426356593,
+        150.9100775193798
+      ],
+      "area": 24027.458001322033,
+      "iscrowd": 0,
+      "source_annotation_id": 128,
+      "review_crops": [
+        "049_gvhc_stockton_image_003.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 222,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1595.6620155038759,
+        1139.029457364341,
+        91.9875968992248,
+        81.37364341085278
+      ],
+      "area": 7485.365908298785,
+      "iscrowd": 0,
+      "source_annotation_id": 0,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 223,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1546.1302325581396,
+        958.5922480620155,
+        106.13953488372091,
+        102.60155038759687
+      ],
+      "area": 10890.080836488187,
+      "iscrowd": 0,
+      "source_annotation_id": 1,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 224,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1074.2829073696385,
+        830.8653301710798,
+        105.48095011937535,
+        95.74424703143296
+      ],
+      "area": 10099.194145339732,
+      "iscrowd": 0,
+      "source_annotation_id": 2,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 225,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1401.0728682170543,
+        1050.5798449612403,
+        81.37364341085271,
+        93.75658914728683
+      ],
+      "area": 7629.315252689142,
+      "iscrowd": 0,
+      "source_annotation_id": 3,
+      "review_crops": [
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 226,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1965.381395348837,
+        958.5922480620155,
+        88.44961240310074,
+        93.75658914728677
+      ],
+      "area": 8292.733970314277,
+      "iscrowd": 0,
+      "source_annotation_id": 4,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 227,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1575.7627906976745,
+        805.0976744186047,
+        89.8232558139535,
+        84.76279069767443
+      ],
+      "area": 7613.669832341809,
+      "iscrowd": 0,
+      "source_annotation_id": 5,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 228,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1683.5674418604651,
+        876.460465116279,
+        87.94418604651162,
+        77.33023255813951
+      ],
+      "area": 6800.744359113031,
+      "iscrowd": 0,
+      "source_annotation_id": 6,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 229,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1862.4883720930231,
+        814.293023255814,
+        95.52558139534884,
+        63.68372093023257
+      ],
+      "area": 6083.424467279611,
+      "iscrowd": 0,
+      "source_annotation_id": 7,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 230,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1958.3054263565891,
+        802.9209302325581,
+        83.14263565891471,
+        84.91162790697673
+      ],
+      "area": 7059.776542275102,
+      "iscrowd": 0,
+      "source_annotation_id": 8,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 231,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2183.939534883721,
+        873.4279069767442,
+        90.9767441860466,
+        80.36279069767441
+      ],
+      "area": 7311.145051379131,
+      "iscrowd": 0,
+      "source_annotation_id": 9,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 232,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2313.325581395349,
+        807.6279069767442,
+        80.96744186046521,
+        78.43720930232564
+      ],
+      "area": 6350.860183883193,
+      "iscrowd": 0,
+      "source_annotation_id": 10,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 233,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2128.1286821705426,
+        990.4341085271318,
+        99.0635658914729,
+        68.99069767441861
+      ],
+      "area": 6834.4645249684545,
+      "iscrowd": 0,
+      "source_annotation_id": 11,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png",
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 234,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2117.5147286821707,
+        1227.4790697674418,
+        113.215503875969,
+        79.60465116279076
+      ],
+      "area": 9012.480692266097,
+      "iscrowd": 0,
+      "source_annotation_id": 12,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 235,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2380.3767441860464,
+        1241.5627906976745,
+        87.29302325581402,
+        79.70232558139531
+      ],
+      "area": 6957.456960519202,
+      "iscrowd": 0,
+      "source_annotation_id": 13,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 236,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1946.4418604651164,
+        1337.711627906977,
+        89.82325581395348,
+        77.17209302325566
+      ],
+      "area": 6931.8486533261075,
+      "iscrowd": 0,
+      "source_annotation_id": 14,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 237,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2152.8945736434107,
+        1402.6093023255814,
+        91.9875968992248,
+        72.52868217054261
+      ],
+      "area": 6671.739179135866,
+      "iscrowd": 0,
+      "source_annotation_id": 15,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 238,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2377.846511627907,
+        1403.4976744186047,
+        72.11162790697682,
+        73.37674418604652
+      ],
+      "area": 5291.316473769612,
+      "iscrowd": 0,
+      "source_annotation_id": 16,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 239,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2583.4718860007015,
+        1408.576380055659,
+        89.25311163947124,
+        63.28857007162501
+      ],
+      "area": 5648.701810105245,
+      "iscrowd": 0,
+      "source_annotation_id": 17,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 240,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2809.038840871365,
+        1405.3308123596778,
+        74.64805700755818,
+        79.51640855152931
+      ],
+      "area": 5935.745398590847,
+      "iscrowd": 0,
+      "source_annotation_id": 18,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 241,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3023.2463088060995,
+        1397.216893119722,
+        81.13919239951728,
+        97.36703087942739
+      ],
+      "area": 7900.2822518956,
+      "iscrowd": 0,
+      "source_annotation_id": 19,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 242,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3248.813263676761,
+        1402.0852446636968,
+        82.76197624751023,
+        87.63032779148098
+      ],
+      "area": 7252.459107240084,
+      "iscrowd": 0,
+      "source_annotation_id": 20,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 243,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3156.3145843413095,
+        1236.5612921686777,
+        81.13919239951964,
+        92.49867933545194
+      ],
+      "area": 7505.268139300707,
+      "iscrowd": 0,
+      "source_annotation_id": 21,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 244,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2942.1071164065775,
+        1241.4296437126486,
+        103.85816627138567,
+        89.25311163947141
+      ],
+      "area": 9269.66450889077,
+      "iscrowd": 0,
+      "source_annotation_id": 22,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 245,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3329.9524560762807,
+        1157.0448836171483,
+        102.23538242339419,
+        74.6480570075577
+      ],
+      "area": 7631.672655330991,
+      "iscrowd": 0,
+      "source_annotation_id": 23,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 246,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3326.7068883803,
+        978.5386603382052,
+        108.72651781535653,
+        81.13919239951957
+      ],
+      "area": 8821.981847950006,
+      "iscrowd": 0,
+      "source_annotation_id": 24,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 247,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3138.4639620134153,
+        975.2930926422242,
+        103.85816627138476,
+        81.13919239951957
+      ],
+      "area": 8426.967735355182,
+      "iscrowd": 0,
+      "source_annotation_id": 25,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 248,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2906.0976744186046,
+        964.9627906976743,
+        75.01395348837208,
+        80.96744186046516
+      ],
+      "area": 6073.687917793404,
+      "iscrowd": 0,
+      "source_annotation_id": 26,
+      "review_crops": [
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 249,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2528.646511627907,
+        976.8697674418604,
+        79.77674418604641,
+        83.34883720930236
+      ],
+      "area": 6649.298864250941,
+      "iscrowd": 0,
+      "source_annotation_id": 27,
+      "review_crops": [
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 250,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2542.93488372093,
+        803.0279069767441,
+        91.68372093023258,
+        79.77674418604649
+      ],
+      "area": 7314.22875067604,
+      "iscrowd": 0,
+      "source_annotation_id": 28,
+      "review_crops": [
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 251,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2771.5488372093023,
+        804.2186046511628,
+        82.15813953488372,
+        76.20465116279073
+      ],
+      "area": 6260.832363439699,
+      "iscrowd": 0,
+      "source_annotation_id": 29,
+      "review_crops": [
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 252,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2857.279069767442,
+        804.2186046511628,
+        66.67906976744187,
+        77.39534883720938
+      ],
+      "area": 5160.649864791786,
+      "iscrowd": 0,
+      "source_annotation_id": 30,
+      "review_crops": [
+        "036_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 253,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3200.1297482370496,
+        814.6374916911758,
+        90.87589548746183,
+        84.38476009550028
+      ],
+      "area": 7668.540639173223,
+      "iscrowd": 0,
+      "source_annotation_id": 31,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 254,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3291.0056437245116,
+        811.3919239951949,
+        92.49867933545198,
+        81.13919239951942
+      ],
+      "area": 7505.268139300689,
+      "iscrowd": 0,
+      "source_annotation_id": 32,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 255,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3480.8713539393875,
+        869.8121425228492,
+        113.59486935932696,
+        92.49867933545211
+      ],
+      "area": 10507.37539502096,
+      "iscrowd": 0,
+      "source_annotation_id": 33,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 256,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3500.3447601152716,
+        1194.368912120927,
+        92.49867933545244,
+        86.0075439434907
+      ],
+      "area": 7955.584227658781,
+      "iscrowd": 0,
+      "source_annotation_id": 34,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 257,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3441.9245415876157,
+        1304.718213784273,
+        103.85816627138522,
+        86.00754394349069
+      ],
+      "area": 8932.585799476527,
+      "iscrowd": 0,
+      "source_annotation_id": 35,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 258,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3318.592969140348,
+        1312.8321330242254,
+        107.1037339673655,
+        81.13919239951942
+      ],
+      "area": 8690.310477085013,
+      "iscrowd": 0,
+      "source_annotation_id": 36,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 259,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1941.3813953488373,
+        1507.2372093023255,
+        80.96744186046504,
+        67.05116279069762
+      ],
+      "area": 5428.961124932386,
+      "iscrowd": 0,
+      "source_annotation_id": 37,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 260,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1727.5767441860467,
+        1509.7674418604652,
+        72.11162790697675,
+        70.84651162790698
+      ],
+      "area": 5108.857285018929,
+      "iscrowd": 0,
+      "source_annotation_id": 38,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "063_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 261,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        578.3023255813953,
+        3423.827906976744,
+        120.26046511627906,
+        86.92093023255808
+      ],
+      "area": 10453.151498107078,
+      "iscrowd": 0,
+      "source_annotation_id": 39,
+      "review_crops": [
+        "052_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 262,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        696.1813953488372,
+        3545.279069767442,
+        84.53953488372095,
+        85.73023255813958
+      ],
+      "area": 7247.59398593835,
+      "iscrowd": 0,
+      "source_annotation_id": 40,
+      "review_crops": [
+        "052_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 263,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        804.5348837209302,
+        3407.158139534884,
+        104.78139534883718,
+        117.8790697674419
+      ],
+      "area": 12351.53341265549,
+      "iscrowd": 0,
+      "source_annotation_id": 41,
+      "review_crops": [
+        "052_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 264,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        993.3278473879227,
+        2989.6431322518188,
+        99.81576424319488,
+        78.88665238575079
+      ],
+      "area": 7874.131496470968,
+      "iscrowd": 0,
+      "source_annotation_id": 42,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 265,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        953.0795553543765,
+        2901.0968897780176,
+        93.37603751782746,
+        78.88665238575327
+      ],
+      "area": 7366.123012827909,
+      "iscrowd": 0,
+      "source_annotation_id": 43,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 266,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        977.2285305745042,
+        2830.2598957989762,
+        85.326379111118,
+        96.5959008805108
+      ],
+      "area": 8242.17845911044,
+      "iscrowd": 0,
+      "source_annotation_id": 44,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 267,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1086.70388490575,
+        2822.2102373922658,
+        94.9859691991691,
+        96.59590088051144
+      ],
+      "area": 9175.25526580225,
+      "iscrowd": 0,
+      "source_annotation_id": 45,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 268,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1407.0802894927785,
+        2806.110920578848,
+        104.64555928722044,
+        106.25549096856254
+      ],
+      "area": 11119.165279743427,
+      "iscrowd": 0,
+      "source_annotation_id": 46,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 269,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1571.293320989647,
+        2817.3804423482406,
+        152.94350972747623,
+        96.59590088051175
+      ],
+      "area": 14773.716105952877,
+      "iscrowd": 0,
+      "source_annotation_id": 47,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 270,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1725.8467623984654,
+        2904.3167531407007,
+        112.69521769392955,
+        96.59590088051111
+      ],
+      "area": 10885.89607807044,
+      "iscrowd": 0,
+      "source_annotation_id": 48,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 271,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1814.3930048722673,
+        2807.7208522601895,
+        123.96473946332266,
+        106.25549096856287
+      ],
+      "area": 13171.93425446533,
+      "iscrowd": 0,
+      "source_annotation_id": 49,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 272,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1812.783073190925,
+        3073.3595796815953,
+        90.15617415514379,
+        90.15617415514349
+      ],
+      "area": 8128.13573829259,
+      "iscrowd": 0,
+      "source_annotation_id": 50,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 273,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1967.9535160905841,
+        3000.1954707985697,
+        87.62812872467222,
+        100.77234803337308
+      ],
+      "area": 8830.492285355886,
+      "iscrowd": 0,
+      "source_annotation_id": 51,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 274,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2084.060786650775,
+        3013.3396901072706,
+        81.05601907032181,
+        94.20023837902264
+      ],
+      "area": 7635.496318478919,
+      "iscrowd": 0,
+      "source_annotation_id": 52,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 275,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2204.549463647199,
+        3046.2002383790227,
+        96.3909415971394,
+        87.62812872467224
+      ],
+      "area": 8446.557838166495,
+      "iscrowd": 0,
+      "source_annotation_id": 53,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 276,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2329.419547079857,
+        3061.5351609058403,
+        96.39094159713953,
+        76.6746126340882
+      ],
+      "area": 7390.738108395693,
+      "iscrowd": 0,
+      "source_annotation_id": 54,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 277,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2112.5399284862933,
+        3278.414779499404,
+        94.20023837902264,
+        70.1025029797378
+      ],
+      "area": 6603.672491657446,
+      "iscrowd": 0,
+      "source_annotation_id": 55,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 278,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2388.568533969011,
+        3168.879618593564,
+        87.62812872467222,
+        81.05601907032182
+      ],
+      "area": 7102.787273003647,
+      "iscrowd": 0,
+      "source_annotation_id": 56,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 279,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2114.73063170441,
+        3425.19189511323,
+        87.62812872467222,
+        81.05601907032182
+      ],
+      "area": 7102.787273003647,
+      "iscrowd": 0,
+      "source_annotation_id": 57,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 280,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2390.759237187128,
+        3488.7222884386174,
+        89.81883194278896,
+        85.43742550655539
+      ],
+      "area": 7673.889763197849,
+      "iscrowd": 0,
+      "source_annotation_id": 58,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 281,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2274.651966626937,
+        3617.973778307509,
+        72.29320619785454,
+        70.10250297973793
+      ],
+      "area": 5067.934702899907,
+      "iscrowd": 0,
+      "source_annotation_id": 59,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 282,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2355.7079856972587,
+        3607.020262216925,
+        83.24672228843866,
+        78.86531585220494
+      ],
+      "area": 6565.2790469385045,
+      "iscrowd": 0,
+      "source_annotation_id": 60,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 283,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2629.545887961859,
+        3600.4481525625743,
+        96.39094159713949,
+        87.62812872467235
+      ],
+      "area": 8446.557838166515,
+      "iscrowd": 0,
+      "source_annotation_id": 61,
+      "review_crops": [
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 284,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2730.3182359952325,
+        3600.4481525625743,
+        76.67461263408809,
+        83.2467222884387
+      ],
+      "area": 6382.9101845235455,
+      "iscrowd": 0,
+      "source_annotation_id": 62,
+      "review_crops": [
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 285,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3015.077519379845,
+        3613.0806201550386,
+        84.58604651162788,
+        81.90077519379847
+      ],
+      "area": 6927.662779881016,
+      "iscrowd": 0,
+      "source_annotation_id": 63,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 286,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3118.072705601907,
+        3688.0762812872467,
+        89.81883194278925,
+        78.86531585220494
+      ],
+      "area": 7083.590550644189,
+      "iscrowd": 0,
+      "source_annotation_id": 64,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 287,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3433.533969010727,
+        3587.3039332538738,
+        85.43742550655548,
+        96.39094159713949
+      ],
+      "area": 8235.393892212345,
+      "iscrowd": 0,
+      "source_annotation_id": 65,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 288,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3287.4362416107383,
+        3519.489932885906,
+        94.22818791946307,
+        71.54362416107375
+      ],
+      "area": 6741.426061889096,
+      "iscrowd": 0,
+      "source_annotation_id": 66,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 289,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3015.077519379845,
+        3438.537984496124,
+        88.61395348837212,
+        76.53023255813955
+      ],
+      "area": 6781.646468361279,
+      "iscrowd": 0,
+      "source_annotation_id": 67,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 290,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2934.5193798449613,
+        3497.6139534883723,
+        80.5581395348837,
+        84.5860465116279
+      ],
+      "area": 6814.094537587883,
+      "iscrowd": 0,
+      "source_annotation_id": 68,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 291,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3395.043410852713,
+        3431.8248062015505,
+        85.92868217054279,
+        72.50232558139535
+      ],
+      "area": 6230.029291508935,
+      "iscrowd": 0,
+      "source_annotation_id": 69,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 292,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3385.1543624161072,
+        3235.0604026845635,
+        104.69798657718121,
+        76.77852348993298
+      ],
+      "area": 8038.556821764795,
+      "iscrowd": 0,
+      "source_annotation_id": 70,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 293,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3627.7046979865772,
+        3153.046979865772,
+        83.75838926174501,
+        76.77852348993291
+      ],
+      "area": 6430.845457411833,
+      "iscrowd": 0,
+      "source_annotation_id": 71,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 294,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3713.943980929678,
+        3232.410011918951,
+        70.10250297973772,
+        87.62812872467228
+      ],
+      "area": 6142.9511550301795,
+      "iscrowd": 0,
+      "source_annotation_id": 72,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 295,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3915.6241610738252,
+        3158.281879194631,
+        83.75838926174492,
+        90.73825503355705
+      ],
+      "area": 7600.090086032157,
+      "iscrowd": 0,
+      "source_annotation_id": 73,
+      "review_crops": [
+        "016_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 296,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3606.5995232419546,
+        3063.7258641239573,
+        76.67461263408849,
+        76.67461263408819
+      ],
+      "area": 5878.9962225875,
+      "iscrowd": 0,
+      "source_annotation_id": 74,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 297,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3432.268456375839,
+        2975.060402684564,
+        85.50335570469794,
+        73.28859060402681
+      ],
+      "area": 6266.420431512087,
+      "iscrowd": 0,
+      "source_annotation_id": 75,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 298,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3212.4026845637586,
+        2962.8456375838928,
+        82.01342281879195,
+        85.50335570469797
+      ],
+      "area": 7012.422863834961,
+      "iscrowd": 0,
+      "source_annotation_id": 76,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 299,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2845.959731543624,
+        2992.510067114094,
+        99.46308724832215,
+        88.99328859060401
+      ],
+      "area": 8851.54722760236,
+      "iscrowd": 0,
+      "source_annotation_id": 77,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 300,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2633.927294398093,
+        3008.958283671037,
+        87.62812872467222,
+        74.48390941597138
+      ],
+      "area": 6526.885602219566,
+      "iscrowd": 0,
+      "source_annotation_id": 78,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 301,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2478.3873659118,
+        3002.3861740166867,
+        94.20023837902272,
+        83.24672228843863
+      ],
+      "area": 7841.861083843223,
+      "iscrowd": 0,
+      "source_annotation_id": 79,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 302,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1272.0426184235914,
+        3388.769688513321,
+        96.30606574815818,
+        94.29968937840471
+      ],
+      "area": 9081.632085307538,
+      "iscrowd": 0,
+      "source_annotation_id": 80,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 303,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1727.49005435759,
+        3697.751649455329,
+        114.36345307593814,
+        96.30606574815788
+      ],
+      "area": 11013.894231117667,
+      "iscrowd": 0,
+      "source_annotation_id": 81,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 304,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1637.2031177186914,
+        3613.4838419256894,
+        112.357076706185,
+        100.31881848766545
+      ],
+      "area": 11271.529183892477,
+      "iscrowd": 0,
+      "source_annotation_id": 82,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 305,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2079.679380214541,
+        3705.601907032181,
+        81.0560190703218,
+        89.81883194278916
+      ],
+      "area": 7280.356954828747,
+      "iscrowd": 0,
+      "source_annotation_id": 83,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 306,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2138.8283671036947,
+        3547.8712753277714,
+        94.20023837902264,
+        74.4839094159713
+      ],
+      "area": 7016.402022386025,
+      "iscrowd": 0,
+      "source_annotation_id": 84,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 307,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2969.8523489932886,
+        3100.6979865771814,
+        94.22818791946305,
+        73.28859060402682
+      ],
+      "area": 6905.851087788834,
+      "iscrowd": 0,
+      "source_annotation_id": 85,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 308,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3521.1620977353996,
+        3567.5876042908226,
+        85.43742550655521,
+        87.62812872467221
+      ],
+      "area": 7486.721720193013,
+      "iscrowd": 0,
+      "source_annotation_id": 86,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png",
+        "006_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 309,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3540.8784266984503,
+        3026.4839094159715,
+        65.72109654350398,
+        74.4839094159714
+      ],
+      "area": 4895.164201664661,
+      "iscrowd": 0,
+      "source_annotation_id": 87,
+      "review_crops": [
+        "016_greenville_image_000.png",
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 310,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3985.422818791946,
+        2908.751677852349,
+        104.69798657718111,
+        82.01342281879197
+      ],
+      "area": 8586.640241430561,
+      "iscrowd": 0,
+      "source_annotation_id": 88,
+      "review_crops": [
+        "016_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 311,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        4196.563758389262,
+        3269.959731543624,
+        85.50335570469781,
+        88.99328859060411
+      ],
+      "area": 7609.224809693248,
+      "iscrowd": 0,
+      "source_annotation_id": 89,
+      "review_crops": [
+        "016_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 312,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3799.7592971551126,
+        3395.0544847604633,
+        116.6840043576884,
+        146.1755658986426
+      ],
+      "area": 17056.35036830478,
+      "iscrowd": 0,
+      "source_annotation_id": 90,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 313,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2837.6626936829557,
+        3228.0286054827175,
+        100.77234803337309,
+        78.86531585220494
+      ],
+      "area": 7947.443056820292,
+      "iscrowd": 0,
+      "source_annotation_id": 91,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 314,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        2057.772348033373,
+        3177.6424314660308,
+        78.86531585220497,
+        83.24672228843858
+      ],
+      "area": 6565.2790469385,
+      "iscrowd": 0,
+      "source_annotation_id": 92,
+      "review_crops": [
+        "026_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 315,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        1485.984496124031,
+        868.3736434108528,
+        102.60155038759689,
+        90.2186046511628
+      ],
+      "area": 9256.568711014963,
+      "iscrowd": 0,
+      "source_annotation_id": 93,
+      "review_crops": [
+        "045_greenville_image_000.png",
+        "064_greenville_image_000.png"
+      ],
+      "annotation_origin": "review_batch_01"
+    },
+    {
+      "id": 316,
+      "image_id": 10,
+      "category_id": 0,
+      "bbox": [
+        3588.0431708348788,
+        1157.4332809144769,
+        173.61499213717127,
+        68.39378478131003
+      ],
+      "area": 11874.186407038525,
+      "iscrowd": 0,
+      "source_annotation_id": 94,
+      "annotation_origin": "original_v1_preserved"
+    },
+    {
+      "id": 317,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        3065.4418604651164,
+        2293.705426356589,
+        111.86046511627914,
+        185.0
+      ],
+      "area": 20694.18604651164,
+      "iscrowd": 0,
+      "annotation_origin": "review_batch_01_new",
+      "review_crops": [
+        "039_gvhc_stockton_image_002.png"
+      ]
+    },
+    {
+      "id": 318,
+      "image_id": 8,
+      "category_id": 0,
+      "bbox": [
+        1606.8372093023256,
+        2147.4418604651164,
+        188.37209302325587,
+        43.95348837209304
+      ],
+      "area": 8279.610600324506,
+      "iscrowd": 0,
+      "annotation_origin": "review_batch_01_new",
+      "review_crops": [
+        "019_gvhc_stockton_image_002.png"
+      ]
+    },
+    {
+      "id": 319,
+      "image_id": 7,
+      "category_id": 0,
+      "bbox": [
+        3263.156589147287,
+        2257.82015503876,
+        135.95038759689925,
+        142.95813953488377
+      ],
+      "area": 19435.214479899056,
+      "iscrowd": 0,
+      "annotation_origin": "review_batch_01_new",
+      "review_crops": [
+        "008_gvhc_stockton_image_001.png"
+      ]
+    }
+  ]
+}
