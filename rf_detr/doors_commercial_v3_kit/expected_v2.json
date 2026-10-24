@@ -1,0 +1,8 @@
+{
+  "train/_annotations.coco.json": "c302a62feec302e9cd2db16b7db893427b94ab60e95dbe0591db20727fa80f9a",
+  "full_pages/train/_annotations.coco.json": "dd470e96bfa01ab3848ec8adf5da78cabac91b19766ae09986eb540558614e20",
+  "valid/_annotations.coco.json": "6ae26367a5ebeb73a238cc6d6a4f9f5b465db37bb081558f8eb3b6535083f2ee",
+  "full_pages/valid/_annotations.coco.json": "0684fbc967c86ff39e316c31511880c6a748c5a0393c9ce61f4ee9ae5935dfad",
+  "test/_annotations.coco.json": "d6be7f7b9db07fe1fc22d4b59cb811847e7bb3387d2f85dd6a98659d2b9ced60",
+  "full_pages/test/_annotations.coco.json": "6235358e5e8eefa09b6da07bdd5933e71f343bfebb7a43075cc58c33073599de"
+}
