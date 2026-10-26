@@ -31,3 +31,7 @@ runs/
 /rf_detr/doors_commercial_v*_kit/
 /local_scripts/
 *.zip
+
+# React development dependencies and build output
+node_modules/
+/frontend/dist/

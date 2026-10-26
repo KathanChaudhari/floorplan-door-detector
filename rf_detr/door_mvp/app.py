@@ -19,7 +19,6 @@ import pymupdf
 from PIL import Image
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, Response
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 HERE = Path(__file__).resolve().parent
@@ -161,12 +160,17 @@ async def lifespan(app):
 
 
 app = FastAPI(title='Door Review — local MVP', lifespan=lifespan)
+DEV_ORIGINS = frozenset(
+    origin.strip() for origin in os.environ.get('DOOR_MVP_DEV_ORIGINS', '').split(',')
+    if origin.strip()
+)
 
 
 @app.middleware('http')
 async def local_origin(request: Request, call_next):
     origin = request.headers.get('origin')
-    if origin and origin not in (f'http://127.0.0.1:{request.url.port or 80}', f'http://localhost:{request.url.port or 80}'):
+    local = (f'http://127.0.0.1:{request.url.port or 80}', f'http://localhost:{request.url.port or 80}')
+    if origin and origin not in local and origin not in DEV_ORIGINS:
         return Response('Origin not allowed.', status_code=403)
     return await call_next(request)
 
@@ -332,9 +336,6 @@ def export(job:str,kind:str):
             content=result.tobytes(garbage=4,deflate=True)
         return Response(content,media_type='application/pdf',headers=headers)
     raise HTTPException(404,'Choose json, csv or pdf.')
-
-
-app.mount('/',StaticFiles(directory=HERE/'static',html=True),name='interface')
 
 
 if __name__=='__main__':

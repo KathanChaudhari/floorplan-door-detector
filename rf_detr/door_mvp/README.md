@@ -1,22 +1,42 @@
 # Door Review — local MVP
 
-PDF selection → V3 detection → correction → reviewed count/export.
+React PDF selection → V3 detection → correction → reviewed count/export.
 All inference runs locally. One complete box represents one architectural opening,
 including both leaves of a double door. Counts across selected sheets do not
 automatically deduplicate repeated drawings, levels, or physical openings.
 
-## Start
+## Start — API and React in separate terminals
+
+API:
 
 ```bash
 cd /Users/kathan/Projects/floorplan-door-detector/rf_detr
-.venv/bin/python door_mvp/app.py
+DOOR_MVP_DEV_ORIGINS='http://127.0.0.1:5173,http://localhost:5173' .venv/bin/python -B door_mvp/app.py
 ```
 
-Open http://127.0.0.1:8765. Keep the terminal running; Ctrl+C stops the server.
-Use one process, without reload or additional workers.
+React:
+
+```bash
+cd /Users/kathan/Projects/floorplan-door-detector/frontend
+npm run dev
+```
+
+Open http://127.0.0.1:5173. The API runs at http://127.0.0.1:8765 and its automatic
+documentation remains at http://127.0.0.1:8765/docs. Keep both terminals running;
+Ctrl+C stops each process. Use one backend process without reload/extra workers.
+The old static interface has been removed. The backend does not serve React or
+require frontend/dist; an API-root 404 is expected.
+
+Vite uses strict port 5173 on 127.0.0.1 and proxies relative /api requests to port
+8765. The explicit, comma-separated DOOR_MVP_DEV_ORIGINS values allow the two local
+development Origin headers while retaining existing same-origin checks. Without
+that environment setting, development-origin requests are rejected. Do not use
+wildcard origins. No Python dependency or model setting changed.
+
 Keep the working RF-DETR 1.11.2 / Python 3.13 / PyTorch installation unchanged.
-`environment-current.txt` records all installed versions; `requirements-web.txt`
-lists the added web packages. `environment-before-web.txt` remains historical.
+environment-current.txt records all installed versions; requirements-web.txt
+lists the added web packages. environment-before-web.txt remains historical.
+See ../../frontend/README.md for frontend controls and checks.
 
 ## Models and configuration
 
@@ -41,15 +61,23 @@ Run setup from `rf_detr/`:
 ```
 
 This is a path/package/device check. A successful check alone is not an inference
-test. The permanent cleanup verification records include real detection with both
-copied checkpoints on MPS and API workflow checks.
+test. The cleanup verification records include real detection with both copied
+checkpoints on MPS. API contract tests use isolated temporary stores:
+
+```bash
+# From the repository root
+rf_detr/.venv/bin/python -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+These contract tests do not load models. The React migration was also exercised
+with actual V3/V4 MPS inference against a temporary store and a local PDF.
 
 ## Review
 
 1. Upload an unlocked PDF smaller than 250 MB. Sheets start unchecked.
 2. Open and select only the floor-plan sheets to detect and export. Exclude
    repeated overall plans, schedules, and repeated views where appropriate.
-3. Choose **Detect with v3**. Initial loading can take time; progress appears in
+3. Choose **Detect V3**. Initial loading can take time; progress appears in
    the UI and tile details in Terminal. Corrections are never overwritten by reruns.
 4. In Select / move mode, drag boxes or resize using corner handles.
    Shift/Cmd-click selects multiple boxes. Delete removes selected boxes.
@@ -69,7 +97,8 @@ from the dropdown. The app does not automatically delete saved reviews.
 `sessions/<document-id>/` contains `source.pdf`, rendered `page_N.png` files, raw
 model suggestions, and `job.json` with corrected boxes and review state. Keep the
 whole folder to reopen and export a review. Existing sessions were preserved during
-cleanup; cleanup tests use a separate store inside archive verification records.
+cleanup. React integration tests use a separate temporary session store;
+existing sessions are never used as the test store.
 
 - JSON contains rendered-pixel boxes, sheet dimensions/counts, source PDF hash,
   and model/checkpoint/settings provenance.
