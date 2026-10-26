@@ -1,0 +1,12 @@
+{
+  "default_model": "v3",
+  "device": "mps",
+  "dpi": 150,
+  "threshold": 0.3,
+  "nms_iou": 0.5,
+  "max_render_pixels": 40000000,
+  "models": {
+    "v3": "outputs/doors_commercial_v3_run2/checkpoint_best_ema.pth",
+    "v4": "outputs/doors_commercial_v4_trial1/checkpoint_best_ema.pth"
+  }
+}

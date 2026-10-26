@@ -1,13 +1,33 @@
+# Local Python environments and caches
 .venv/
 __pycache__/
-*.pyc
-
-models/
-data/
-outputs/
-runs/
-local_scripts/
-
-.env
+*.py[cod]
 .DS_Store
-rf_detr/*.zip
+.env
+
+# Inference/model artifacts
+*.pth
+*.ckpt
+*.pt
+*.onnx
+/rf_detr/door_mvp/weights/
+/models/
+
+# Local uploads, reviews, and generated exports
+/rf_detr/door_mvp/sessions/
+/rf_detr/door_mvp/uploads/
+/rf_detr/door_mvp/exports/
+*.[pP][dD][fF]
+/outputs/
+/rf_detr/outputs/
+runs/
+
+# Training datasets, kits, downloaded archives, and legacy local scripts
+/data/
+/rf_detr/data/
+/rf_detr/pdfs/
+/rf_detr/selected_plans/
+/rf_detr/doors_commercial_v1/
+/rf_detr/doors_commercial_v*_kit/
+/local_scripts/
+*.zip

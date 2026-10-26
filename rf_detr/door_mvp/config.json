@@ -1,0 +1,12 @@
+{
+  "default_model": "v3",
+  "device": "mps",
+  "dpi": 150,
+  "threshold": 0.3,
+  "nms_iou": 0.5,
+  "max_render_pixels": 40000000,
+  "models": {
+    "v3": "door_mvp/weights/v3.pth",
+    "v4": "door_mvp/weights/v4.pth"
+  }
+}
