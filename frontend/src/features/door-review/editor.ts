@@ -110,3 +110,5 @@ export function reviewSummary(job: Job | null, editor: EditorState) {
     canExport: selected.length > 0 && selected.length === reviewed.length && !editor.dirty,
   }
 }
+
+export type ReviewSummary = ReturnType<typeof reviewSummary>

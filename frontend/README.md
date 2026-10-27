@@ -78,6 +78,11 @@ src/styles/workspace.css
 tests/editor.test.ts
 ```
 
+`Workspace` owns the review hook and composes the header, notices, sheet toolbar,
+viewer and export footer. The header, notices, sheet toolbar, summary and export
+components receive typed data and callbacks, keeping their presentation separate
+from the review hook's API and editing state.
+
 ## Checks
 
 ```bash
