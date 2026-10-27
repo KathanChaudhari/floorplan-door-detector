@@ -1,17 +1,39 @@
 import { Button } from '../../../components/ui/Button.tsx'
 import { Icon } from '../../../components/ui/Icon.tsx'
-import type { DoorReview } from '../hooks/useDoorReview.ts'
+import type { ReviewSummary } from '../editor.ts'
 import type { ExportKind } from '../types.ts'
 
-export function ExportActions({ review: r }: { review: DoorReview }) {
-  const remaining = r.summary.selected - r.summary.reviewed
-  const status = !r.summary.selected ? 'Select sheets in the sidebar to include them.'
-    : r.editor.dirty ? 'Unsaved edits · save and confirm review to export.'
-      : remaining ? `${remaining} selected sheet${remaining === 1 ? '' : 's'} still need review.` : 'All selected sheets reviewed. Ready to export.'
-  return <footer className="export-footer">
-    <div><strong>Reviewed export</strong><span aria-live="polite">{status}</span></div>
-    <div className="export-buttons"><Icon name="download" size={16} />{(['json', 'csv', 'pdf'] as ExportKind[]).map((kind) =>
-      <Button key={kind} disabled={r.busy || !r.summary.canExport} onClick={() => void r.exportReview(kind)}>{kind === 'pdf' ? 'Marked PDF' : kind.toUpperCase()}</Button>)}
-    </div>
-  </footer>
+type Props = {
+  summary: Pick<ReviewSummary, 'selected' | 'reviewed' | 'canExport'>
+  dirty: boolean
+  busy: boolean
+  onExport: (kind: ExportKind) => Promise<void>
+}
+
+const exportOptions: { kind: ExportKind; label: string }[] = [
+  { kind: 'json', label: 'JSON' },
+  { kind: 'csv', label: 'CSV' },
+  { kind: 'pdf', label: 'Marked PDF' },
+]
+
+export function ExportActions({ summary, dirty, busy, onExport }: Props) {
+  const remaining = summary.selected - summary.reviewed
+  let status = 'All selected sheets reviewed. Ready to export.'
+  if (!summary.selected) status = 'Select sheets in the sidebar to include them.'
+  else if (dirty) status = 'Unsaved edits · save and confirm review to export.'
+  else if (remaining) status = `${remaining} selected sheet${remaining === 1 ? '' : 's'} still need review.`
+
+  return (
+    <footer className="export-footer">
+      <div><strong>Reviewed export</strong><span aria-live="polite">{status}</span></div>
+      <div className="export-buttons">
+        <Icon name="download" size={16} />
+        {exportOptions.map(({ kind, label }) => (
+          <Button key={kind} disabled={busy || !summary.canExport} onClick={() => void onExport(kind)}>
+            {label}
+          </Button>
+        ))}
+      </div>
+    </footer>
+  )
 }
