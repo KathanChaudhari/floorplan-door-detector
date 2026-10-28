@@ -35,3 +35,7 @@ runs/
 # React development dependencies and build output
 node_modules/
 /frontend/dist/
+
+# Standalone Hugging Face release and private local verification records
+/huggingface-release/
+/release-review/

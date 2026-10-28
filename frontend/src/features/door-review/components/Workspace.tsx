@@ -79,9 +79,7 @@ export function Workspace() {
           busy={busy}
           onExport={review.exportReview}
         />
-        <div className="counting-note">
-          One complete opening per box. Double-door leaves count together as one. Repeated drawings are not deduplicated across sheets.
-        </div>
+        
       </main>
     </div>
   )
