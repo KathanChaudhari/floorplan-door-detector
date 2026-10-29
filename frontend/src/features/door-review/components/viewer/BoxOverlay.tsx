@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { clientToPage, moveBoxes, rectangle, resizeBox } from '../editor.ts'
-import type { Corner } from '../editor.ts'
-import type { Dimensions, EditMode, OpeningBox, Point, ReferenceBox } from '../types.ts'
+import { clientToPage, moveBoxes, rectangle, resizeBox } from '../../editor.ts'
+import type { Corner } from '../../editor.ts'
+import type { Dimensions, EditMode, OpeningBox, Point, ReferenceBox } from '../../types.ts'
 
 type Props = {
   size: Dimensions
@@ -102,28 +102,28 @@ export function BoxOverlay({ size, boxes, reference, selected, mode, disabled, s
 
   function cancel() { drag.current = null; setPreview(null); setAddition(null) }
 
-  return <svg ref={svg} className={`box-overlay ${mode === 'add' ? 'is-adding' : ''}`} viewBox={`0 0 ${size.width} ${size.height}`}
+  return <svg ref={svg} className={`absolute inset-0 size-full touch-none overflow-visible select-none ${mode === 'add' ? 'cursor-crosshair' : ''}`} viewBox={`0 0 ${size.width} ${size.height}`}
     aria-label="Editable opening boxes" onPointerDown={down} onPointerMove={move} onPointerUp={finish} onPointerCancel={cancel} onLostPointerCapture={cancel}>
-    <g className="reference-boxes" pointerEvents="none" aria-hidden="true">
-      {reference.map((box) => <rect key={box.id} x={box.box[0]} y={box.box[1]} width={box.box[2] - box.box[0]} height={box.box[3] - box.box[1]} vectorEffect="non-scaling-stroke" />)}
+    <g pointerEvents="none" aria-hidden="true">
+      {reference.map((box) => <rect className="fill-none stroke-[#9459bc] stroke-[1.5] [stroke-dasharray:5_4]" key={box.id} x={box.box[0]} y={box.box[1]} width={box.box[2] - box.box[0]} height={box.box[3] - box.box[1]} vectorEffect="non-scaling-stroke" />)}
     </g>
     {(preview ?? boxes).map((box, index) => {
       const [x, y, x2, y2] = box.box
       const active = selected.includes(box.id)
       const corners: [Corner, number, number][] = [['nw', x, y], ['ne', x2, y], ['sw', x, y2], ['se', x2, y2]]
-      return <g key={box.id} data-box-id={box.id} className={active ? 'is-selected' : ''}>
-        <rect className="opening-box" x={x} y={y} width={x2 - x} height={y2 - y} vectorEffect="non-scaling-stroke"
+      return <g key={box.id} data-box-id={box.id}>
+        <rect className={`focus-visible:fill-[#ffc05d25] focus-visible:stroke-[#bd7b1e] focus-visible:stroke-2 focus-visible:outline-none ${mode === 'add' ? 'cursor-crosshair' : 'cursor-move'} ${active ? 'fill-[#ffc05d25] stroke-[#bd7b1e] stroke-2' : 'fill-[#236ad20b] stroke-[#236ad2] stroke-[1.5] hover:fill-[#236ad21c] hover:stroke-2'}`} x={x} y={y} width={x2 - x} height={y2 - y} vectorEffect="non-scaling-stroke"
           role="button" tabIndex={disabled ? -1 : 0} aria-label={`Opening ${index + 1}`} aria-pressed={active}
           onKeyDown={(event) => {
             if (!disabled && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onSelect([box.id]) }
           }} />
-        {active && <text x={x} y={Math.max(12 / scale, y - 5 / scale)} fontSize={11 / scale} strokeWidth={3 / scale} className="box-number" pointerEvents="none">{index + 1}</text>}
+        {active && <text x={x} y={Math.max(12 / scale, y - 5 / scale)} fontSize={11 / scale} strokeWidth={3 / scale} className="fill-[#a46c1b] stroke-white font-semibold [paint-order:stroke]" pointerEvents="none">{index + 1}</text>}
         {active && selected.length === 1 && !disabled && corners.map(([corner, cx, cy]) =>
-          <rect key={corner} className="resize-handle" data-corner={corner} x={cx - handleSize / 2} y={cy - handleSize / 2} width={handleSize} height={handleSize}
-            vectorEffect="non-scaling-stroke" style={{ cursor: corner === 'nw' || corner === 'se' ? 'nwse-resize' : 'nesw-resize' }} />)}
+          <rect key={corner} className={`fill-white stroke-[#bd7b1e] stroke-[1.5] ${corner === 'nw' || corner === 'se' ? 'cursor-nwse-resize' : 'cursor-nesw-resize'}`} data-corner={corner} x={cx - handleSize / 2} y={cy - handleSize / 2} width={handleSize} height={handleSize}
+            vectorEffect="non-scaling-stroke" />)}
       </g>
     })}
-    {addition && <rect className="addition-preview" x={rectangle(...addition)[0]} y={rectangle(...addition)[1]}
+    {addition && <rect className="fill-[#236ad214] stroke-[#236ad2] stroke-[1.5] [stroke-dasharray:4_3]" x={rectangle(...addition)[0]} y={rectangle(...addition)[1]}
       width={Math.abs(addition[1].x - addition[0].x)} height={Math.abs(addition[1].y - addition[0].y)} vectorEffect="non-scaling-stroke" pointerEvents="none" />}
   </svg>
 }

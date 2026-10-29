@@ -1,4 +1,6 @@
-import type { Dimensions, EditMode, Job, OpeningBox, Point, Rect, Sheet } from './types.ts'
+import type { Job } from '../projects/types.ts'
+import type { Sheet } from '../sheets/types.ts'
+import type { Dimensions, EditMode, OpeningBox, Point, Rect } from './types.ts'
 
 export type Matrix = { a: number; b: number; c: number; d: number; e: number; f: number }
 export type Corner = 'nw' | 'ne' | 'sw' | 'se'

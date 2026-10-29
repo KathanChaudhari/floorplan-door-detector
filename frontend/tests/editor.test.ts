@@ -1,22 +1,9 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { clientToPage, editorReducer, initialEditor, mergeBoxes, moveBoxes, rectangle, resizeBox, reviewSummary } from '../src/features/door-review/editor.ts'
-import { errorMessage } from '../src/features/door-review/api.ts'
-import type { Job, OpeningBox, Sheet } from '../src/features/door-review/types.ts'
-
-const box = (id: string, rect: OpeningBox['box']): OpeningBox => ({ id, box: rect, source: 'v3', score: .87 })
-const first = box('one', [10, 20, 30, 45])
-const second = box('two', [40, 25, 65, 55])
-const size = { width: 100, height: 80 }
-const sheet = (overrides: Partial<Sheet> = {}): Sheet => ({
-  number: 1, point_size: [72, 72], ...size, boxes: [first], revision: 4,
-  reviewed: true, detected: true, reference: null, base_model: null, ...overrides,
-})
-const job = (pages: Sheet[], selected: number[]): Job => ({
-  id: 'unit-test-fixture', name: 'Fixture.pdf', status: 'ready', message: '', dpi: 150,
-  inference_settings: { threshold: .3, nms_iou: .5 }, source_sha256: 'fixture',
-  pages, selected_pages: selected,
-})
+import { errorMessage } from '../src/lib/http.ts'
+import type { Sheet } from '../src/features/sheets/types.ts'
+import { box, first, job, second, sheet, size } from './fixtures.ts'
 
 test('SVG inverse transform keeps the same page coordinate across zoom, scrolling, and translation', () => {
   const point = { x: 25, y: 40 }

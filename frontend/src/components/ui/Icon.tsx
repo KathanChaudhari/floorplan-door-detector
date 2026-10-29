@@ -16,8 +16,11 @@ const paths = {
   layers: 'm12 3 10 5-10 5L2 8ZM2 12l10 5 10-5M2 16l10 5 10-5',
   fit: 'M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M8 8h8v8H8Z',
   minus: 'M5 12h14',
+  sidebar: 'M9 3v18M3 3h18v18H3Z',
+  chevronLeft: 'm14 7-5 5 5 5',
+  chevronRight: 'm10 7 5 5-5 5',
 } as const
 
 export function Icon({ name, size = 18 }: { name: keyof typeof paths; size?: number }) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>
+  return <svg className="shrink-0" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>
 }

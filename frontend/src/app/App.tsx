@@ -1,6 +1,5 @@
-import { Workspace } from '../features/door-review/components/Workspace.tsx'
-import '../styles/workspace.css'
+import { DashboardPage } from '../pages/dashboard/DashboardPage.tsx'
 
 export default function App() {
-  return <Workspace />
+  return <DashboardPage />
 }

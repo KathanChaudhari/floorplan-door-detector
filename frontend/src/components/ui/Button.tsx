@@ -1,7 +1,9 @@
 import type { ButtonHTMLAttributes } from 'react'
+import { buttonStyles } from './buttonStyles.ts'
+import type { ButtonStyleOptions } from './buttonStyles.ts'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'default' | 'primary' | 'ghost' | 'danger' }
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & ButtonStyleOptions
 
-export function Button({ variant = 'default', className = '', children, ...props }: Props) {
-  return <button type="button" className={`button button--${variant} ${className}`} {...props}>{children}</button>
+export function Button({ variant, size, className, children, ...props }: Props) {
+  return <button type="button" className={buttonStyles({ variant, size, className })} {...props}>{children}</button>
 }

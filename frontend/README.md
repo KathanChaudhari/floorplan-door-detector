@@ -1,87 +1,97 @@
 # Door Review frontend
 
-A desktop drawing workspace built with the existing React 19 + TypeScript + Vite
-scaffold and its installed dependency versions. No router, global-state library,
-CSS framework, or new runtime/test dependency was added.
+One dashboard built with React, TypeScript, Vite and Tailwind CSS. There is no
+router, session context/provider or shared layout layer.
 
 ## Run
 
-Start the API in another terminal:
+Start the existing API in another terminal:
 
 ```bash
 cd /Users/kathan/Projects/floorplan-door-detector/rf_detr
 DOOR_MVP_DEV_ORIGINS='http://127.0.0.1:5173,http://localhost:5173' .venv/bin/python -B door_mvp/app.py
 ```
 
-Start React:
+Start the frontend:
 
 ```bash
 cd /Users/kathan/Projects/floorplan-door-detector/frontend
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. Vite binds that exact address/port and fails if the port
-is already in use. All browser API URLs are relative `/api` URLs, proxied to
-http://127.0.0.1:8765. Explicit backend development origins are necessary because
-the browser Origin header is preserved through the proxy. API docs stay available
-at http://127.0.0.1:8765/docs. The backend does not serve this app or its build.
-`npm ci` is only needed when installing this frontend on a fresh checkout.
+Vite serves http://127.0.0.1:5173 and proxies `/api` to
+http://127.0.0.1:8765. The backend does not serve the frontend build. Use `npm ci`
+when installing dependencies on a fresh checkout.
 
-## Review workflow
+## Dashboard
 
-1. Upload an unlocked PDF up to 250 MB, or reopen a saved document. Actual upload
-   progress is shown; parsing/rendering and detection have distinct busy feedback.
-2. Open sheets to inspect them. Check only the enlarged floor-plan sheets to
-   process/export. Uploading or opening a sheet never selects it automatically.
-3. Run **Detect V3**. The frontend polls the existing background job until it is
-   ready or reports an error. Processed/corrected sheets are not overwritten.
-4. Select boxes and drag to move; use corner handles to resize. Shift/Cmd-click
-   selects multiple. Add opening draws a new box; Delete removes; Merge takes the
-   union of selected boxes; Undo reverses edits. Merge only leaves/duplicates of
-   the same doorway. Double doors count as one complete opening.
-5. Save changes, then **Confirm reviewed** after checking the whole selected sheet.
-   Any edit or undo clears review. A reviewed zero-opening sheet is valid.
-6. Export JSON, CSV or marked PDF once every selected sheet is saved and reviewed.
-   The summary counts only selected reviewed sheets. Purple V4 reference boxes
-   never enter the editable state, reviewed count, or exports.
+- The header contains only the app icon.
+- Upload a PDF in the canvas or drawer. A successful upload opens its sheet drawer.
+  Previously saved files can be reopened from the drawer's file selector.
+- Click the drawer edge or toolbar toggle to open/close it. Drag the edge to resize;
+  dragging almost fully left closes it. Drag right from the closed edge to reopen.
+  The handle also supports Enter/Space and Left/Right arrow keys. Escape closes
+  the drawer while focus is inside it. On narrow screens it overlays the canvas.
+- Check sheets to include them in detection and export. Opening a sheet does not
+  select it. Compact text in the drawer shows selected sheets, reviewed sheets and
+  reviewed opening counts.
+- Run **Detect V3**, then correct boxes in the viewer. Selection, movement, corner
+  resizing, adding, deleting, merging and undo retain the existing behavior. V4 is
+  an optional separate reference overlay, toggled in the drawer.
+- Save edits with the top save icon or Cmd/Ctrl S. Confirm the active sheet using
+  **Confirm reviewed** in the drawer. Every edit/undo clears reviewed status.
+- Choose marked PDF, CSV or JSON at the top and use the download icon. Export is
+  enabled only after every selected sheet is saved and reviewed. Reviewed zero
+  openings is valid. V4 reference boxes do not enter reviewed counts or exports.
 
-V4 reference detection is optional. Its dashed overlay can be shown/hidden. Zoom is
-relative to fit; fit adjusts to the available viewport, with scrolling when zoomed.
-Pointer coordinates use the inverse SVG screen transform and the rendered page's
-actual dimensions. Zoom, scroll and viewport resizing do not alter stored pixels.
+The canvas supports fit/zoom and scrolling. Delete/Backspace, Cmd/Ctrl Z,
+Cmd/Ctrl S and Escape work when the viewer is focused. Box coordinates use the
+inverse SVG screen transform, so zoom/scroll do not alter stored coordinates.
 
-The viewer supports Delete/Backspace, Cmd/Ctrl Z, Cmd/Ctrl S and Escape when focused.
-Opening boxes can also be selected with Enter/Space when keyboard-focused.
-
-## Saving and failure states
-
-Page/session switches and new uploads first save existing edits. A failed save
-blocks navigation and retains the draft and original revision. Conflict responses
-are displayed; revisions are never silently advanced. Use **Discard & reload**
-only after its explicit confirmation if you want to abandon a draft. Failed reloads
-still retain local edits. Browser navigation warns about unsaved changes.
-
-Controls that conflict with saves/detection are disabled. Polling retries connection
-failures, aborts on cleanup, and ignores late replies. Reopening a saved running job
-resumes polling. Completed backend results remain on disk if the browser closes.
+Sheet/file switches and new uploads save the current draft first. Save failures
+retain the draft and its revision and block switching. The browser warns before
+closing/refreshing while edits or operations are pending. Failed actions appear
+as compact inline feedback; discarding a draft still requires confirmation.
+Detection runs on the existing backend and uses one cancellable polling loop.
+Closing or resizing the drawer does not reset the editor or stop polling.
 
 ## Source
 
 ```text
-src/app/App.tsx
-src/features/door-review/
-  api.ts, types.ts, editor.ts
-  hooks/useDoorReview.ts
-  components/ (workspace, documents/sheets, tools, SVG editor, summary, exports)
-src/components/ui/ (Button, Icon)
-src/styles/workspace.css
-tests/editor.test.ts
+src/
+  app/App.tsx
+  pages/dashboard/
+    DashboardPage.tsx
+    SheetDrawer.tsx
+    drawer.ts
+  features/
+    projects/
+      api.ts, types.ts
+      hooks/useProjects.ts
+      components/UploadPanel.tsx
+    sheets/
+      api.ts, types.ts
+    door-review/
+      api.ts, types.ts, editor.ts, pollDetection.ts
+      hooks/useDoorReview.ts
+      components/review/
+        DetectionControls.tsx, DetectionToolbar.tsx, ExportActions.tsx
+      components/viewer/
+        PlanViewer.tsx, BoxOverlay.tsx, ZoomControls.tsx
+  components/ui/
+    Button.tsx, buttonStyles.ts, Icon.tsx, Spinner.tsx
+  lib/http.ts
+  styles/tailwind.css
+  main.tsx
+tests/
+  drawer.test.ts, editor.test.ts, polling.test.ts, workflow.test.ts
+  fixtures.ts
 ```
 
-`Workspace` owns the review hook and composes the header, notices, sheet toolbar,
-viewer and export footer. The header, notices, sheet toolbar, summary and export
-components receive typed data and callbacks, keeping their presentation separate
-from the review hook's API and editing state.
+`App` renders `DashboardPage` directly. The dashboard owns one `useDoorReview`
+controller, its zoom state and drawer visibility. `SheetDrawer` is a component
+colocated with that page and owns its drag/width state. API functions, editor
+operations, HTTP handling and reusable controls remain separate small modules.
 
 ## Checks
 
@@ -92,14 +102,9 @@ npm run typecheck
 npm run build
 ```
 
-Tests use the built-in Node test runner with TypeScript stripping (the installed
-Node 24 supports it). They exercise coordinate transforms under zoom/scroll,
-boundary clamping, metadata/ID preservation, merging, edit/undo review transitions,
-late-response protection and V4/count isolation. These are fixture-based unit
-checks, not simulated successful model runs. Backend contract tests live in
-`../tests/test_api.py` and use synthetic PDFs in isolated temporary stores.
-
-The production build goes to `dist/` and is ignored by Git. `npm run preview` can
-inspect build output but is not the documented API-proxied development workflow.
-The app remains a local single-user assisted-review MVP; sheets/door identities and
-repeated drawings still require human review.
+Tests use the built-in Node test runner with TypeScript stripping. They cover
+editor geometry/revisions, review/export rules, V4 isolation, polling cleanup,
+drawer sizing/snap behavior and the API/reducer workflow using mocked HTTP.
+They do not open a browser, upload a real PDF or run inference. Live pointer/touch
+interactions and the real upload/detection/download flow remain manual checks.
+The backend, saved files and model configuration are unchanged.
