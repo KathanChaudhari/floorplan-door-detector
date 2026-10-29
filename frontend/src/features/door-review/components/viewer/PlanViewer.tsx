@@ -18,6 +18,7 @@ type ViewerEditing = {
   onUndo: () => void
   onSave: () => Promise<unknown>
   onRemove: () => void
+  onInteractionChange: (active: boolean) => void
 }
 
 type Props = {
@@ -74,7 +75,8 @@ export function PlanViewer({ jobId, dpi, page, busy, imageReady, zoom, onZoomCha
           onLoad={(event) => { setLoading(false); onReady({ width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight }) }}
           onError={() => { setLoading(false); setFailure(true) }} />
         {editing && !loading && imageReady && <BoxOverlay ref={overlay} size={{ width, height }} boxes={page.boxes} reference={showReference ? page.reference?.boxes ?? [] : []}
-          selected={editing.selected} mode={editing.mode} disabled={busy} scale={scale} onSelect={editing.onSelect} onChange={editing.onChange} focusViewer={() => viewport.current?.focus({ preventScroll: true })} />}
+          selected={editing.selected} mode={editing.mode} disabled={busy} scale={scale} onSelect={editing.onSelect} onChange={editing.onChange}
+          onInteractionChange={editing.onInteractionChange} focusViewer={() => viewport.current?.focus({ preventScroll: true })} />}
       </div>
     </div>}
     </div>

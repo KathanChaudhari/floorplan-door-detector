@@ -16,6 +16,7 @@ type Props = {
   onSelect: (ids: string[]) => void
   onChange: (boxes: OpeningBox[], selected?: string[]) => void
   focusViewer: () => void
+  onInteractionChange: (active: boolean) => void
 }
 export type BoxOverlayHandle = { cancel: () => void }
 type Drag = {
@@ -29,7 +30,7 @@ type Drag = {
   changed: boolean
 }
 
-export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabled, scale, onSelect, onChange, focusViewer }: Props) {
+export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabled, scale, onSelect, onChange, focusViewer, onInteractionChange }: Props) {
   const svg = useRef<SVGSVGElement>(null)
   const drag = useRef<Drag | null>(null)
   const [preview, setPreview] = useState<OpeningBox[] | null>(null)
@@ -65,6 +66,7 @@ export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabl
       onSelect(ids)
       drag.current = { kind, id, corner: corner ?? undefined, start: at, end: at, boxes, ids, changed: false }
     }
+    onInteractionChange(true)
     event.currentTarget.setPointerCapture(event.pointerId)
   }
 
@@ -101,7 +103,12 @@ export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabl
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
   }
 
-  function cancel() { drag.current = null; setPreview(null); setAddition(null) }
+  function cancel() {
+    drag.current = null
+    setPreview(null)
+    setAddition(null)
+    onInteractionChange(false)
+  }
 
   return <svg ref={svg} className={`absolute inset-0 size-full touch-none overflow-visible select-none ${mode === 'add' ? 'cursor-crosshair' : ''}`} viewBox={`0 0 ${size.width} ${size.height}`}
     aria-label="Editable opening boxes" onPointerDown={down} onPointerMove={move} onPointerUp={finish} onPointerCancel={cancel} onLostPointerCapture={cancel}>

@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { Icon } from '../../components/ui/Icon.tsx'
-import type { ReviewSummary } from '../../features/door-review/editor.ts'
 import { UploadPanel } from '../../features/projects/components/UploadPanel.tsx'
 import type { SessionSummary } from '../../features/projects/types.ts'
 import type { Sheet } from '../../features/sheets/types.ts'
@@ -12,11 +11,9 @@ type Props = {
   onOpenChange: (open: boolean) => void
   documents: SessionSummary[]
   documentId?: string
-  documentName?: string
   pages: Sheet[]
   selectedPages: number[]
   page: Sheet | null
-  summary: Pick<ReviewSummary, 'selected' | 'reviewed' | 'openings'>
   dirty: boolean
   busy: boolean
   uploadDisabled: boolean
@@ -30,7 +27,7 @@ type Props = {
 
 type Drag = { x: number; width: number; viewport: number }
 
-export function SheetDrawer({ open, onOpenChange, documents, documentId, documentName, pages, selectedPages, page, summary,
+export function SheetDrawer({ open, onOpenChange, documents, documentId, pages, selectedPages, page,
   dirty, busy, uploadDisabled, showReference, onUpload, onOpenDocument, onOpenPage, onSelectPage, onShowReferenceChange }: Props) {
   const [width, setWidth] = useState(DEFAULT_DRAWER_WIDTH)
   const [previewWidth, setPreviewWidth] = useState<number | null>(null)
@@ -87,12 +84,6 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, documen
               <option value="">Open saved file…</option>
               {documents.map((document) => <option key={document.id} value={document.id}>{document.name}</option>)}
             </select>}
-            {documentName && <p className="truncate text-[11px] text-muted" title={documentName}>{documentName}</p>}
-            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-muted" aria-label="Review counts" aria-live="polite">
-              <span>{summary.selected} selected</span>
-              <span>{summary.reviewed} / {summary.selected} reviewed</span>
-              <span>{summary.openings} openings</span>
-            </div>
           </div>
           <ul className="min-h-0 flex-1 space-y-1 overflow-y-auto p-2">
             {pages.map((sheet) => <li key={sheet.number} className={`flex items-center gap-2 rounded-md border px-2 py-1 ${sheet.number === page?.number ? 'border-[#c4d9cc] bg-[#edf4ef]' : 'border-transparent'}`}>
@@ -101,19 +92,18 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, documen
               <button type="button" className="flex min-w-0 flex-1 items-center gap-2 py-2 text-left disabled:opacity-60" disabled={busy}
                 aria-current={sheet.number === page?.number ? 'page' : undefined} onClick={() => void onOpenPage(sheet.number)}>
                 <Icon name="file" size={18} />
-                <span className="flex-1 text-[11px]">Sheet {sheet.number}<small className="mt-1 block text-[10px] text-muted">{sheet.boxes.length} openings</small></span>
+                <span className="flex-1 text-[11px]">Sheet {sheet.number}{sheet.detected && <small className="mt-1 block text-[10px] text-muted">{sheet.boxes.length} openings</small>}</span>
                 {dirty && sheet.number === page?.number && <span className="size-[5px] rounded-full bg-[#bc8b32]" title="Unsaved edits" />}
                 {sheet.reviewed && <span className="text-accent" title="Reviewed"><Icon name="check" size={14} /><span className="sr-only">Reviewed</span></span>}
               </button>
             </li>)}
             {!pages.length && <li className="p-3 text-[11px] text-muted">Upload a PDF to see its sheets.</li>}
           </ul>
-          {page && <div className="space-y-3 border-t border-border p-3">
-            <div className="flex items-center justify-between text-[11px]"><span>Sheet {page.number}</span><span className="text-muted">{page.boxes.length} openings</span></div>
-            {page.reference && <label className="flex items-center gap-2 text-[11px] text-[#896aaf]">
+          {page?.reference && <div className="border-t border-border p-3">
+            <label className="flex items-center gap-2 text-[11px] text-[#896aaf]">
               <input type="checkbox" className="size-[13px] accent-[#8b5ab7]" checked={showReference} onChange={(event) => onShowReferenceChange(event.target.checked)} />
               Show V4 · {page.reference.boxes.length}
-            </label>}
+            </label>
           </div>}
         </aside>
       </div>

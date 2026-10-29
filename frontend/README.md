@@ -33,15 +33,18 @@ when installing dependencies on a fresh checkout.
   border supports Left/Right arrow keys, and Escape closes the drawer. On narrow
   screens the drawer overlays the canvas.
 - Check sheets to include them in detection/export. Opening a sheet does not
-  select it. The drawer shows compact selected/reviewed/opening counts.
-- Tool buttons are small icons with hover titles. Run V3 detection, or optional V4
-  reference detection, on selected sheets. Toggle the V4 overlay in the drawer.
+  select it. Per-sheet opening counts appear only after V3 detection completes.
+  The selected file name is shown in the file selector and main toolbar.
+- V3 model and V4 reference buttons include their names and icons. The other
+  editing tools remain small icons with hover titles. Toggle V4 in the drawer.
 - Click an existing opening to select it, then drag it or its corner handles to
   move/resize. Drag empty sheet space to create an opening without switching
   tools. Shift/Cmd-click selects multiple. The select/draw icons remain available
   as shortcuts. Delete, merge and undo retain their existing behavior.
-- Save edits with the top save icon or Cmd/Ctrl S. Use **Confirm review** in the
-  main toolbar. Every edit/undo clears reviewed status.
+- Edits save automatically after a 600 ms pause. Drawing/resizing and pending
+  operations pause autosave; failed saves retain the draft and offer a retry.
+  Use **Confirm review** in the main toolbar. Every edit/undo clears reviewed
+  status; automatic saving does not confirm a review.
 - Choose marked PDF, CSV or JSON at the top and use the download icon. Export is
   enabled only after every selected sheet is saved and reviewed. Reviewed zero
   openings is valid. V4 reference boxes do not enter reviewed counts or exports.
@@ -81,7 +84,7 @@ src/
     sheets/
       api.ts, types.ts
     door-review/
-      api.ts, types.ts, editor.ts, pollDetection.ts
+      api.ts, types.ts, editor.ts, autosave.ts, pollDetection.ts
       hooks/useDoorReview.ts
       components/review/
         DetectionControls.tsx, DetectionToolbar.tsx, ExportActions.tsx
@@ -94,7 +97,7 @@ src/
   styles/tailwind.css
   main.tsx
 tests/
-  dashboard.test.ts, drawer.test.ts, editor.test.ts
+  dashboard.test.ts, drawer.test.ts, editor.test.ts, autosave.test.ts
   viewer.test.ts, polling.test.ts, workflow.test.ts
   fixtures.ts
 ```
@@ -115,7 +118,7 @@ npm run build
 
 Tests use the built-in Node test runner with TypeScript stripping. They cover
 editor geometry/revisions, review/export rules, V4 isolation, polling cleanup,
-drawer resizing, wheel/pinch zoom math, pointer anchoring, automatic editing
+drawer resizing, autosave timing/cancellation, wheel/pinch zoom math, pointer anchoring, automatic editing
 behavior and the API/reducer workflow using mocked HTTP. The first-render test
 uses the installed Vite compiler and React server rendering, with HTTP/WebSocket
 listening disabled, to check the initial dashboard and toolbar placement.

@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
+import { useCallback, useEffect, useEffectEvent, useReducer, useRef, useState } from 'react'
 import { ApiError } from '../../../lib/http.ts'
 import { projectsApi } from '../../projects/api.ts'
 import { useProjects } from '../../projects/hooks/useProjects.ts'
 import type { Job } from '../../projects/types.ts'
 import { sheetsApi } from '../../sheets/api.ts'
 import { reviewApi } from '../api.ts'
+import { scheduleAutosave } from '../autosave.ts'
 import { editorReducer, initialEditor, mergeBoxes, reviewSummary } from '../editor.ts'
 import { isDetecting, pollDetection } from '../pollDetection.ts'
 import type { Dimensions, EditMode, ExportKind, ModelKey, OpeningBox } from '../types.ts'
@@ -23,11 +24,25 @@ export function useDoorReview() {
   const [imageReady, setImageReady] = useState(false)
   const [viewVersion, setViewVersion] = useState(0)
   const [showReference, setShowReference] = useState(false)
+  const [interacting, setInteracting] = useState(false)
+  const interaction = useRef(false)
+  const pendingAutosave = useRef<(() => void) | null>(null)
   const operation = useRef(false)
   const sessionVersion = useRef(0)
   const uploadController = useRef<AbortController | null>(null)
   const busy = phase !== null || isDetecting(job) || connecting
   const summary = reviewSummary(job, editor)
+
+  const autosave = useEffectEvent(() => { void save() })
+  useEffect(() => {
+    if (!editor.dirty || busy || interacting || error) return
+    const cancel = scheduleAutosave(autosave, () => !operation.current && !interaction.current)
+    pendingAutosave.current = cancel
+    return () => {
+      cancel()
+      if (pendingAutosave.current === cancel) pendingAutosave.current = null
+    }
+  }, [editor.dirty, editor.page?.boxes, busy, interacting, error])
 
   useEffect(() => () => uploadController.current?.abort(), [])
 
@@ -58,7 +73,8 @@ export function useDoorReview() {
   }, [editor.dirty, phase])
 
   async function perform(label: string, action: () => Promise<void>, allowDetection = false): Promise<boolean> {
-    if (operation.current || (!allowDetection && (isDetecting(job) || connecting))) return false
+    if (operation.current || interaction.current || (!allowDetection && (isDetecting(job) || connecting))) return false
+    cancelAutosave()
     operation.current = true
     setPhase(label)
     setError(null)
@@ -67,7 +83,7 @@ export function useDoorReview() {
       return true
     } catch (cause) {
       const conflict = cause instanceof ApiError && cause.status === 409
-      setError(message(cause) + (conflict && editor.dirty ? ' Your local edits have been kept. Save again or explicitly discard and reload.' : ''))
+      setError(message(cause) + (conflict && editor.dirty ? ' Your local edits have been kept. Retry saving or explicitly discard and reload.' : ''))
       return false
     } finally {
       operation.current = false
@@ -104,6 +120,21 @@ export function useDoorReview() {
       await saveCurrent()
       adopt(await projectsApi.job(id))
     }, true)
+  }
+
+  async function save() {
+    return perform('Saving changes…', () => saveCurrent())
+  }
+
+  function cancelAutosave() {
+    pendingAutosave.current?.()
+    pendingAutosave.current = null
+  }
+
+  function interact(active: boolean) {
+    if (active) cancelAutosave()
+    interaction.current = active
+    setInteracting(active)
   }
 
   async function upload(file: File): Promise<string | null> {
@@ -165,7 +196,10 @@ export function useDoorReview() {
   }
 
   function change(boxes: OpeningBox[], selected?: string[]) {
-    if (!operation.current && !isDetecting(job) && imageReady) dispatch({ type: 'change', boxes, selected })
+    if (!operation.current && !isDetecting(job) && imageReady) {
+      cancelAutosave()
+      dispatch({ type: 'change', boxes, selected })
+    }
   }
 
   function select(ids: string[]) {
@@ -187,7 +221,10 @@ export function useDoorReview() {
   }
 
   function undo() {
-    if (!operation.current && !isDetecting(job) && imageReady) dispatch({ type: 'undo' })
+    if (!operation.current && !isDetecting(job) && imageReady && editor.history.length > 0) {
+      cancelAutosave()
+      dispatch({ type: 'undo' })
+    }
   }
 
   async function reload() {
@@ -226,8 +263,7 @@ export function useDoorReview() {
     canDetectV3: !!config?.available.v3 && pendingV3.length > 0 && !blockedV3,
     blockedV3,
     canDetectV4: !!config?.available.v4 && summary.pages.some((page) => job?.selected_pages.includes(page.number) && !page.reference),
-    upload, openDocument, openPage, selectPage, detect, change, select, mode, remove, merge, undo, reload, exportReview, ready,
-    save: () => perform('Saving changes…', () => saveCurrent()),
+    upload, openDocument, openPage, selectPage, detect, change, select, mode, remove, merge, undo, reload, exportReview, ready, save, interact,
     review: () => perform('Confirming review…', () => saveCurrent(!editor.page?.reviewed)),
     reconnect: projects.reconnect,
     dismissError: () => { setError(null); projects.dismissError() },
