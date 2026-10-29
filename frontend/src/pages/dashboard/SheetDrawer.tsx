@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { Button } from '../../components/ui/Button.tsx'
 import { Icon } from '../../components/ui/Icon.tsx'
 import type { ReviewSummary } from '../../features/door-review/editor.ts'
 import { UploadPanel } from '../../features/projects/components/UploadPanel.tsx'
 import type { SessionSummary } from '../../features/projects/types.ts'
 import type { Sheet } from '../../features/sheets/types.ts'
-import { DEFAULT_DRAWER_WIDTH, drawerWidth, settleDrawerWidth } from './drawer.ts'
+import { DEFAULT_DRAWER_WIDTH, resizeDrawerWidth } from './drawer.ts'
 
 type Props = {
   open: boolean
@@ -21,61 +20,50 @@ type Props = {
   dirty: boolean
   busy: boolean
   uploadDisabled: boolean
-  imageReady: boolean
   showReference: boolean
   onUpload: (file: File) => Promise<unknown>
   onOpenDocument: (id: string) => Promise<unknown>
   onOpenPage: (number: number) => Promise<unknown>
   onSelectPage: (number: number, checked: boolean) => Promise<unknown>
-  onReview: () => Promise<unknown>
   onShowReferenceChange: (show: boolean) => void
 }
 
-type Drag = { x: number; width: number; viewport: number; moved: boolean }
+type Drag = { x: number; width: number; viewport: number }
 
 export function SheetDrawer({ open, onOpenChange, documents, documentId, documentName, pages, selectedPages, page, summary,
-  dirty, busy, uploadDisabled, imageReady, showReference, onUpload, onOpenDocument, onOpenPage, onSelectPage, onReview, onShowReferenceChange }: Props) {
+  dirty, busy, uploadDisabled, showReference, onUpload, onOpenDocument, onOpenPage, onSelectPage, onShowReferenceChange }: Props) {
   const [width, setWidth] = useState(DEFAULT_DRAWER_WIDTH)
   const [previewWidth, setPreviewWidth] = useState<number | null>(null)
   const drawer = useRef<HTMLDivElement>(null)
-  const handle = useRef<HTMLButtonElement>(null)
   const drag = useRef<Drag | null>(null)
-  const visible = open || previewWidth !== null
 
   function close() {
     onOpenChange(false)
-    handle.current?.focus()
+    document.getElementById('drawer-toggle')?.focus()
   }
 
-  function start(event: ReactPointerEvent<HTMLButtonElement>) {
+  function start(event: ReactPointerEvent<HTMLDivElement>) {
     if (event.button !== 0) return
     event.preventDefault()
     const currentWidth = drawer.current?.getBoundingClientRect().width ?? 0
-    drag.current = { x: event.clientX, width: currentWidth, viewport: window.innerWidth, moved: false }
+    drag.current = { x: event.clientX, width: currentWidth, viewport: window.innerWidth }
     setPreviewWidth(currentWidth)
     event.currentTarget.setPointerCapture(event.pointerId)
   }
 
-  function move(event: ReactPointerEvent<HTMLButtonElement>) {
+  function move(event: ReactPointerEvent<HTMLDivElement>) {
     const current = drag.current
     if (!current) return
     const delta = event.clientX - current.x
-    current.moved ||= Math.abs(delta) > 4
-    setPreviewWidth(drawerWidth(current.width, delta, current.viewport))
+    setPreviewWidth(resizeDrawerWidth(current.width, delta, current.viewport))
   }
 
-  function finish(event: ReactPointerEvent<HTMLButtonElement>) {
+  function finish(event: ReactPointerEvent<HTMLDivElement>) {
     const current = drag.current
     if (!current) return
     drag.current = null
     const delta = event.clientX - current.x
-    if (current.moved || Math.abs(delta) > 4) {
-      const nextWidth = settleDrawerWidth(drawerWidth(current.width, delta, current.viewport), current.viewport)
-      if (nextWidth) setWidth(nextWidth)
-      onOpenChange(nextWidth > 0)
-    } else {
-      onOpenChange(!open)
-    }
+    setWidth(resizeDrawerWidth(current.width, delta, current.viewport))
     setPreviewWidth(null)
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
   }
@@ -85,19 +73,14 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, documen
     setPreviewWidth(null)
   }
 
-  return <>
-    {open && <button type="button" aria-label="Close sheet drawer" className="absolute inset-0 z-10 bg-black/10 min-[768px]:hidden" onClick={close} />}
-    <div ref={drawer} className={`absolute inset-y-0 left-0 z-20 max-w-[calc(100vw-48px)] shrink-0 bg-[#f8faf8] min-[768px]:relative ${previewWidth === null ? 'transition-[width] duration-200 motion-reduce:transition-none' : 'transition-none'}`}
-      style={{ width: previewWidth ?? (open ? width : 0) }}>
-      <div className="h-full overflow-hidden" inert={!visible}>
+  return <div ref={drawer} className={`absolute inset-y-0 left-0 z-20 max-w-[calc(100vw-48px)] shrink-0 bg-[#f8faf8] min-[768px]:relative ${previewWidth === null ? 'transition-[width] duration-200 motion-reduce:transition-none' : 'transition-none'}`}
+      style={{ width: open ? previewWidth ?? width : 0 }}>
+      <div className="h-full overflow-hidden" inert={!open}>
         <aside id="sheet-drawer" aria-label="Files and sheets" className="flex h-full min-w-[220px] flex-col border-r border-border" onKeyDown={(event) => {
           if (event.key === 'Escape') { event.stopPropagation(); close() }
         }}>
           <div className="space-y-3 border-b border-border p-3">
-            <div className="flex items-center justify-between gap-2">
-              <h2 className="text-[12px] font-semibold">Sheets</h2>
-              <Button variant="ghost" size="icon" onClick={close} aria-label="Close sheets"><Icon name="close" size={14} /></Button>
-            </div>
+            <h2 className="text-[12px] font-semibold">Files & sheets</h2>
             <UploadPanel compact disabled={uploadDisabled} upload={onUpload} />
             {documents.length > 0 && <select className="h-8 w-full min-w-0 rounded-md border border-border bg-white px-2 text-[11px]"
               aria-label="Open saved file" value={documentId ?? ''} disabled={busy} onChange={(event) => void onOpenDocument(event.target.value)}>
@@ -131,28 +114,17 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, documen
               <input type="checkbox" className="size-[13px] accent-[#8b5ab7]" checked={showReference} onChange={(event) => onShowReferenceChange(event.target.checked)} />
               Show V4 · {page.reference.boxes.length}
             </label>}
-            <Button className="w-full" variant={page.reviewed ? 'default' : 'primary'} disabled={busy || !imageReady} onClick={() => void onReview()}>
-              <Icon name="check" size={15} />{page.reviewed ? 'Reopen review' : 'Confirm reviewed'}
-            </Button>
           </div>}
         </aside>
       </div>
-      <button ref={handle} type="button" className="absolute top-1/2 -right-5 flex h-16 w-5 -translate-y-1/2 touch-none cursor-ew-resize! items-center justify-center rounded-r-md border border-l-0 border-border bg-white text-muted shadow-sm select-none"
-        aria-label={open ? 'Close sheet drawer' : 'Open sheet drawer'} aria-expanded={open} aria-controls="sheet-drawer"
-        title="Click to toggle · drag to resize, close or open"
-        onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={cancel} onLostPointerCapture={cancel}
-        onClick={(event) => { if (event.detail === 0) onOpenChange(!open) }}
+      {open && <div role="separator" tabIndex={0} aria-orientation="vertical" aria-label="Resize sheet drawer"
+        aria-valuemin={220} aria-valuemax={420} aria-valuenow={Math.round(previewWidth ?? width)}
+        className="absolute inset-y-0 -right-1 w-2 touch-none cursor-col-resize before:absolute before:inset-y-0 before:left-1/2 before:w-px before:bg-border hover:before:bg-accent focus-visible:outline-2 focus-visible:outline-accent"
+        title="Drag the border to resize" onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={cancel} onLostPointerCapture={cancel}
         onKeyDown={(event) => {
           if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
           event.preventDefault()
-          const next = event.key === 'ArrowRight'
-            ? drawerWidth(open ? width : 220, 32, window.innerWidth)
-            : open && width > 220 ? Math.max(220, width - 32) : 0
-          if (next) setWidth(next)
-          onOpenChange(next > 0)
-        }}>
-        <Icon name={open ? 'chevronLeft' : 'chevronRight'} size={14} />
-      </button>
+          setWidth(resizeDrawerWidth(width, event.key === 'ArrowRight' ? 24 : -24, window.innerWidth))
+        }} />}
     </div>
-  </>
 }

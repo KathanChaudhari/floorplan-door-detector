@@ -17,8 +17,8 @@ const paths = {
   fit: 'M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M8 8h8v8H8Z',
   minus: 'M5 12h14',
   sidebar: 'M9 3v18M3 3h18v18H3Z',
-  chevronLeft: 'm14 7-5 5 5 5',
-  chevronRight: 'm10 7 5 5-5 5',
+  fullscreen: 'M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5',
+  restore: 'M3 8h5V3M21 8h-5V3M8 21v-5H3M16 21v-5h5',
 } as const
 
 export function Icon({ name, size = 18 }: { name: keyof typeof paths; size?: number }) {

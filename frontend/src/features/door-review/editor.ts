@@ -4,6 +4,9 @@ import type { Dimensions, EditMode, OpeningBox, Point, Rect } from './types.ts'
 
 export type Matrix = { a: number; b: number; c: number; d: number; e: number; f: number }
 export type Corner = 'nw' | 'ne' | 'sw' | 'se'
+export function openingDragKind(id: string | undefined, corner: Corner | null): 'add' | 'move' | 'resize' {
+  return id ? corner ? 'resize' : 'move' : 'add'
+}
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value))
 
 // The matrix is the inverse of SVG.getScreenCTM(), including zoom and scroll.

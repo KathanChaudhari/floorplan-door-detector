@@ -1,5 +1,5 @@
 type ButtonVariant = 'default' | 'primary' | 'ghost' | 'danger'
-type ButtonSize = 'default' | 'icon' | 'upload'
+type ButtonSize = 'default' | 'icon' | 'upload' | 'tool'
 
 export type ButtonStyleOptions = {
   variant?: ButtonVariant
@@ -17,6 +17,7 @@ const variants: Record<ButtonVariant, string> = {
 const sizes: Record<ButtonSize, string> = {
   default: 'min-h-[34px] px-[11px] py-[7px]',
   icon: 'min-h-[34px] w-8 min-w-8 p-[7px]',
+  tool: 'size-7 min-w-7 p-1',
   upload: 'min-h-[37px] px-[18px] py-[7px]',
 }
 

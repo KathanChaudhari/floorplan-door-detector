@@ -1,7 +1,6 @@
 import { Button } from '../../../../components/ui/Button.tsx'
 import { Icon } from '../../../../components/ui/Icon.tsx'
 import type { EditMode } from '../../types.ts'
-import { ZoomControls } from '../viewer/ZoomControls.tsx'
 import { DetectionControls } from './DetectionControls.tsx'
 import type { DetectionControlsProps } from './DetectionControls.tsx'
 
@@ -10,25 +9,27 @@ type Props = DetectionControlsProps & {
   mode: EditMode
   selectedCount: number
   canUndo: boolean
-  zoom: number
-  onZoomChange: (value: number) => void
+  reviewed: boolean
+  onReview: () => Promise<unknown>
   onModeChange: (mode: EditMode) => void
   onMerge: () => void
   onRemove: () => void
   onUndo: () => void
 }
 
-export function DetectionToolbar({ busy, imageReady, mode, selectedCount, canUndo, zoom, onZoomChange, onModeChange, onMerge, onRemove, onUndo, ...detection }: Props) {
+export function DetectionToolbar({ busy, imageReady, mode, selectedCount, canUndo, reviewed, onReview, onModeChange, onMerge, onRemove, onUndo, ...detection }: Props) {
   const disabled = busy || !imageReady
-  return <div className="flex flex-wrap items-center gap-2.5 border-b border-border bg-white px-[18px] py-[11px] max-[1250px]:gap-2 max-[1250px]:px-3.5 max-[1250px]:[&_button]:gap-[5px] max-[1250px]:[&_button]:px-[7px] max-[1250px]:[&_button]:text-[11px]" aria-label="Detection and editing tools">
+  return <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-white px-3 py-1.5" aria-label="Detection and editing tools">
     <DetectionControls busy={busy} {...detection} />
-    <div className="flex flex-wrap items-center gap-[5px] border-l border-border pl-2.5 max-[1250px]:pl-2 max-[650px]:gap-[3px] max-[650px]:border-0 max-[650px]:pl-0 min-[1250px]:[&_button]:px-2" role="group" aria-label="Box tools">
-      <Button disabled={disabled} aria-pressed={mode === 'select'} onClick={() => onModeChange('select')}><Icon name="cursor" size={16} /> Select</Button>
-      <Button disabled={disabled} aria-pressed={mode === 'add'} onClick={() => onModeChange('add')}><Icon name="add" size={16} /> Add opening</Button>
-      <Button disabled={disabled || selectedCount < 2} onClick={onMerge} title="Merge selected leaves/duplicates of the same opening into one box"><Icon name="merge" size={16} /> Merge</Button>
-      <Button size="icon" disabled={disabled || !selectedCount} onClick={onRemove} title="Delete selected boxes (Delete)" aria-label="Delete selected boxes"><Icon name="trash" size={16} /></Button>
-      <Button size="icon" disabled={disabled || !canUndo} onClick={onUndo} title="Undo edit (⌘/Ctrl Z)" aria-label="Undo edit"><Icon name="undo" size={16} /></Button>
+    <div className="flex items-center gap-1 border-l border-border pl-2" role="group" aria-label="Opening tools">
+      <Button size="tool" disabled={disabled} aria-pressed={mode === 'select'} onClick={() => onModeChange('select')} title="Select or move an opening · drag empty space to draw" aria-label="Select opening"><Icon name="cursor" size={15} /></Button>
+      <Button size="tool" disabled={disabled} aria-pressed={mode === 'add'} onClick={() => onModeChange('add')} title="Draw an opening by dragging empty space" aria-label="Draw opening"><Icon name="add" size={15} /></Button>
+      <Button size="tool" disabled={disabled || selectedCount < 2} onClick={onMerge} title="Merge selected openings" aria-label="Merge selected openings"><Icon name="merge" size={15} /></Button>
+      <Button size="tool" disabled={disabled || !selectedCount} onClick={onRemove} title="Delete selected openings (Delete)" aria-label="Delete selected openings"><Icon name="trash" size={15} /></Button>
+      <Button size="tool" disabled={disabled || !canUndo} onClick={onUndo} title="Undo (⌘/Ctrl Z)" aria-label="Undo edit"><Icon name="undo" size={15} /></Button>
     </div>
-    <ZoomControls ready={imageReady} zoom={zoom} onZoomChange={onZoomChange} />
+    <Button className="ml-auto" variant={reviewed ? 'default' : 'primary'} disabled={disabled} onClick={() => void onReview()}>
+      <Icon name="check" size={14} />{reviewed ? 'Reopen review' : 'Confirm review'}
+    </Button>
   </div>
 }

@@ -25,28 +25,37 @@ when installing dependencies on a fresh checkout.
 
 ## Dashboard
 
-- The header contains only the app icon.
-- Upload a PDF in the canvas or drawer. A successful upload opens its sheet drawer.
-  Previously saved files can be reopened from the drawer's file selector.
-- Click the drawer edge or toolbar toggle to open/close it. Drag the edge to resize;
-  dragging almost fully left closes it. Drag right from the closed edge to reopen.
-  The handle also supports Enter/Space and Left/Right arrow keys. Escape closes
-  the drawer while focus is inside it. On narrow screens it overlays the canvas.
-- Check sheets to include them in detection and export. Opening a sheet does not
-  select it. Compact text in the drawer shows selected sheets, reviewed sheets and
-  reviewed opening counts.
-- Run **Detect V3**, then correct boxes in the viewer. Selection, movement, corner
-  resizing, adding, deleting, merging and undo retain the existing behavior. V4 is
-  an optional separate reference overlay, toggled in the drawer.
-- Save edits with the top save icon or Cmd/Ctrl S. Confirm the active sheet using
-  **Confirm reviewed** in the drawer. Every edit/undo clears reviewed status.
+- The header's sidebar icon opens/closes the file drawer. The dashboard, file
+  drawer and tools are visible on the first load; upload/reopen a PDF inside the
+  drawer. A successful upload opens its sheets there.
+- Drag anywhere along the drawer's right border to resize it. Resizing preserves
+  a usable minimum width; opening/closing belongs to the header toggle. The
+  border supports Left/Right arrow keys, and Escape closes the drawer. On narrow
+  screens the drawer overlays the canvas.
+- Check sheets to include them in detection/export. Opening a sheet does not
+  select it. The drawer shows compact selected/reviewed/opening counts.
+- Tool buttons are small icons with hover titles. Run V3 detection, or optional V4
+  reference detection, on selected sheets. Toggle the V4 overlay in the drawer.
+- Click an existing opening to select it, then drag it or its corner handles to
+  move/resize. Drag empty sheet space to create an opening without switching
+  tools. Shift/Cmd-click selects multiple. The select/draw icons remain available
+  as shortcuts. Delete, merge and undo retain their existing behavior.
+- Save edits with the top save icon or Cmd/Ctrl S. Use **Confirm review** in the
+  main toolbar. Every edit/undo clears reviewed status.
 - Choose marked PDF, CSV or JSON at the top and use the download icon. Export is
   enabled only after every selected sheet is saved and reviewed. Reviewed zero
   openings is valid. V4 reference boxes do not enter reviewed counts or exports.
 
-The canvas supports fit/zoom and scrolling. Delete/Backspace, Cmd/Ctrl Z,
-Cmd/Ctrl S and Escape work when the viewer is focused. Box coordinates use the
-inverse SVG screen transform, so zoom/scroll do not alter stored coordinates.
+The floating bottom bar contains fit, minus/plus, zoom percentage and full view.
+Ctrl/Command + mouse wheel and trackpad pinch zoom around the pointer. Ordinary
+scrolling pans. Two-finger touch gestures zoom/pan while cancelling any unfinished
+box drawing. The fit button resets the sheet to the available canvas size. Full
+view expands the canvas using native fullscreen where supported, with a viewport
+layout fallback; Escape or the same button exits.
+
+The viewer supports Delete/Backspace, Cmd/Ctrl Z, Cmd/Ctrl S and Escape when focused.
+Pointer coordinates use the inverse SVG screen transform. Zooming, panning and
+thinner visual box outlines do not change saved opening coordinates.
 
 Sheet/file switches and new uploads save the current draft first. Save failures
 retain the draft and its revision and block switching. The browser warns before
@@ -78,13 +87,15 @@ src/
         DetectionControls.tsx, DetectionToolbar.tsx, ExportActions.tsx
       components/viewer/
         PlanViewer.tsx, BoxOverlay.tsx, ZoomControls.tsx
+        useViewerGestures.ts, useFullView.ts, viewport.ts
   components/ui/
     Button.tsx, buttonStyles.ts, Icon.tsx, Spinner.tsx
   lib/http.ts
   styles/tailwind.css
   main.tsx
 tests/
-  drawer.test.ts, editor.test.ts, polling.test.ts, workflow.test.ts
+  dashboard.test.ts, drawer.test.ts, editor.test.ts
+  viewer.test.ts, polling.test.ts, workflow.test.ts
   fixtures.ts
 ```
 
@@ -104,7 +115,10 @@ npm run build
 
 Tests use the built-in Node test runner with TypeScript stripping. They cover
 editor geometry/revisions, review/export rules, V4 isolation, polling cleanup,
-drawer sizing/snap behavior and the API/reducer workflow using mocked HTTP.
+drawer resizing, wheel/pinch zoom math, pointer anchoring, automatic editing
+behavior and the API/reducer workflow using mocked HTTP. The first-render test
+uses the installed Vite compiler and React server rendering, with HTTP/WebSocket
+listening disabled, to check the initial dashboard and toolbar placement.
 They do not open a browser, upload a real PDF or run inference. Live pointer/touch
-interactions and the real upload/detection/download flow remain manual checks.
-The backend, saved files and model configuration are unchanged.
+interactions, native fullscreen and real upload/detection/download remain manual
+checks. The backend, saved files and model configuration are unchanged.

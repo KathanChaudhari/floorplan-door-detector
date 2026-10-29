@@ -12,7 +12,7 @@ export type DetectionControlsProps = {
 
 export function DetectionControls({ busy, canDetectV3, canDetectV4, blockedV3, onDetect }: DetectionControlsProps) {
   return <div className="flex items-center gap-[5px] max-[650px]:gap-[3px]">
-    <Button variant="primary" disabled={busy || !canDetectV3} onClick={() => void onDetect('v3')} title={blockedV3 ? 'An undetected selected sheet already has edits. Keep them, or upload a new document for detection.' : 'Detect unprocessed selected sheets with V3'}><Icon name="detect" size={16} /> Detect V3</Button>
-    <Button disabled={busy || !canDetectV4} onClick={() => void onDetect('v4')} title="Run V4 on selected sheets as a separate reference"><Icon name="layers" size={16} /> V4 reference</Button>
+    <Button size="tool" variant="primary" disabled={busy || !canDetectV3} onClick={() => void onDetect('v3')} aria-label="Detect V3" title={blockedV3 ? 'An undetected selected sheet already has edits. Keep them, or upload a new document for detection.' : 'Detect V3 on selected sheets'}><Icon name="detect" size={15} /></Button>
+    <Button size="tool" disabled={busy || !canDetectV4} onClick={() => void onDetect('v4')} title="Detect V4 reference on selected sheets" aria-label="Detect V4 reference"><Icon name="layers" size={15} /></Button>
   </div>
 }
