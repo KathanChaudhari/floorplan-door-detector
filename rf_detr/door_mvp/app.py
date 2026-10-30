@@ -245,10 +245,10 @@ def upload(file: UploadFile = File(...)):
             width,height=render_image(source,dest/'page_1.png')
             pages.append(dict(number=1,point_size=[width*72/CONFIG['dpi'],height*72/CONFIG['dpi']],
                 width=width,height=height,boxes=[],detected=False,reviewed=False,revision=0,reference=None,base_model=None))
-        data=dict(id=job,name=Path(file.filename or source.name).name,status='ready',message='Select floor-plan sheets to review.',
+        data=dict(id=job,name=Path(file.filename or source.name).name,status='ready',message='All sheets selected. Uncheck any sheets you do not need.',
                   dpi=CONFIG['dpi'],inference_settings={key:CONFIG[key] for key in ('threshold','nms_iou')},
                   source_type='pdf' if is_pdf else 'image',source_file=source.name,
-                  source_sha256=sha(source),selected_pages=[],pages=pages)
+                  source_sha256=sha(source),selected_pages=[p['number'] for p in pages],pages=pages)
         write(dest/'job.json',data)
         return data
     except HTTPException:

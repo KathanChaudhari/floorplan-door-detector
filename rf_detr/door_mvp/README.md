@@ -77,8 +77,8 @@ with actual V3/V4 MPS inference against a temporary store and a local PDF.
 1. Upload an unlocked PDF or a PNG, JPEG or WebP image smaller than 250 MB.
    Each image becomes one sheet at its original pixel resolution, with EXIF
    orientation applied and transparency flattened onto white. Images must be
-   single-frame and at most 40 million pixels. Sheets start unchecked.
-2. Open and select only the floor-plan sheets to detect and export. Exclude
+   single-frame and at most 40 million pixels. All sheets start selected.
+2. Uncheck sheets you do not need to detect or export. Exclude
    repeated overall plans, schedules, and repeated views where appropriate.
 3. Choose **Detect V3**. Initial loading can take time; progress appears in
    the UI and tile details in Terminal. Corrections are never overwritten by reruns.

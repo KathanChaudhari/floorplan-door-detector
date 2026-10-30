@@ -44,8 +44,7 @@ class ApiTests(unittest.TestCase):
         response = self.client.post('/api/jobs', files={'file': ('fixture.pdf', io.BytesIO(content), 'application/pdf')})
         self.assertEqual(response.status_code, 200)
         data = response.json()
-        self.assertEqual(data['selected_pages'], [])
-        self.assertEqual(self.client.put(f'/api/jobs/{data["id"]}/selection', json={'pages': [1]}).status_code, 200)
+        self.assertEqual(data['selected_pages'], [1])
         self.assertEqual(self.client.get(f'/api/jobs/{data["id"]}/pages/1/image').status_code, 200)
         return data['id']
 
@@ -54,6 +53,23 @@ class ApiTests(unittest.TestCase):
             self.assertEqual(self.client.get('/api/config', headers={'Origin': origin}).status_code, 200)
         for origin in ('http://127.0.0.1:5173', 'https://example.com', '*', 'null'):
             self.assertEqual(self.client.get('/api/config', headers={'Origin': origin}).status_code, 403)
+
+    def test_all_uploaded_pdf_sheets_start_selected_and_deselection_persists(self):
+        with pymupdf.open() as doc:
+            for _ in range(3):
+                doc.new_page(width=300, height=220)
+            content = doc.tobytes()
+        response = self.client.post('/api/jobs', files={'file': ('sheets.pdf', content, 'application/pdf')})
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertEqual(data['selected_pages'], [1, 2, 3])
+        prefix = f'/api/jobs/{data["id"]}'
+        self.assertEqual(self.client.get(prefix).json()['selected_pages'], [1, 2, 3])
+        for selected in ([1, 3], []):
+            updated = self.client.put(prefix + '/selection', json={'pages': selected})
+            self.assertEqual(updated.status_code, 200)
+            self.assertEqual(updated.json()['selected_pages'], selected)
+            self.assertEqual(self.client.get(prefix).json()['selected_pages'], selected)
 
     def test_only_explicit_development_origins_are_added(self):
         module = load_app(Path(self.temp.name) / 'development', ' http://127.0.0.1:5173, http://localhost:5173 ')
@@ -115,7 +131,7 @@ class ApiTests(unittest.TestCase):
                 prefix = f'/api/jobs/{data["id"]}'
                 self.assertEqual(data['source_type'], 'image')
                 self.assertEqual(data['source_sha256'], hashlib.sha256(original).hexdigest())
-                self.assertEqual(data['selected_pages'], [])
+                self.assertEqual(data['selected_pages'], [1])
                 self.assertEqual(len(data['pages']), 1)
                 self.assertFalse(data['pages'][0]['detected'])
                 self.assertEqual((Path(self.temp.name) / data['id'] / data['source_file']).read_bytes(), original)
@@ -130,7 +146,6 @@ class ApiTests(unittest.TestCase):
                 self.assertEqual(reopened['pages'][0]['width'], 300)
                 self.assertEqual(reopened['pages'][0]['height'], 220)
                 self.assertIn(data['id'], [item['id'] for item in self.client.get('/api/jobs').json()])
-                self.assertEqual(self.client.put(prefix + '/selection', json={'pages': [1]}).status_code, 200)
                 self.assertEqual(self.client.get(prefix + '/export/json').status_code, 409)
                 boxes = [{'id': 'opening', 'box': [10, 20, 100, 150], 'score': None, 'source': 'manual'}]
                 edited = self.client.put(prefix + '/pages/1', json={'revision': 0, 'boxes': boxes, 'reviewed': True})

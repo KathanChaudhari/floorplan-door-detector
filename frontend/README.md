@@ -34,8 +34,9 @@ when installing dependencies on a fresh checkout.
   a usable minimum width; opening/closing belongs to the header toggle. The
   border supports Left/Right arrow keys, and Escape closes the drawer. On narrow
   screens the drawer overlays the canvas.
-- Check sheets to include them in detection/export. Opening a sheet does not
-  select it. Per-sheet opening counts appear only after V3 detection completes.
+- All sheets start selected on upload. Uncheck any sheets to exclude them from
+  detection/export. Saved selections are preserved when reopening a file.
+  Per-sheet opening counts appear only after V3 detection completes.
   The selected file name is shown in the file selector and main toolbar.
 - V3 model and V4 reference buttons include their names and icons. The other
   editing tools remain small icons with hover titles. Toggle V4 in the drawer.
