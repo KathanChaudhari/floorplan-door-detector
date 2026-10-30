@@ -26,8 +26,10 @@ when installing dependencies on a fresh checkout.
 ## Dashboard
 
 - The header's sidebar icon opens/closes the file drawer. The dashboard, file
-  drawer and tools are visible on the first load; upload/reopen a PDF inside the
-  drawer. A successful upload opens its sheets there.
+  drawer and tools are visible on the first load; upload/reopen a PDF or PNG,
+  JPEG or WebP image inside the drawer. A successful upload opens its sheets
+  there. An image is one sheet at its original resolution. Files may be up to
+  250 MB; images must be single-frame and at most 40 million pixels.
 - Drag anywhere along the drawer's right border to resize it. Resizing preserves
   a usable minimum width; opening/closing belongs to the header toggle. The
   border supports Left/Right arrow keys, and Escape closes the drawer. On narrow
@@ -78,7 +80,7 @@ src/
     drawer.ts
   features/
     projects/
-      api.ts, types.ts
+      api.ts, types.ts, upload.ts
       hooks/useProjects.ts
       components/UploadPanel.tsx
     sheets/
@@ -98,7 +100,7 @@ src/
   main.tsx
 tests/
   dashboard.test.ts, drawer.test.ts, editor.test.ts, autosave.test.ts
-  viewer.test.ts, polling.test.ts, workflow.test.ts
+  viewer.test.ts, polling.test.ts, workflow.test.ts, upload.test.ts
   fixtures.ts
 ```
 
@@ -122,6 +124,7 @@ drawer resizing, autosave timing/cancellation, wheel/pinch zoom math, pointer an
 behavior and the API/reducer workflow using mocked HTTP. The first-render test
 uses the installed Vite compiler and React server rendering, with HTTP/WebSocket
 listening disabled, to check the initial dashboard and toolbar placement.
-They do not open a browser, upload a real PDF or run inference. Live pointer/touch
+They do not open a browser, upload a real file or run inference. Live pointer/touch
 interactions, native fullscreen and real upload/detection/download remain manual
-checks. The backend, saved files and model configuration are unchanged.
+checks. Backend API tests cover actual PDF/image uploads, rendering and exports
+using generated fixtures without running inference.

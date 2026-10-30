@@ -1,6 +1,6 @@
 # Door Review — local MVP
 
-React PDF selection → V3 detection → correction → reviewed count/export.
+React PDF/image selection → V3 detection → correction → reviewed count/export.
 All inference runs locally. One complete box represents one architectural opening,
 including both leaves of a double door. Counts across selected sheets do not
 automatically deduplicate repeated drawings, levels, or physical openings.
@@ -74,7 +74,10 @@ with actual V3/V4 MPS inference against a temporary store and a local PDF.
 
 ## Review
 
-1. Upload an unlocked PDF smaller than 250 MB. Sheets start unchecked.
+1. Upload an unlocked PDF or a PNG, JPEG or WebP image smaller than 250 MB.
+   Each image becomes one sheet at its original pixel resolution, with EXIF
+   orientation applied and transparency flattened onto white. Images must be
+   single-frame and at most 40 million pixels. Sheets start unchecked.
 2. Open and select only the floor-plan sheets to detect and export. Exclude
    repeated overall plans, schedules, and repeated views where appropriate.
 3. Choose **Detect V3**. Initial loading can take time; progress appears in
@@ -94,13 +97,14 @@ from the dropdown. The app does not automatically delete saved reviews.
 
 ## Sessions and exports
 
-`sessions/<document-id>/` contains `source.pdf`, rendered `page_N.png` files, raw
+`sessions/<document-id>/` contains `source.pdf` (or `source.png`, `source.jpg`,
+`source.webp` for images), rendered `page_N.png` files, raw
 model suggestions, and `job.json` with corrected boxes and review state. Keep the
 whole folder to reopen and export a review. Existing sessions were preserved during
 cleanup. React integration tests use a separate temporary session store;
 existing sessions are never used as the test store.
 
-- JSON contains rendered-pixel boxes, sheet dimensions/counts, source PDF hash,
+- JSON contains rendered-pixel boxes, sheet dimensions/counts, original source file hash,
   and model/checkpoint/settings provenance.
 - CSV has one row per opening. The per-sheet count repeats on rows: do not sum it.
   Reviewed zero-opening sheets receive a `reviewed_zero` row.

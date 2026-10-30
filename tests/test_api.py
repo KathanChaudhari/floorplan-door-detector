@@ -1,4 +1,5 @@
 """API contract/origin/revision tests. No model inference or mocked detections."""
+import hashlib
 import importlib.util
 import io
 import os
@@ -11,6 +12,7 @@ import uuid
 
 from fastapi.testclient import TestClient
 import pymupdf
+from PIL import Image
 
 APP_PATH = Path(__file__).resolve().parents[1] / 'rf_detr/door_mvp/app.py'
 
@@ -100,6 +102,93 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(self.client.put(prefix + '/pages/1', json={'revision': 0, 'boxes': [], 'reviewed': True}).status_code, 200)
         self.assertEqual(self.client.get(prefix + '/export/json').json()['reviewed_openings_on_selected_sheets'], 0)
         self.assertIn('reviewed_zero', self.client.get(prefix + '/export/csv').text)
+
+    def test_images_support_render_reopen_review_and_exports(self):
+        for format, extension, mime in [('PNG', 'png', 'image/png'), ('JPEG', 'jpg', 'image/jpeg'), ('WEBP', 'webp', 'image/webp')]:
+            with self.subTest(format=format):
+                content = io.BytesIO()
+                Image.new('RGB', (300, 220), 'white').save(content, format=format)
+                original = content.getvalue()
+                response = self.client.post('/api/jobs', files={'file': (f'plan.{extension}', original, mime)})
+                self.assertEqual(response.status_code, 200, response.text)
+                data = response.json()
+                prefix = f'/api/jobs/{data["id"]}'
+                self.assertEqual(data['source_type'], 'image')
+                self.assertEqual(data['source_sha256'], hashlib.sha256(original).hexdigest())
+                self.assertEqual(data['selected_pages'], [])
+                self.assertEqual(len(data['pages']), 1)
+                self.assertFalse(data['pages'][0]['detected'])
+                self.assertEqual((Path(self.temp.name) / data['id'] / data['source_file']).read_bytes(), original)
+                # Recreate the cached raster from the original, as for a reopened session.
+                (Path(self.temp.name) / data['id'] / 'page_1.png').unlink()
+                rendered = self.client.get(prefix + '/pages/1/image')
+                self.assertEqual(rendered.status_code, 200)
+                with Image.open(io.BytesIO(rendered.content)) as image:
+                    self.assertEqual(image.size, (300, 220))
+                    self.assertEqual(image.mode, 'RGB')
+                reopened = self.client.get(prefix).json()
+                self.assertEqual(reopened['pages'][0]['width'], 300)
+                self.assertEqual(reopened['pages'][0]['height'], 220)
+                self.assertIn(data['id'], [item['id'] for item in self.client.get('/api/jobs').json()])
+                self.assertEqual(self.client.put(prefix + '/selection', json={'pages': [1]}).status_code, 200)
+                self.assertEqual(self.client.get(prefix + '/export/json').status_code, 409)
+                boxes = [{'id': 'opening', 'box': [10, 20, 100, 150], 'score': None, 'source': 'manual'}]
+                edited = self.client.put(prefix + '/pages/1', json={'revision': 0, 'boxes': boxes, 'reviewed': True})
+                self.assertEqual(edited.status_code, 200)
+                exported = self.client.get(prefix + '/export/json').json()
+                self.assertEqual(exported['pages'][0]['boxes'], boxes)
+                self.assertEqual(exported['reviewed_openings_on_selected_sheets'], 1)
+                self.assertEqual(self.client.get(prefix + '/export/csv').status_code, 200)
+                pdf_response = self.client.get(prefix + '/export/pdf')
+                self.assertEqual(pdf_response.status_code, 200)
+                with pymupdf.open(stream=pdf_response.content, filetype='pdf') as pdf:
+                    self.assertEqual(len(pdf), 1)
+                    self.assertAlmostEqual(pdf[0].rect.width, 300 * 72 / data['dpi'])
+                    self.assertAlmostEqual(pdf[0].rect.height, 220 * 72 / data['dpi'], places=4)
+                    self.assertEqual(len(pdf[0].get_drawings()), 1)
+
+    def test_image_orientation_and_transparency(self):
+        transparent = io.BytesIO()
+        Image.new('RGBA', (30, 20), (0, 0, 0, 0)).save(transparent, format='PNG')
+        oriented = io.BytesIO()
+        exif = Image.Exif()
+        exif[274] = 6
+        Image.new('RGB', (30, 20), 'white').save(oriented, format='JPEG', exif=exif)
+        for name, content, expected_size in [('transparent.png', transparent, (30, 20)), ('rotated.jpg', oriented, (20, 30))]:
+            with self.subTest(name=name):
+                data = self.client.post('/api/jobs', files={'file': (name, content.getvalue())}).json()
+                rendered = self.client.get(f'/api/jobs/{data["id"]}/pages/1/image')
+                with Image.open(io.BytesIO(rendered.content)) as image:
+                    self.assertEqual(image.size, expected_size)
+                    self.assertEqual(image.getpixel((0, 0)), (255, 255, 255))
+                self.assertEqual((data['pages'][0]['width'], data['pages'][0]['height']), expected_size)
+
+    def test_invalid_unsupported_oversized_and_animated_images_leave_no_sessions(self):
+        gif = io.BytesIO()
+        Image.new('RGB', (10, 10)).save(gif, format='GIF')
+        png = io.BytesIO()
+        Image.new('RGB', (10, 10)).save(png, format='PNG')
+        animated = io.BytesIO()
+        Image.new('RGB', (10, 10), 'white').save(animated, format='PNG', save_all=True,
+            append_images=[Image.new('RGB', (10, 10), 'black')], duration=100, loop=0)
+        for name, content in [('fake.png', b'not an image'), ('empty.jpg', b''), ('unsupported.png', gif.getvalue()),
+                              ('truncated.png', png.getvalue()[:40]), ('animated.png', animated.getvalue())]:
+            with self.subTest(name=name):
+                self.assertEqual(self.client.post('/api/jobs', files={'file': (name, content)}).status_code, 400)
+                self.assertEqual(list(Path(self.temp.name).iterdir()), [])
+        with patch.dict(self.module.CONFIG, {'max_render_pixels': 50}):
+            response = self.client.post('/api/jobs', files={'file': ('large.png', png.getvalue())})
+        self.assertEqual(response.status_code, 413)
+        self.assertEqual(list(Path(self.temp.name).iterdir()), [])
+
+    def test_legacy_pdf_sessions_still_render(self):
+        job = self.upload()
+        data = self.module.load(job)
+        data.pop('source_type')
+        data.pop('source_file')
+        self.module.persist(data)
+        (Path(self.temp.name) / job / 'page_1.png').unlink()
+        self.assertEqual(self.client.get(f'/api/jobs/{job}/pages/1/image').status_code, 200)
 
 
 if __name__ == '__main__':

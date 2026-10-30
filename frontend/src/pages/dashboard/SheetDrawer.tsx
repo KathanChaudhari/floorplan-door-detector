@@ -97,7 +97,7 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, pages, 
                 {sheet.reviewed && <span className="text-accent" title="Reviewed"><Icon name="check" size={14} /><span className="sr-only">Reviewed</span></span>}
               </button>
             </li>)}
-            {!pages.length && <li className="p-3 text-[11px] text-muted">Upload a PDF to see its sheets.</li>}
+            {!pages.length && <li className="p-3 text-[11px] text-muted">Upload a PDF or image to see its sheets.</li>}
           </ul>
           {page?.reference && <div className="border-t border-border p-3">
             <label className="flex items-center gap-2 text-[11px] text-[#896aaf]">

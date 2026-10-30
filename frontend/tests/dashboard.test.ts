@@ -18,7 +18,10 @@ test('the first render shows the dashboard tools and file drawer instead of an u
     assert.ok(html.includes('aria-label="Full view"'))
     const aside = html.match(/<aside[\s\S]*?<\/aside>/)?.[0] ?? ''
     const main = html.match(/<main[\s\S]*?<\/main>/)?.[0] ?? ''
-    assert.ok(aside.includes('Upload PDF'))
+    assert.ok(aside.includes('Upload PDF or image'))
+    for (const type of ['application/pdf', 'image/png', 'image/jpeg', 'image/webp']) {
+      assert.ok(aside.includes(type))
+    }
     assert.ok(!aside.includes('Confirm review'))
     assert.ok(main.includes('Confirm review'))
     assert.ok(!main.includes('type="file"'))

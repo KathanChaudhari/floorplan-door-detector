@@ -16,7 +16,7 @@ import time
 import uuid
 
 import pymupdf
-from PIL import Image
+from PIL import Image, ImageOps
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
@@ -69,12 +69,34 @@ def idle(data):
     if data['status'] in ('queued', 'running'): raise HTTPException(409, 'Wait for detection to finish.')
 
 
+def render_image(source, target):
+    with Image.open(source, formats=('PNG', 'JPEG', 'WEBP')) as image:
+        if image.width * image.height > CONFIG['max_render_pixels']:
+            raise HTTPException(413, 'This image is too large. Resize or crop it to at most 40 million pixels.')
+        if getattr(image, 'n_frames', 1) != 1:
+            raise HTTPException(400, 'Use a single-frame PNG, JPEG or WebP image.')
+        oriented = ImageOps.exif_transpose(image)
+        if 'A' in oriented.getbands() or 'transparency' in oriented.info:
+            rgba = oriented.convert('RGBA')
+            result = Image.new('RGB', rgba.size, 'white')
+            result.paste(rgba, mask=rgba.getchannel('A'))
+        else:
+            result = oriented.convert('RGB')
+        result.save(target)
+        return result.size
+
+
 def render_page(job, number):
     with LOCK:
         data = load(job)
         p = page_of(data, number)
         path = folder(job) / f'page_{number}.png'
         if path.exists(): return path
+        if data.get('source_type') == 'image':
+            width, height = render_image(folder(job) / data['source_file'], path)
+            p.update(width=width, height=height)
+            persist(data)
+            return path
         with PDF_LOCK, pymupdf.open(folder(job) / 'source.pdf') as doc:
             page = doc[number-1]
             dpi = data.get('dpi',CONFIG['dpi'])
@@ -199,27 +221,40 @@ def upload(file: UploadFile = File(...)):
     job=uuid.uuid4().hex; dest=STORE/job; dest.mkdir()
     try:
         size=0
-        with (dest/'source.pdf').open('wb') as target:
+        source=dest/'source'
+        with source.open('wb') as target:
             for chunk in iter(lambda:file.file.read(1024*1024),b''):
                 size+=len(chunk)
-                if size>250*1024*1024: raise HTTPException(413,'Use a PDF smaller than 250 MB.')
+                if size>250*1024*1024: raise HTTPException(413,'Use a PDF or image smaller than 250 MB.')
                 target.write(chunk)
         pages=[]
-        with PDF_LOCK,pymupdf.open(dest/'source.pdf') as doc:
-            if not doc.is_pdf or doc.needs_pass or len(doc)<1:
-                raise HTTPException(400,'Provide an unlocked PDF with at least one page.')
-            for i,page in enumerate(doc):
-                pages.append(dict(number=i+1,point_size=list(page.rect.br-page.rect.tl), width=None,height=None,
-                    boxes=[],detected=False,reviewed=False,revision=0,reference=None,base_model=None))
-        data=dict(id=job,name=Path(file.filename or 'plan.pdf').name,status='ready',message='Select enlarged floor-plan sheets.',
+        with source.open('rb') as content:
+            is_pdf=b'%PDF-' in content.read(1024)
+        if is_pdf:
+            source=source.rename(dest/'source.pdf')
+            with PDF_LOCK,pymupdf.open(source) as doc:
+                if not doc.is_pdf or doc.needs_pass or len(doc)<1:
+                    raise HTTPException(400,'Provide an unlocked PDF with at least one page.')
+                for i,page in enumerate(doc):
+                    pages.append(dict(number=i+1,point_size=list(page.rect.br-page.rect.tl), width=None,height=None,
+                        boxes=[],detected=False,reviewed=False,revision=0,reference=None,base_model=None))
+        else:
+            with Image.open(source, formats=('PNG', 'JPEG', 'WEBP')) as image:
+                extension={'PNG':'png','JPEG':'jpg','WEBP':'webp'}[image.format]
+            source=source.rename(dest/f'source.{extension}')
+            width,height=render_image(source,dest/'page_1.png')
+            pages.append(dict(number=1,point_size=[width*72/CONFIG['dpi'],height*72/CONFIG['dpi']],
+                width=width,height=height,boxes=[],detected=False,reviewed=False,revision=0,reference=None,base_model=None))
+        data=dict(id=job,name=Path(file.filename or source.name).name,status='ready',message='Select floor-plan sheets to review.',
                   dpi=CONFIG['dpi'],inference_settings={key:CONFIG[key] for key in ('threshold','nms_iou')},
-                  source_sha256=sha(dest/'source.pdf'),selected_pages=[],pages=pages)
+                  source_type='pdf' if is_pdf else 'image',source_file=source.name,
+                  source_sha256=sha(source),selected_pages=[],pages=pages)
         write(dest/'job.json',data)
         return data
     except HTTPException:
         shutil.rmtree(dest); raise
     except Exception:
-        shutil.rmtree(dest); raise HTTPException(400,'Could not read this file as a PDF.')
+        shutil.rmtree(dest); raise HTTPException(400,'Could not read this file. Use an unlocked PDF or a valid PNG, JPEG or WebP image.')
     finally: file.file.close()
 
 

@@ -21,7 +21,7 @@ export const projectsApi = {
       else reject(new ApiError(errorMessage(xhr.response, `Upload failed (${xhr.status}).`), xhr.status))
     }
     xhr.onerror = () => { cleanup(); reject(new ApiError('Upload failed. Check the local backend connection.')) }
-    xhr.ontimeout = () => { cleanup(); reject(new ApiError('Upload timed out. Refresh saved sessions before trying again; the backend may have received the PDF.')) }
+    xhr.ontimeout = () => { cleanup(); reject(new ApiError('Upload timed out. Refresh saved sessions before trying again; the backend may have received the file.')) }
     xhr.onabort = () => { cleanup(); reject(new DOMException('Upload cancelled.', 'AbortError')) }
     if (signal?.aborted) { reject(new DOMException('Upload cancelled.', 'AbortError')); return }
     signal?.addEventListener('abort', abort, { once: true })

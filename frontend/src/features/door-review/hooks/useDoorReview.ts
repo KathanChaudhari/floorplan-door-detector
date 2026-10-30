@@ -3,6 +3,7 @@ import { ApiError } from '../../../lib/http.ts'
 import { projectsApi } from '../../projects/api.ts'
 import { useProjects } from '../../projects/hooks/useProjects.ts'
 import type { Job } from '../../projects/types.ts'
+import { validateUpload } from '../../projects/upload.ts'
 import { sheetsApi } from '../../sheets/api.ts'
 import { reviewApi } from '../api.ts'
 import { scheduleAutosave } from '../autosave.ts'
@@ -139,9 +140,8 @@ export function useDoorReview() {
 
   async function upload(file: File): Promise<string | null> {
     let createdId: string | null = null
-    await perform('Uploading PDF…', async () => {
-      if (!file.name.toLowerCase().endsWith('.pdf') && file.type !== 'application/pdf') throw new Error('Choose a PDF file.')
-      if (file.size > 250 * 1024 * 1024) throw new Error('Choose a PDF smaller than 250 MB.')
+    await perform('Uploading floor plan…', async () => {
+      validateUpload(file)
       await saveCurrent()
       const controller = new AbortController()
       uploadController.current = controller

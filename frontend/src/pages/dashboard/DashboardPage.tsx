@@ -50,7 +50,7 @@ export function DashboardPage() {
           {!job && <span className="text-[12px] font-medium text-muted">Drawing workspace</span>}
           {job && <span className="min-w-0 truncate text-[11px] text-muted" title={job.name}>{job.name}{page ? ` · Sheet ${page.number}` : ''}</span>}
           {activity && <span className="flex min-w-0 items-center gap-2 text-[10px] text-muted" role="status"><Spinner /><span className="truncate" title={activity}>{activity}</span></span>}
-          {review.uploadProgress !== null && <progress className="h-1 w-16 shrink-0 accent-accent" max={100} value={review.uploadProgress} aria-label="PDF upload progress" />}
+          {review.uploadProgress !== null && <progress className="h-1 w-16 shrink-0 accent-accent" max={100} value={review.uploadProgress} aria-label="File upload progress" />}
           <div className="ml-auto flex shrink-0 items-center gap-1">
             <ExportActions canExport={summary.canExport} busy={review.busy} onExport={review.exportReview} />
           </div>
@@ -74,7 +74,7 @@ export function DashboardPage() {
             editing={{ mode: editor.mode, selected: editor.selected, onSelect: review.select, onChange: review.change,
               onUndo: review.undo, onSave: review.save, onRemove: review.remove, onInteractionChange: review.interact }} />
           : <div className="relative grid min-h-0 flex-1 place-items-center bg-[#eaf0ed] bg-[radial-gradient(#b4c6b742_.7px,transparent_.7px)] bg-size-[12px_12px]">
-          <p className="px-6 text-center text-[12px] text-muted">Choose a PDF from Files to open a sheet.</p>
+          <p className="px-6 text-center text-[12px] text-muted">Choose a PDF or image from Files to open a sheet.</p>
           <ZoomControls ready={false} zoom={zoom} onZoomChange={setZoom} />
         </div>}
       </main>

@@ -1,7 +1,7 @@
 # Floor-plan door review MVP
 
 React + TypeScript + Vite frontend with an existing local FastAPI/RF-DETR backend.
-Upload a PDF, select enlarged sheets, detect with V3, correct boxes, confirm review,
+Upload a PDF or PNG/JPEG/WebP image, select sheets, detect with V3, correct boxes, confirm review,
 and export reviewed counts. One complete opening is one item, including both leaves
 of a double door. V4 is an optional reference and never enters reviewed counts.
 
@@ -46,7 +46,7 @@ root `requirements.txt` over that environment.
 - `rf_detr/door_mvp/`: FastAPI API, unchanged inference engine, configuration and
   setup/storage/checkpoint collection scripts.
 - `rf_detr/door_mvp/weights/v3.pth` and `v4.pth`: default/reference checkpoints.
-- `rf_detr/door_mvp/sessions/`: saved review state, rendered pages and source PDFs.
+- `rf_detr/door_mvp/sessions/`: saved review state, rendered pages and source PDFs/images.
   Preserve complete session folders. They are ignored by Git.
 - `rf_detr/door_mvp/environment-current.txt`: working Python environment record;
   `environment-before-web.txt` and `requirements-web.txt` retain earlier records.
