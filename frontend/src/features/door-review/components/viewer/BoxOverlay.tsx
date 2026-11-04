@@ -1,4 +1,4 @@
-import { useImperativeHandle, useRef, useState } from 'react'
+import { memo, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent, Ref } from 'react'
 import { clientToPage, moveBoxes, openingDragKind, rectangle, resizeBox } from '../../editor.ts'
 import type { Corner } from '../../editor.ts'
@@ -30,11 +30,18 @@ type Drag = {
   changed: boolean
 }
 
+const ReferenceLayer = memo(function ReferenceLayer({ boxes }: { boxes: ReferenceBox[] }) {
+  return <g pointerEvents="none" aria-hidden="true">
+    {boxes.map((box) => <rect className="fill-none stroke-[#9459bc] stroke-1 [stroke-dasharray:5_4]" key={box.id} x={box.box[0]} y={box.box[1]} width={box.box[2] - box.box[0]} height={box.box[3] - box.box[1]} vectorEffect="non-scaling-stroke" />)}
+  </g>
+})
+
 export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabled, scale, onSelect, onChange, focusViewer, onInteractionChange }: Props) {
   const svg = useRef<SVGSVGElement>(null)
   const drag = useRef<Drag | null>(null)
   const [preview, setPreview] = useState<OpeningBox[] | null>(null)
   const [addition, setAddition] = useState<[Point, Point] | null>(null)
+  const selectedIds = useMemo(() => new Set(selected), [selected])
   const handleSize = 6 / Math.max(.01, scale)
   useImperativeHandle(ref, () => ({ cancel }))
 
@@ -59,10 +66,10 @@ export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabl
       setAddition([at, at])
     } else if (id) {
       if (event.shiftKey || event.metaKey || event.ctrlKey) {
-        onSelect(selected.includes(id) ? selected.filter((key) => key !== id) : [...selected, id])
+        onSelect(selectedIds.has(id) ? selected.filter((key) => key !== id) : [...selected, id])
         return
       }
-      const ids = selected.includes(id) ? selected : [id]
+      const ids = selectedIds.has(id) ? selected : [id]
       onSelect(ids)
       drag.current = { kind, id, corner: corner ?? undefined, start: at, end: at, boxes, ids, changed: false }
     }
@@ -112,12 +119,10 @@ export function BoxOverlay({ ref, size, boxes, reference, selected, mode, disabl
 
   return <svg ref={svg} className={`absolute inset-0 size-full touch-none overflow-visible select-none ${mode === 'add' ? 'cursor-crosshair' : ''}`} viewBox={`0 0 ${size.width} ${size.height}`}
     aria-label="Editable opening boxes" onPointerDown={down} onPointerMove={move} onPointerUp={finish} onPointerCancel={cancel} onLostPointerCapture={cancel}>
-    <g pointerEvents="none" aria-hidden="true">
-      {reference.map((box) => <rect className="fill-none stroke-[#9459bc] stroke-1 [stroke-dasharray:5_4]" key={box.id} x={box.box[0]} y={box.box[1]} width={box.box[2] - box.box[0]} height={box.box[3] - box.box[1]} vectorEffect="non-scaling-stroke" />)}
-    </g>
+    <ReferenceLayer boxes={reference} />
     {(preview ?? boxes).map((box, index) => {
       const [x, y, x2, y2] = box.box
-      const active = selected.includes(box.id)
+      const active = selectedIds.has(box.id)
       const corners: [Corner, number, number][] = [['nw', x, y], ['ne', x2, y], ['sw', x, y2], ['se', x2, y2]]
       return <g key={box.id} data-box-id={box.id}>
         <rect className={`cursor-move focus-visible:fill-[#ffc05d25] focus-visible:stroke-[#bd7b1e] focus-visible:stroke-[1.25] focus-visible:outline-none ${active ? 'fill-[#ffc05d25] stroke-[#bd7b1e] stroke-[1.25]' : 'fill-[#236ad20b] stroke-[#236ad2] stroke-1 hover:fill-[#236ad21c] hover:stroke-[1.25]'}`} x={x} y={y} width={x2 - x} height={y2 - y} vectorEffect="non-scaling-stroke"

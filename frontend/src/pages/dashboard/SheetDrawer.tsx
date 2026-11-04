@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import { Icon } from '../../components/ui/Icon.tsx'
 import { UploadPanel } from '../../features/projects/components/UploadPanel.tsx'
@@ -29,6 +29,7 @@ type Drag = { x: number; width: number; viewport: number }
 
 export function SheetDrawer({ open, onOpenChange, documents, documentId, pages, selectedPages, page,
   dirty, busy, uploadDisabled, showReference, onUpload, onOpenDocument, onOpenPage, onSelectPage, onShowReferenceChange }: Props) {
+  const selectedPageNumbers = useMemo(() => new Set(selectedPages), [selectedPages])
   const [width, setWidth] = useState(DEFAULT_DRAWER_WIDTH)
   const [previewWidth, setPreviewWidth] = useState<number | null>(null)
   const drawer = useRef<HTMLDivElement>(null)
@@ -87,7 +88,7 @@ export function SheetDrawer({ open, onOpenChange, documents, documentId, pages, 
           </div>
           <ul className="min-h-0 flex-1 space-y-1 overflow-y-auto p-2">
             {pages.map((sheet) => <li key={sheet.number} className={`flex items-center gap-2 rounded-md border px-2 py-1 ${sheet.number === page?.number ? 'border-[#c4d9cc] bg-[#edf4ef]' : 'border-transparent'}`}>
-              <input type="checkbox" className="size-[15px] shrink-0 cursor-pointer accent-accent" checked={selectedPages.includes(sheet.number)}
+              <input type="checkbox" className="size-[15px] shrink-0 cursor-pointer accent-accent" checked={selectedPageNumbers.has(sheet.number)}
                 disabled={busy} aria-label={`Include sheet ${sheet.number}`} onChange={(event) => void onSelectPage(sheet.number, event.target.checked)} />
               <button type="button" className="flex min-w-0 flex-1 items-center gap-2 py-2 text-left disabled:opacity-60" disabled={busy}
                 aria-current={sheet.number === page?.number ? 'page' : undefined} onClick={() => void onOpenPage(sheet.number)}>

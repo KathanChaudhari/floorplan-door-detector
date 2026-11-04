@@ -21,12 +21,28 @@ export function rectangle(start: Point, end: Point): Rect {
   return [Math.min(start.x, end.x), Math.min(start.y, end.y), Math.max(start.x, end.x), Math.max(start.y, end.y)]
 }
 
+// Accumulate bounds without temporary coordinate arrays or argument-count limits.
+function selectionBounds(boxes: OpeningBox[], ids: Set<string>) {
+  let count = 0
+  const bounds: Rect = [Infinity, Infinity, -Infinity, -Infinity]
+  for (const { id, box } of boxes) {
+    if (!ids.has(id)) continue
+    count++
+    bounds[0] = Math.min(bounds[0], box[0])
+    bounds[1] = Math.min(bounds[1], box[1])
+    bounds[2] = Math.max(bounds[2], box[2])
+    bounds[3] = Math.max(bounds[3], box[3])
+  }
+  return { count, bounds }
+}
+
 export function moveBoxes(boxes: OpeningBox[], ids: string[], delta: Point, size: Dimensions): OpeningBox[] {
-  const selected = boxes.filter((box) => ids.includes(box.id))
-  if (!selected.length) return boxes
-  const dx = clamp(delta.x, -Math.min(...selected.map((b) => b.box[0])), size.width - Math.max(...selected.map((b) => b.box[2])))
-  const dy = clamp(delta.y, -Math.min(...selected.map((b) => b.box[1])), size.height - Math.max(...selected.map((b) => b.box[3])))
-  return boxes.map((box) => ids.includes(box.id)
+  const selected = new Set(ids)
+  const { count, bounds } = selectionBounds(boxes, selected)
+  if (!count) return boxes
+  const dx = clamp(delta.x, -bounds[0], size.width - bounds[2])
+  const dy = clamp(delta.y, -bounds[1], size.height - bounds[3])
+  return boxes.map((box) => selected.has(box.id)
     ? { ...box, source: 'edited', box: [box.box[0] + dx, box.box[1] + dy, box.box[2] + dx, box.box[3] + dy] }
     : box)
 }
@@ -47,15 +63,11 @@ export function resizeBox(boxes: OpeningBox[], id: string, corner: Corner, at: P
 }
 
 export function mergeBoxes(boxes: OpeningBox[], ids: string[], newId: string): OpeningBox[] {
-  const selected = boxes.filter((box) => ids.includes(box.id))
-  if (selected.length < 2) return boxes
-  const union: OpeningBox = {
-    id: newId, score: null, source: 'merged', box: [
-      Math.min(...selected.map((b) => b.box[0])), Math.min(...selected.map((b) => b.box[1])),
-      Math.max(...selected.map((b) => b.box[2])), Math.max(...selected.map((b) => b.box[3])),
-    ],
-  }
-  return [...boxes.filter((box) => !ids.includes(box.id)), union]
+  const selected = new Set(ids)
+  const { count, bounds } = selectionBounds(boxes, selected)
+  if (count < 2) return boxes
+  const union: OpeningBox = { id: newId, score: null, source: 'merged', box: bounds }
+  return [...boxes.filter((box) => !selected.has(box.id)), union]
 }
 
 export type EditorState = {
@@ -107,7 +119,8 @@ export function editorReducer(state: EditorState, action: EditorAction): EditorS
 
 export function reviewSummary(job: Job | null, editor: EditorState) {
   const pages = job?.pages.map((page) => page.number === editor.page?.number ? editor.page : page) ?? []
-  const selected = pages.filter((page) => job?.selected_pages.includes(page.number))
+  const selectedPages = new Set(job?.selected_pages)
+  const selected = pages.filter((page) => selectedPages.has(page.number))
   const reviewed = selected.filter((page) => page.reviewed)
   return {
     pages, selected: selected.length, reviewed: reviewed.length,

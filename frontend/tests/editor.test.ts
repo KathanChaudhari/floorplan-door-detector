@@ -102,3 +102,18 @@ test('API errors preserve backend conflict and validation messages', () => {
   assert.equal(errorMessage({ detail: [{ msg: 'Invalid box' }, { msg: 'Missing revision' }] }, 'fallback'), 'Invalid box; Missing revision')
   assert.equal(errorMessage(null, 'Connection failed'), 'Connection failed')
 })
+
+
+test('large selections move and merge without exceeding JavaScript argument limits', () => {
+  const boxes = Array.from({ length: 150_000 }, (_, index) => box(String(index), [10, 20, 30, 40]))
+  const ids = boxes.map((item) => item.id)
+  const moved = moveBoxes(boxes, ids, { x: 500, y: -500 }, size)
+  assert.equal(moved.length, boxes.length)
+  assert.deepEqual(moved[0].box, [80, 0, 100, 20])
+  assert.deepEqual(moved.at(-1)?.box, moved[0].box)
+  assert.deepEqual(mergeBoxes(boxes, ids, 'union'), [
+    { id: 'union', score: null, source: 'merged', box: [10, 20, 30, 40] },
+  ])
+  assert.equal(moveBoxes(boxes, ['missing'], { x: 1, y: 1 }, size), boxes)
+  assert.equal(mergeBoxes(boxes, [ids[0], ids[0], 'missing'], 'union'), boxes)
+})
