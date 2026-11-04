@@ -7,17 +7,20 @@ automatically deduplicate repeated drawings, levels, or physical openings.
 
 ## Start — API and React in separate terminals
 
+Run each terminal’s commands from the repository root. The `localhost` and
+`127.0.0.1` addresses below refer to your own computer for local development.
+
 API:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/rf_detr
+cd rf_detr
 DOOR_MVP_DEV_ORIGINS='http://127.0.0.1:5173,http://localhost:5173' .venv/bin/python -B door_mvp/app.py
 ```
 
 React:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/frontend
+cd frontend
 npm run dev
 ```
 
@@ -117,8 +120,8 @@ marks unfinished jobs interrupted while retaining completed results.
 
 ## Archive and storage
 
-Training/evaluation material is preserved at
-`/Users/kathan/Projects/backup floor-detection/`, using the original relative paths.
+Training/evaluation material is kept in a separate archive outside this repository,
+using the original relative paths. Its location depends on your local setup.
 Its `_cleanup_records/` directory contains full manifests, verification evidence,
 dependency records, the approved plan, original active files, and restoration notes.
 Historical absolute paths remain in archived configuration as provenance. Restore

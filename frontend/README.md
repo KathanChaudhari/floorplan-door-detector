@@ -5,17 +5,20 @@ router, session context/provider or shared layout layer.
 
 ## Run
 
+Run each terminal’s commands from the repository root. The `localhost` and
+`127.0.0.1` addresses below refer to your own computer for local development.
+
 Start the existing API in another terminal:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/rf_detr
+cd rf_detr
 DOOR_MVP_DEV_ORIGINS='http://127.0.0.1:5173,http://localhost:5173' .venv/bin/python -B door_mvp/app.py
 ```
 
 Start the frontend:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/frontend
+cd frontend
 npm run dev
 ```
 

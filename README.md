@@ -7,17 +7,20 @@ of a double door. V4 is an optional reference and never enters reviewed counts.
 
 ## Development startup — two terminals
 
+Run each terminal’s commands from the repository root. The `localhost` and
+`127.0.0.1` addresses below refer to your own computer for local development.
+
 Terminal 1 — API:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/rf_detr
+cd rf_detr
 DOOR_MVP_DEV_ORIGINS='http://127.0.0.1:5173,http://localhost:5173' .venv/bin/python -B door_mvp/app.py
 ```
 
 Terminal 2 — React:
 
 ```bash
-cd /Users/kathan/Projects/floorplan-door-detector/frontend
+cd frontend
 npm run dev
 ```
 
@@ -33,8 +36,7 @@ the proxy's Host rewrite alone is insufficient. Existing same-origin checks
 remain enabled and no wildcard origins are used. No direct cross-origin browser
 requests or permissive CORS configuration are needed.
 
-Frontend dependencies are already installed. For a fresh checkout, use `npm ci`
-inside `frontend/` to install the versions in its lockfile. Keep the working
+Use `npm ci` inside `frontend/` to install the versions in its lockfile. Keep the working
 `rf_detr/.venv` and Python dependencies unchanged; do not install the historical
 root `requirements.txt` over that environment.
 
@@ -82,12 +84,11 @@ Norco PDF and real V3/V4 MPS detection; no successful detections were mocked.
 
 ## Training archive
 
-The archive remains `/Users/kathan/Projects/backup floor-detection/`. Its original
+Training material is kept in a separate archive outside this repository. Its original
 directory structure and `_cleanup_records/` preserve datasets, original PDFs,
 annotations, licenses, training/evaluation scripts, old checkpoints, manifests,
 dependency snapshots and cleanup/verification results. It was not modified by
-the React migration. The archive is on the same filesystem as the project and is
-not an independent off-disk backup. Preserve it.
+the React migration. Keep a separate backup of the archive.
 
 Weights, environments, sessions, PDFs, datasets, generated outputs, node_modules
 and frontend/dist are ignored. Package manifests/lockfiles, application source and
